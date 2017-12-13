@@ -41,7 +41,7 @@ class HighlightController extends Controller
 
     public function form()
     {
-      $client = new Client($authorizationToken);
+      $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
       $adapter = new DropboxAdapter($client);
 
