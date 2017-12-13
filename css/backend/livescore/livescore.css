@@ -1,0 +1,14 @@
+.primary{
+  background-color: #337ab7;
+  color:#fff;
+}
+.btn-link{
+  color:red;
+}
+.btn-link:disabled{
+  color:silver;
+}
+.btn-link:hover,
+.btn-link:focus{
+  text-decoration:none;
+}

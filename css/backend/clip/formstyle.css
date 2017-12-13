@@ -1,0 +1,13 @@
+.form-control-feedback{
+  top: 10px !important;
+}
+.cover {
+    display: none;
+    width: 200px;
+    border: 1px solid #d5d5d5;
+    margin-top: 10px;
+}
+.cover img {
+    max-width: 100%;
+    height: auto;
+}

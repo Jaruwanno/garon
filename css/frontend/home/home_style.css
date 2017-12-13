@@ -1,0 +1,156 @@
+/*header*/
+.logo-team img{
+  width: 60px;
+}
+
+.logo-team{
+  margin-bottom:10px;
+}
+
+.news{
+  position:relative;
+  padding:0;
+}
+
+.news img{
+  width:100%;
+}
+
+.news > img:first-of-type{
+  position:absolute;
+  opacity:0.7;
+}
+.news > h3{
+  position:absolute;
+  color:#fff;
+  z-index: 1;
+  font-size: 3vmin;
+  margin-top:30px;
+}
+
+/*-----------------*/
+
+.clip{
+  background-color: #8B0000;
+  padding-top:10px;
+}
+
+#text{
+  color:#fff;
+}
+
+/*ลองก่อน*/
+.slider {
+  width: 85%;
+  margin: 0 auto;
+}
+.slick-slide {
+  margin: 0px 5px;
+  border: 3px solid #FFF;
+  border-radius:3px;
+  position: relative;
+  overflow: hidden;
+}
+.slick-slide img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+
+a.slick-slide:hover > img{
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+  opacity: 1;
+}
+a.slick-slide > a:hover .play > img {
+  opacity: 1;
+}
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+}
+
+a.slick-slide .play {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+
+a.slick-slide .play > img {
+  width:30%;
+  height: 50%;
+  margin:15% auto 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+  opacity: 0.8;
+}
+
+a.slick-slide:hover .play {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*---------------------------*/
+
+table{
+  font-size: 18px;
+}
+
+
+tr.head{
+  color:#fff;
+  background: #990000	;
+  background: -webkit-linear-gradient(#990000	, #4d0000 	);
+  background: -o-linear-gradient(#990000	, #4d0000  	);
+  background: -moz-linear-gradient(#990000	, #4d0000  	);
+  background: linear-gradient(#990000	, #4d0000 	);
+}
+
+
+tr.second{
+  color:#fff;
+  background: #666666	;
+  background: -webkit-linear-gradient(#666666	, #262626 	);
+  background: -o-linear-gradient(#666666	, #262626  	);
+  background: -moz-linear-gradient(#666666	, #262626  	);
+  background: linear-gradient(#666666	, #262626 	);
+
+}
+
+table tr td{
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+div#ou table tr.second,
+div#asian table tr.second{
+  cursor: pointer;
+}
+
+p.red,
+a.red{
+  color:red;
+}
+
+div.modal-body ul li.active a,
+div.modal-body ul li.active a:focus,
+div.modal-body ul li.active a:hover{
+  background-color: #8B0000;
+}
+
+
+div.modal-body ul li:not(.active) a{
+  color: #8B0000;
+}

@@ -1,0 +1,232 @@
+/*div.news div.panel-default,
+div.news div.panel-default div.panel-footer{
+  border:0;
+  background-color:#fff;
+  box-shadow: none;
+}*/
+
+/*div.news div.panel-default div.panel-footer{
+  padding:5px 0 0 0;
+}*/
+
+/*.panel-image img{
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+}*/
+
+/*.news .news-head{
+  font-size:26px;
+}*/
+/*.news .news-time{
+  font-size: 20px;
+}*/
+
+/*home-content*/
+.section-box{
+  padding-top:10px;
+}
+
+.section-box > h3 > a{
+  color:#000;
+}
+
+.section-box > p{
+  font-size: 20px;
+}
+.section-box > p > a{
+  font-size: 16px;
+}
+
+.section-box > h3 > a:hover{
+  color:#8B0000;
+  text-decoration: none;
+}
+
+.rating-desc > div span{
+  font-size:16px;
+}
+
+.rating-desc .fb-like{
+  margin-top:5px;
+}
+
+.section-box hr {
+  margin-top: 0;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid rgb(199, 199, 199);
+}
+
+.leagues-list ul > li.active a{
+  background:  url("../../../pic/active.png")no-repeat;
+  background-size: cover;
+  color:#fff;
+}
+@media only screen and (min-width: 768px){
+  .detail{
+    display:none;
+  }
+}
+.detail{
+  margin-bottom:30px;
+
+}
+
+.leagues-list img.leagues-icon{
+  width: 25px;
+  margin-right: 5%;
+}
+
+.leagues-list a > i{
+  margin-right: 5%;
+}
+
+.leagues-list ul li{
+  border-bottom: 1px solid #f0f4f7;
+  margin-bottom: 3px;
+}
+
+.leagues-list ul li:last-child{
+  border-bottom: none;
+}
+
+.leagues-list ul li a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #F5F5F5;
+  border-left: 5px solid #8B0000;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+.leagues-list ul li a:hover {
+  background-color: #fff;
+  color: #5b9bd1;
+}
+
+
+.leagues-list ul > li.active i,
+.leagues-list ul > li.active img{
+    margin-right: 30%
+}
+
+div.search-leages input{
+  font-size:20px;
+  border-radius:0;
+  padding:20px;
+  background-color:#F5F5F5;
+  border:0;
+}
+
+div.search-leages form{
+  position:relative;
+}
+
+div.search-leages form > button{
+  position:absolute;
+  right:3%;
+  bottom:7%;
+}
+
+.btn-circle{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  background-color: inherit;
+  outline:none;
+  border:none;
+}
+
+
+/*****************News-Show******************/
+div.head-news-show span{
+  font-size:20px;
+  font-weight:normal;
+}
+
+div.head-news-show span i{
+  font-size:20px;
+}
+
+.other{
+  list-style:none;
+}
+.other img{
+  width:15px;
+}
+ul.other li a{
+  color: #000;
+}
+ul.other li a:hover,
+ul.other li a:active{
+  text-decoration: none;
+  color:red;
+}
+ul.other li:not(:last-child){
+  margin-bottom:5px;
+}
+.hot-news,
+.hot-news .panel-heading
+.hot-news .panel-body{
+  border-radius: 0;
+  border:none;
+ box-shadow: none;
+}
+.hot-news > .panel-heading{
+  background:#B22222;
+  color:#fff;
+}
+.hot-news img{
+  width:100%;
+}
+
+.hot-news h1{
+  font-weight:600;
+  font-size: 22px;
+}
+
+.hot-news p,
+.hot-news a{
+  font-size: 16px;
+}
+
+#datetimepicker1{
+  font-size: 18px;
+  font-weight:200;
+}
+
+
+.news .fb-like{
+  margin-top:-5px;
+}
+
+/*Paginations*/
+.pagination>li>a, .pagination>li>span {
+   margin: 0 5px;
+   color:#000;
+ }
+ .pagination>li>a:hover{
+   color:#000 !important;
+ }
+ .pagination>li.active>span,
+ .pagination>li.active>span:hover{
+  background-color: #B22222 !important;
+  border-color:#B22222 !important;
+ }
+
+@media only screen and (min-width: 500px){
+  .facebook-button{
+    float:right;
+  }
+}
+
+
+img
+{
+  width:100%;
+}

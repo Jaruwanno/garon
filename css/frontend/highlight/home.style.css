@@ -1,0 +1,212 @@
+div.leagues-list ul li a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #F5F5F5;
+  border-left: 5px solid #8B0000;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+.leagues-list ul li{
+  border-bottom: 1px solid #f0f4f7;
+  margin-bottom: 3px;
+}
+
+.leagues-list ul > li.active a{
+  background:  url("../../../pic/active.png")no-repeat;
+  background-size: cover;
+  color:#fff;
+}
+
+.leagues-list ul li{
+  border-bottom: 1px solid #f0f4f7;
+  margin-bottom: 3px;
+}
+
+.leagues-list ul li:last-child{
+  border-bottom: none;
+}
+
+.leagues-list ul li a:hover {
+  background-color: #fff;
+  color: #5b9bd1;
+}
+
+.detail{
+  margin-bottom:30px;
+}
+
+@media only screen and (min-width: 768px){
+  .detail{
+    display:none;
+  }
+}
+
+div.search-leages input{
+  font-size:20px;
+  border-radius:0;
+  padding:20px;
+  background-color:#F5F5F5;
+  border:0;
+}
+
+div.search-leages form{
+  position:relative;
+}
+
+div.search-leages form > button{
+  position:absolute;
+  right:3%;
+  bottom:13%;
+}
+
+.btn-circle{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  background-color: inherit;
+  outline:none;
+  border:none;
+}
+
+#datetimepicker1{
+  font-size: 18px;
+  font-weight:200;
+}
+
+.panelD .panel-footer {
+    background-color: #fff !important;
+}
+
+.panel-image img.panel-image-preview {
+  width: 100%;
+	border-radius: 4px 4px 0px 0px;
+}
+
+.panel-body {
+    display: block;
+    text-align: center;
+}
+
+div.panel-body > a:hover{
+  text-decoration: none;
+}
+
+div.panel-body > a:hover > h3{
+  color:red;
+}
+
+div.panel-body > a > h3{
+  color: #8B0000;
+}
+
+ul.list-inline li:first-child{
+  padding-left: 20px;
+}
+
+.panel-image > a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.panel-image > a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+
+.panel-image > a:hover > img{
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+  opacity: 1;
+}
+
+.panel-image > a > .play {
+  background-color: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: background-color 0.15s ease 0s;
+  -o-transition: background-color 0.15s ease 0s;
+  transition: background-color 0.15s ease 0s;
+}
+
+.panel-image > a > div.play > img {
+  width:20%;
+  height: 35%;
+  margin:20% auto 0;
+  opacity: 1;
+  display: table;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+  opacity: 0.8;
+}
+
+.panel-image a:hover .play {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.panel-image ~ .panel-footer span {
+    color: rgb(100, 100, 100);
+    font-size: 18px;
+}
+
+.panel-footer .list-inline {
+    margin: 0 0 0 -15px !important;
+}
+
+.panel-image.hide-panel-body ~ .panel-body {
+	height: 0px;
+	padding: 0px;
+}
+
+/*Paginations*/
+.pagination>li>a, .pagination>li>span {
+   margin: 0 5px;
+   color:#000;
+ }
+ .pagination>li>a:hover{
+   color:#000 !important;
+ }
+ .pagination>li.active>span,
+ .pagination>li.active>span:hover{
+  background-color: #B22222 !important;
+  border-color:#B22222 !important;
+ }
+
+/*==========  Mobile First Method  ==========*/
+
+@media only screen and (max-width : 320px) {
+    .level-line-up {
+        position: relative;
+        top: -4px;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .level-line-up {
+        position: relative;
+        top: -4px;
+    }
+}
+
+@media only screen and (min-width : 480px) and (max-width : 768px) {
+    .level-line-up {
+        position: relative;
+        top: -4px;
+    }
+}
