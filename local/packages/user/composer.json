@@ -1,0 +1,8 @@
+{
+    "name": "macbookpro/user",
+    "description": "this is first package",
+    "type": "laravel",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {}
+}
