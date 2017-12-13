@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\backend;
 
+use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client;
+use Spatie\FlysystemDropbox\DropboxAdapter;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -37,26 +41,33 @@ class HighlightController extends Controller
 
     public function form()
     {
-      $zones = Zone::orderBy('length')->get();
+      $client = new Client($authorizationToken);
 
-      $aStyle = array(
-        'formValidation/css/formValidation.min.css',
-        'css/backend/clip/formstyle.css'
-      );
+      $adapter = new DropboxAdapter($client);
 
-      $aScript = array(
-        'js/jquery/jquery.form.min.js',
-        'js/backend/tinymce/tinymce.min.js',
-        'formValidation/js/validator.js',
-        'formValidation/js/framework/bootstrap.js',
-        'js/backend/clip/form.js'
-      );
+      $filesystem = new Filesystem($adapter);
 
-      return view('backend.highlight.form', [
-        'zones' => $zones,
-        'css' => $aStyle,
-        'js' => $aScript
-      ]);
+      dd($filesystem);
+      // $zones = Zone::orderBy('length')->get();
+      //
+      // $aStyle = array(
+      //   'formValidation/css/formValidation.min.css',
+      //   'css/backend/clip/formstyle.css'
+      // );
+      //
+      // $aScript = array(
+      //   'js/jquery/jquery.form.min.js',
+      //   'js/backend/tinymce/tinymce.min.js',
+      //   'formValidation/js/validator.js',
+      //   'formValidation/js/framework/bootstrap.js',
+      //   'js/backend/clip/form.js'
+      // );
+      //
+      // return view('backend.highlight.form', [
+      //   'zones' => $zones,
+      //   'css' => $aStyle,
+      //   'js' => $aScript
+      // ]);
     }
 
     public function store(Request $request)
