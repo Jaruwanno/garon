@@ -43,13 +43,11 @@ class HighlightController extends Controller
     {
       $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
-      $client->getMetadata('garon');
-
       $adapter = new DropboxAdapter($client);
 
       $filesystem = new Filesystem($adapter);
 
-      dd($adapter, $filesystem);
+      dd($adapter, $filesystem, $client->getMetadata('garon'));
       // $zones = Zone::orderBy('length')->get();
       //
       // $aStyle = array(
