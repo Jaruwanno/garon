@@ -43,7 +43,7 @@ class HighlightController extends Controller
     {
       $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
-      $client->createFolder('garon');
+      $client->getMetadata('/');
 
       $adapter = new DropboxAdapter($client);
 
