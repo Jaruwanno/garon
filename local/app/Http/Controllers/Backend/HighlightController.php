@@ -47,7 +47,7 @@ class HighlightController extends Controller
 
       $filesystem = new Filesystem($adapter);
 
-      dd($adapter);
+      dd($adapter, $filesystem);
       // $zones = Zone::orderBy('length')->get();
       //
       // $aStyle = array(
