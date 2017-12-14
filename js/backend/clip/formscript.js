@@ -1,4 +1,5 @@
 $(function(){
+  alert('fd');
   tinymce.init({
     selector: 'textarea',
     height: 600,
