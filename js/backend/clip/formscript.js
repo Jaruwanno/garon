@@ -15,7 +15,11 @@ $(function(){
   });
 
   $("select[name='date']").change(function(){
-    alert('garon');
+    if($(this).val()){
+      $("select[name='clip']").attr('disabled', '');
+    }else{
+      $("select[name='clip']").attr('disabled', 'disabled');
+    }
   });
 
   $('#form').formValidation({

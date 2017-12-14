@@ -43,7 +43,7 @@
             <select class="form-control" name="date">
               <option value="">เลือก</option>
 @foreach ($dates as $date)
-              <option value="">{{ $date['name'] }}</option>
+              <option value="{{ $date['path_lower'] }}">{{ $date['name'] }}</option>
 @endforeach
             </select>
           </div>
