@@ -47,7 +47,7 @@ class HighlightController extends Controller
 
       $filesystem = new Filesystem($adapter);
 
-      dd($client->listFolder());
+      dd($client->listFolder('/'));
       $zones = Zone::orderBy('length')->get();
 
       $aStyle = array(
