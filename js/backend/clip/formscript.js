@@ -74,7 +74,6 @@ $(function(){
         }
       },
       clip: {
-        enabled: false,
         validators: {
           notEmpty: {
             message: "กรุณาเลือกคลิปไฮไลท์ด้วยค่ะ"
@@ -148,6 +147,6 @@ $(function(){
       clip.attr('disabled', 'disabled');
     }
 
-    form.enableFieldValidators('clip', shipHighlight);
+    // form.enableFieldValidators('clip', shipHighlight);
   });
 });
