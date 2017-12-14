@@ -16,7 +16,8 @@ use App\Zone;
 
 class HighlightController extends Controller
 {
-    function __construct(){
+    function __construct()
+    {
       $this->client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
       $this->adapter = new DropboxAdapter($this->client);
@@ -76,7 +77,8 @@ class HighlightController extends Controller
     }
 
     public function name($name){
-      return $name;
+      $data = $this->client->listFolder($name);
+      return $data;
     }
 
     public function store(Request $request)
