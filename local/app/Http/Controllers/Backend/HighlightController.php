@@ -49,7 +49,7 @@ class HighlightController extends Controller
 
       dd(
         $client,
-        $adapter->listContents('/rakball24.png')
+        $adapter->listContents()
 
       );
       // $zones = Zone::orderBy('length')->get();
