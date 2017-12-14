@@ -14,8 +14,6 @@ $(function(){
       '//www.tinymce.com/css/codepen.min.css']
   });
 
-
-
   $('#form').formValidation({
     framework: 'bootstrap',
     icon: {
@@ -75,6 +73,7 @@ $(function(){
         }
       },
       clip: {
+        enabled: false,
         validators: {
           notEmpty: {
             message: "กรุณาเลือกคลิปไฮไลท์ด้วยค่ะ"
@@ -93,16 +92,6 @@ $(function(){
       }
     }
   })
-  .on('init.field.fv', function(e, data){
-    $("select[name='date']").change(function(){
-      // if($(this).val()){
-      //   $("select[name='clip']").removeAttr('disabled');
-      // }else{
-      //   $("select[name='clip']").attr('disabled', 'disabled');
-      // }
-      alert('gd');
-    });
-  })
   .on('err.validator.fv', function(e, data) {
     if (data.field === 'cover' && data.validator === 'promise') {
         // Hide the preview
@@ -120,5 +109,9 @@ $(function(){
   .on('success.form.fv', function(e, data){
     e.preventDefault();
     var $form = $(e.target);
+  });
+
+  $("select[name='date']").change(function(){
+
   });
 });
