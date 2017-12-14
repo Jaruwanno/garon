@@ -118,5 +118,7 @@ $(function(){
 
     shipHighlight ? $("select[name='clip']").removeAttr('disabled')
                   : $("select[name='clip']").attr('disabled', 'disabled');
+
+    form.enableFieldValidators('clip');
   });
 });
