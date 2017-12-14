@@ -49,7 +49,7 @@ class HighlightController extends Controller
 
       dd(
         $client,
-        $client->rpcEndpointRequest('media', ['path' => 'rakball24.png'])
+        $client->rpcEndpointRequest('search', ['path' => '', 'query' => 'bat cave'])
 
       );
       // $zones = Zone::orderBy('length')->get();
