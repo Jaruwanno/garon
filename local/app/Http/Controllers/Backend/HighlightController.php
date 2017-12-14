@@ -48,8 +48,7 @@ class HighlightController extends Controller
       $filesystem = new Filesystem($adapter);
 
       dd(
-        $client,
-        $client->rpcEndpointRequest('search', ['path' => '', 'query' => 'bat cave'])
+        $client
 
       );
       // $zones = Zone::orderBy('length')->get();
