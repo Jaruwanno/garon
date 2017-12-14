@@ -47,7 +47,7 @@ class HighlightController extends Controller
 
       $filesystem = new Filesystem($adapter);
 
-      dd($client->rpcEndpointRequest('file_requests/list'));
+      dd($client->rpcEndpointRequest('files/get_temporary_link', ['path' => '/bar.mp4']));
       // $zones = Zone::orderBy('length')->get();
       //
       // $aStyle = array(
