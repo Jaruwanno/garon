@@ -66,7 +66,7 @@ class HighlightController extends Controller
 
       return view('backend.highlight.form', [
         'zones' => $zones,
-        'dates' => $date->entries,
+        'dates' => $date['entries'],
         'css' => $aStyle,
         'js' => $aScript
       ]);
