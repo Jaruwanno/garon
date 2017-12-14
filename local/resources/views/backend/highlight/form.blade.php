@@ -49,6 +49,16 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="col-sm-2 control-label">ชื่อไฟล์คลิป: </label>
+          <div class="col-sm-8">
+            <select class="form-control" name="zone_id">
+              <option value="">เลือก</option>
+
+            </select>
+          </div>
+        </div>
+
 
         <div class="form-group">
           <label class="col-sm-2 control-label">ไฮไลท์ลีก: </label>
