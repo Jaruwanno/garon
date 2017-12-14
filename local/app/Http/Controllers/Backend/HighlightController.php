@@ -82,8 +82,10 @@ class HighlightController extends Controller
 
       if( count($list['entries']) != 0 ){
         foreach ($list['entries'] as $v) {
-          $data['name'] = $v['name'];
-          $data['path_display'] = $v['path_display'];
+          array_push($data, [
+            'name' => $v['name'],
+            'path_display' => $v['path_display']
+          ]);
         }
       }
 
