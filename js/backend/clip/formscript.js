@@ -114,11 +114,11 @@ $(function(){
 
   $("select[name='date']").change(function(){
     var form = $('#form').data('formValidation'),
-        shipHighlight = ($(this).val());
+        shipHighlight = ($(this).val() != '');
 
     shipHighlight ? $("select[name='clip']").removeAttr('disabled')
                   : $("select[name='clip']").attr('disabled', 'disabled');
 
-    form.enableFieldValidators('clip');
+    form.enableFieldValidators('clip', shipHighlight);
   });
 });
