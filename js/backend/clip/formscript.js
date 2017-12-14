@@ -121,7 +121,7 @@ $(function(){
       $.ajax({
         'url' : 'form' + $(this).val(),
         'type' : 'get',
-        // 'dataType' : 'json',
+        'dataType' : 'json',
         success : function(data){
           console.log(data);
         },
