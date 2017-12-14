@@ -49,7 +49,7 @@ class HighlightController extends Controller
 
       dd(
         $client,
-        $adapter->getMetadata('/rakball24.png')
+        $client->rpcEndpointRequest('/media')
 
       );
       // $zones = Zone::orderBy('length')->get();
