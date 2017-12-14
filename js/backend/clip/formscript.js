@@ -130,11 +130,11 @@ $(function(){
           );
         },
         success : function(data){
-          // $.each(data, function(k, v){
-          //   clip.append(
-          //     '<option value="'+v.path_display+'">'+v.name+'</option>'
-          //   );
-          // });
+          $.each(data, function(k, v){
+            clip.append(
+              '<option value="'+v.path_display+'">'+v.name+'</option>'
+            );
+          });
           console.log(data);
         },
         error : function(data){
