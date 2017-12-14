@@ -16,7 +16,7 @@ $(function(){
 
   $("select[name='date']").change(function(){
     if($(this).val()){
-      $("select[name='clip']").attr('disabled', '');
+      $("select[name='clip']").removeAttr('disabled');
     }else{
       $("select[name='clip']").attr('disabled', 'disabled');
     }
