@@ -164,6 +164,11 @@ Route::middleware('roles')->group(function () {
     'roles' => ['highlight']
   ])->name('admin.highlight.form');
 
+  Route::get('admin/highlight/form/{name}', [
+    'uses' => 'Backend\HighlightController@name',
+    'roles' => ['highlight']
+  ]);
+
   Route::post('admin/highlight', [
     'uses' => 'Backend\HighlightController@store',
     'roles' => ['highlight']

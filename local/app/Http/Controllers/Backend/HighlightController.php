@@ -16,6 +16,14 @@ use App\Zone;
 
 class HighlightController extends Controller
 {
+    function __construct(){
+      $this->client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
+
+      $this->adapter = new DropboxAdapter($this->client);
+
+      $this->filesystem = new Filesystem($this->adapter);
+    }
+
     public function index()
     {
       $clip = Post::where('type', '=', 'highlight')
@@ -41,13 +49,8 @@ class HighlightController extends Controller
 
     public function form()
     {
-      $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
-      $adapter = new DropboxAdapter($client);
-
-      $filesystem = new Filesystem($adapter);
-
-      $date = $client->listFolder('/');
+      $date = $this->client->listFolder('/');
 
       $zones = Zone::orderBy('length')->get();
 //
@@ -70,6 +73,10 @@ class HighlightController extends Controller
         'css' => $aStyle,
         'js' => $aScript
       ]);
+    }
+
+    public function name($name){
+      return $name;
     }
 
     public function store(Request $request)

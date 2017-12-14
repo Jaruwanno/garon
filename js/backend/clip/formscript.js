@@ -116,8 +116,21 @@ $(function(){
     var form = $('#form').data('formValidation'),
         shipHighlight = ($(this).val() != '');
 
-    shipHighlight ? $("select[name='clip']").removeAttr('disabled')
-                  : $("select[name='clip']").attr('disabled', 'disabled');
+    if(shipHighlight){
+      $("select[name='clip']").removeAttr('disabled');
+      $.ajax({
+        'url' : 'form/' + $(this).val(),
+        'type' : 'get',
+        success : function(data){
+          alert(data);
+        },
+        error : function(data){
+          console.log(data);
+        }
+      });
+    }else{
+      $("select[name='clip']").attr('disabled', 'disabled');
+    }
 
     form.enableFieldValidators('clip', shipHighlight);
   });
