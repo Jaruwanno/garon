@@ -36,21 +36,19 @@
             </div>
         </div>
 
-        @foreach ($dates as $date)
-          {{ 1 }}
-        @endforeach
 
         <div class="form-group">
           <label class="col-sm-2 control-label">วันที่ไฮไลท์: </label>
           <div class="col-sm-8">
             <select class="form-control" name="zone_id">
               <option value="">เลือก</option>
-
-
-
+@foreach ($dates as $date)
+              <option value="">{{ $date['name'] }}</option>
+@endforeach
             </select>
           </div>
         </div>
+
 
         <div class="form-group">
           <label class="col-sm-2 control-label">ไฮไลท์ลีก: </label>
