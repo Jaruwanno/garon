@@ -114,10 +114,11 @@ $(function(){
 
   $("select[name='date']").change(function(){
     var form = $('#form').data('formValidation'),
-        shipHighlight = ($(this).val() != '');
+        shipHighlight = ($(this).val() != ''),
+        clip = $("select[name='clip']");;
 
     if(shipHighlight){
-      var clip = $("select[name='clip']");
+
       clip.removeAttr('disabled');
       $.ajax({
         'url' : 'form' + $(this).val(),
