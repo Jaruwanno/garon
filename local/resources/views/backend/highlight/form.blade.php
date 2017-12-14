@@ -37,7 +37,7 @@
         </div>
 
         @foreach ($dates as $date)
-
+          {{ 1 }}
         @endforeach
 
         <div class="form-group">
