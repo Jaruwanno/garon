@@ -1,5 +1,5 @@
 $(function(){
-  alert('fd');
+  // alert('fd');
   tinymce.init({
     selector: 'textarea',
     height: 600,
@@ -113,6 +113,10 @@ $(function(){
   });
 
   $("select[name='date']").change(function(){
+    var form = $('#form').data('formValidation'),
+        shipHighlight = ($(this).val());
 
+    shipHighlight ? $("select[name='clip']").removeAttr('disabled')
+                  : $("select[name='clip']").attr('disabled', 'disabled');
   });
 });

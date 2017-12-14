@@ -52,7 +52,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">ชื่อไฟล์คลิป: </label>
           <div class="col-sm-8">
-            <select class="form-control" name="clip">
+            <select class="form-control" name="clip" disabled>
               <option value="">เลือก</option>
 
             </select>
