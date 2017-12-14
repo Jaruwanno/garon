@@ -41,33 +41,33 @@ class HighlightController extends Controller
 
     public function form()
     {
-      $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
-
-      $adapter = new DropboxAdapter($client);
-
-      $filesystem = new Filesystem($adapter);
-
-      dd($client->rpcEndpointRequest('files/get_temporary_link', ['path' => '/ome.mp4']));
-      // $zones = Zone::orderBy('length')->get();
+      // $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
       //
-      // $aStyle = array(
-      //   'formValidation/css/formValidation.min.css',
-      //   'css/backend/clip/formstyle.css'
-      // );
+      // $adapter = new DropboxAdapter($client);
       //
-      // $aScript = array(
-      //   'js/jquery/jquery.form.min.js',
-      //   'js/backend/tinymce/tinymce.min.js',
-      //   'formValidation/js/validator.js',
-      //   'formValidation/js/framework/bootstrap.js',
-      //   'js/backend/clip/form.js'
-      // );
-      //
-      // return view('backend.highlight.form', [
-      //   'zones' => $zones,
-      //   'css' => $aStyle,
-      //   'js' => $aScript
-      // ]);
+      // $filesystem = new Filesystem($adapter);
+
+      // dd($client->rpcEndpointRequest('files/get_temporary_link', ['path' => '/ome.mp4']));
+      $zones = Zone::orderBy('length')->get();
+
+      $aStyle = array(
+        'formValidation/css/formValidation.min.css',
+        'css/backend/clip/formstyle.css'
+      );
+
+      $aScript = array(
+        'js/jquery/jquery.form.min.js',
+        'js/backend/tinymce/tinymce.min.js',
+        'formValidation/js/validator.js',
+        'formValidation/js/framework/bootstrap.js',
+        'js/backend/clip/form.js'
+      );
+
+      return view('backend.highlight.form', [
+        'zones' => $zones,
+        'css' => $aStyle,
+        'js' => $aScript
+      ]);
     }
 
     public function store(Request $request)
