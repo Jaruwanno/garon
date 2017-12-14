@@ -39,7 +39,7 @@ class HighlightController extends Controller
       ]);
     }
 
-    public function form()
+    public function form() 
     {
       $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
@@ -47,7 +47,6 @@ class HighlightController extends Controller
 
       $filesystem = new Filesystem($adapter);
 
-      dd($client->listFolder('/'));
       $zones = Zone::orderBy('length')->get();
 
       $aStyle = array(
@@ -65,6 +64,7 @@ class HighlightController extends Controller
 
       return view('backend.highlight.form', [
         'zones' => $zones,
+        'date' => $client->listFolder('/'),
         'css' => $aStyle,
         'js' => $aScript
       ]);
