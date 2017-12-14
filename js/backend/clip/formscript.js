@@ -1,5 +1,4 @@
 $(function(){
-  alert('garon');
   tinymce.init({
     selector: 'textarea',
     height: 600,

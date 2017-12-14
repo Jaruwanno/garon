@@ -40,7 +40,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">วันที่ไฮไลท์: </label>
           <div class="col-sm-8">
-            <select class="form-control" name="zone_id">
+            <select class="form-control" name="date">
               <option value="">เลือก</option>
 @foreach ($dates as $date)
               <option value="">{{ $date['name'] }}</option>
@@ -52,7 +52,7 @@
         <div class="form-group">
           <label class="col-sm-2 control-label">ชื่อไฟล์คลิป: </label>
           <div class="col-sm-8">
-            <select class="form-control" name="zone_id">
+            <select class="form-control" name="clip">
               <option value="">เลือก</option>
 
             </select>
