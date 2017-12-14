@@ -14,13 +14,7 @@ $(function(){
       '//www.tinymce.com/css/codepen.min.css']
   });
 
-  $("select[name='date']").change(function(){
-    if($(this).val()){
-      $("select[name='clip']").removeAttr('disabled');
-    }else{
-      $("select[name='clip']").attr('disabled', 'disabled');
-    }
-  });
+
 
   $('#form').formValidation({
     framework: 'bootstrap',
@@ -84,12 +78,6 @@ $(function(){
         validators: {
           notEmpty: {
             message: "กรุณาเลือกคลิปไฮไลท์ด้วยค่ะ"
-          },
-          file: {
-            message: "ต้องเป็นไฟล์ mp4 ขนาดไม่เกิน 100 MB นะค่ะ",
-            extension: "mp4",
-            type: "video/mp4",
-            maxSize: 104857600,
           }
         }
       },
@@ -104,6 +92,16 @@ $(function(){
 
       }
     }
+  })
+  .on('init.field.fv', funtcion(e, data){
+    $("select[name='date']").change(function(){
+      // if($(this).val()){
+      //   $("select[name='clip']").removeAttr('disabled');
+      // }else{
+      //   $("select[name='clip']").attr('disabled', 'disabled');
+      // }
+      alert('gd');
+    });
   })
   .on('err.validator.fv', function(e, data) {
     if (data.field === 'cover' && data.validator === 'promise') {
@@ -122,21 +120,5 @@ $(function(){
   .on('success.form.fv', function(e, data){
     e.preventDefault();
     var $form = $(e.target);
-    $form.ajaxSubmit({
-      beforeSend: function() {
-        $(".progress").show();
-        // var percentVal = '0%';
-        // bar.width(percentVal);
-        // percent.html(percentVal);
-      },
-      uploadProgress: function(event, position, total, percentComplete) {
-        var percentVal = percentComplete + '%',
-            pg = $(".progress > div");
-        pg.css('width', percentVal);
-      },
-      success: function(data) {
-        window.location.assign(home);
-      }
-    });
   });
 });
