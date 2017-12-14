@@ -571,7 +571,7 @@ class Client
                 $options['json'] = $parameters;
             }
 
-            $response = $this->client->post("https://api.dropboxapi.com/2/{$endpoint}", $options);
+            $response = $this->client->post("https://api.dropboxapi.com/1/{$endpoint}", $options);
         } catch (ClientException $exception) {
             throw $this->determineException($exception);
         }
