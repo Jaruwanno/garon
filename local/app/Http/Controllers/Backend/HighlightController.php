@@ -47,7 +47,7 @@ class HighlightController extends Controller
 
       $filesystem = new Filesystem($adapter);
 
-      dd($client->rpcEndpointRequest('files/search', ['query' => 'rakball']));
+      dd($client->rpcEndpointRequest('file/requests/list'));
       // $zones = Zone::orderBy('length')->get();
       //
       // $aStyle = array(
