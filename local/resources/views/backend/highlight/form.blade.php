@@ -37,11 +37,17 @@
         </div>
 
         <div class="form-group">
-          <label class="col-sm-2 control-label">วิดีโอไฮไลท์:</label>
-            <div class="col-sm-8">
-                <input type="file" class="form-control" name="clip"/>
-                <span class="help-block">*** ขนาดไฟล์ไม่เกิน 100 MB ***</span>
-            </div>
+          <label class="col-sm-2 control-label">วันที่ไฮไลท์: </label>
+          <div class="col-sm-8">
+            <select class="form-control" name="zone_id">
+              <option value="">เลือก</option>
+
+  @foreach ($dates as $date)
+              <option value="{{ $zone->id }}">{{ $zone->name }}</option>
+  @endforeach
+
+            </select>
+          </div>
         </div>
 
         <div class="form-group">
