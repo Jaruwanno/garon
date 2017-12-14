@@ -78,7 +78,8 @@ class HighlightController extends Controller
 
     public function name($name){
       $data = $this->client->listFolder($name);
-      return $data;
+
+      return count($data['entries']);
     }
 
     public function store(Request $request)
