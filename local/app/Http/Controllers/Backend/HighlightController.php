@@ -47,10 +47,10 @@ class HighlightController extends Controller
 
       $filesystem = new Filesystem($adapter);
 
-      // dd($client->listFolder('/'));
+      $date = $client->listFolder('/');
 
       $zones = Zone::orderBy('length')->get();
-// 
+//
       $aStyle = array(
         'formValidation/css/formValidation.min.css',
         'css/backend/clip/formstyle.css'
@@ -66,7 +66,7 @@ class HighlightController extends Controller
 
       return view('backend.highlight.form', [
         'zones' => $zones,
-        'dates' => $client->listFolder('/'),
+        'dates' => $date->entries,
         'css' => $aStyle,
         'js' => $aScript
       ]);

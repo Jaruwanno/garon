@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        @foreach ($dates->entries[0] as $date)
+        @foreach ($dates as $date)
 
         @endforeach
 
