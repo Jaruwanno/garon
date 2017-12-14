@@ -77,11 +77,13 @@ class HighlightController extends Controller
     }
 
     public function name($name){
-      $data = $this->client->listFolder($name);
+      $data = [];
+      $list = $this->client->listFolder($name);
 
-      if( count($data['entries']) != 0 ){
-        foreach ($data['entries'] as $v) {
-          
+      if( count($list['entries']) != 0 ){
+        foreach ($list['entries'] as $v) {
+          $data['name'] = $v['name'];
+          $data['path_display'] = $v['path_display'];
         }
       }
 
