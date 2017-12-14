@@ -117,6 +117,9 @@ $(function(){
         shipHighlight = ($(this).val() != ''),
         clip = $("select[name='clip']");
 
+    clip.html(
+      '<option value="">เลือก</option>'
+    );
     form.resetField(clip);
 
     if(shipHighlight){
@@ -127,9 +130,7 @@ $(function(){
         'type' : 'get',
         'dataType' : 'json',
         beforeSend : function(){
-          clip.html(
-            '<option value="">เลือก</option>'
-          );
+
         },
         success : function(data){
           $.each(data, function(k, v){
