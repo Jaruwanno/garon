@@ -83,7 +83,7 @@ class HighlightController extends Controller
       if( count($list['entries']) != 0 ){
         foreach ($list['entries'] as $v) {
           $link = $this->client->rpcEndpointRequest('files/get_temporary_link', ['path' => $v['path_display']]);
-          dd($link);
+          return $link;
           array_push($data, [
             'name' => $v['name'],
             'path_display' => $v['path_display']
