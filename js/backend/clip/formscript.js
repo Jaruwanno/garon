@@ -73,6 +73,13 @@ $(function(){
           }
         }
       },
+      date:{
+        validators: {
+          notEmpty: {
+            message: "กรุณาเลือกวันที่ไฮไลท์ด้วยนะค่ะ"
+          }
+        }
+      },
       clip: {
         validators: {
           notEmpty: {
