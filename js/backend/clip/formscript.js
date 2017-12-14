@@ -119,7 +119,7 @@ $(function(){
     if(shipHighlight){
       $("select[name='clip']").removeAttr('disabled');
       $.ajax({
-        'url' : 'form/' + $(this).val(),
+        'url' : 'form' + $(this).val(),
         'type' : 'get',
         success : function(data){
           alert(data);
