@@ -115,7 +115,9 @@ $(function(){
   $("select[name='date']").change(function(){
     var form = $('#form').data('formValidation'),
         shipHighlight = ($(this).val() != ''),
-        clip = $("select[name='clip']");;
+        clip = $("select[name='clip']");
+
+    form.resetField(clip);
 
     if(shipHighlight){
 
