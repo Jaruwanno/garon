@@ -42,8 +42,8 @@
             <select class="form-control" name="zone_id">
               <option value="">เลือก</option>
 
-  @foreach ($dates as $date)
-              <option value="{{ $zone->id }}">{{ $zone->name }}</option>
+  @foreach ($dates->entries as $date)
+              <option value="{{ $date->name }}">{{ $date->name }}</option>
   @endforeach
 
             </select>
