@@ -117,20 +117,30 @@ $(function(){
         shipHighlight = ($(this).val() != '');
 
     if(shipHighlight){
-      $("select[name='clip']").removeAttr('disabled');
+      var clip = $("select[name='clip']");
+      clip.removeAttr('disabled');
       $.ajax({
         'url' : 'form' + $(this).val(),
         'type' : 'get',
         'dataType' : 'json',
+        beforeSend : function(){
+          clip.html(
+            '<option value="">เลือก</option>'
+          );
+        },
         success : function(data){
-          console.log(data);
+          $.each(data, function(k, v){
+            clip.append(
+              '<option value="'+v.path_display+'">'+v.name+'</option>'
+            );
+          });
         },
         error : function(data){
           console.log(data);
         }
       });
     }else{
-      $("select[name='clip']").attr('disabled', 'disabled');
+      clip.attr('disabled', 'disabled');
     }
 
     form.enableFieldValidators('clip', shipHighlight);
