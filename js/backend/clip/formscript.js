@@ -141,7 +141,7 @@ $(function(){
         success : function(data){
           $.each(data, function(k, v){
             clip.append(
-              '<option value="'+v.path_display+'">'+v.name+'</option>'
+              '<option value="'+v.link+'">'+v.name+'</option>'
             );
           });
           console.log(data);
@@ -155,5 +155,18 @@ $(function(){
     }
 
     // form.enableFieldValidators('clip', shipHighlight);
+  });
+
+  $("select[name='clip']").change(function(){
+    var clip = $('#clipPreview');
+    if($(this).val() != ''){
+      clip.html(
+        '<video width="400" controls>'+
+          '<source src="'+$(this).val()+'" type="video/mp4">'+
+        '</video>'
+      ).show();
+    }else{
+      clip.html('').hide();
+    }
   });
 });

@@ -56,7 +56,7 @@
               <option value="">เลือก</option>
 
             </select>
-            <div id="clipPreview" class="clip">ดำ</div>
+            <div id="clipPreview" class="clip"></div>
           </div>
         </div>
 
