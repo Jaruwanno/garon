@@ -41,13 +41,13 @@ class HighlightController extends Controller
 
     public function form()
     {
-      // $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
-      //
-      // $adapter = new DropboxAdapter($client);
-      //
-      // $filesystem = new Filesystem($adapter);
+      $client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
 
-      // dd($client->rpcEndpointRequest('files/get_temporary_link', ['path' => '/ome.mp4']));
+      $adapter = new DropboxAdapter($client);
+
+      $filesystem = new Filesystem($adapter);
+
+      dd($client->listFolder();
       $zones = Zone::orderBy('length')->get();
 
       $aStyle = array(
