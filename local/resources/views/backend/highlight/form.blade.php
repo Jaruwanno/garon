@@ -36,8 +36,8 @@
             </div>
         </div>
 
-        @foreach ($dates->entries as $date)
-                    
+        @foreach ($dates->entries[0] as $date)
+
         @endforeach
 
         <div class="form-group">
