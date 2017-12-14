@@ -14,6 +14,10 @@ $(function(){
       '//www.tinymce.com/css/codepen.min.css']
   });
 
+  $("select[name='date']").change(function(){
+    alert('garon');
+  });
+
   $('#form').formValidation({
     framework: 'bootstrap',
     icon: {
