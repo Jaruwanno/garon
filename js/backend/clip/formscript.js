@@ -93,7 +93,7 @@ $(function(){
       }
     }
   })
-  .on('init.field.fv', funtcion(e, data){
+  .on('init.field.fv', function(e, data){
     $("select[name='date']").change(function(){
       // if($(this).val()){
       //   $("select[name='clip']").removeAttr('disabled');
