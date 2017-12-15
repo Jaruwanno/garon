@@ -118,8 +118,9 @@ $(function(){
     var $form = $(e.target);
   });
 
+  var clipPreview = $('#clipPreview');
   $("select[name='date']").change(function(){
-    clip.html('').hide();
+    clipPreview.html('').hide();
     var form = $('#form').data('formValidation'),
         shipHighlight = ($(this).val() != ''),
         clip = $("select[name='clip']");
@@ -159,15 +160,14 @@ $(function(){
   });
 
   $("select[name='clip']").change(function(){
-    var clip = $('#clipPreview');
     if($(this).val() != ''){
-      clip.html(
+      clipPreview.html(
         '<video controls>'+
           '<source src="'+$(this).val()+'" type="video/mp4">'+
         '</video>'
       ).show();
     }else{
-      clip.html('').hide();
+      clipPreview.html('').hide();
     }
   });
 });
