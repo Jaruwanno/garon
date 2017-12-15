@@ -161,7 +161,7 @@ $(function(){
     var clip = $('#clipPreview');
     if($(this).val() != ''){
       clip.html(
-        '<video width="400" controls>'+
+        '<video controls>'+
           '<source src="'+$(this).val()+'" type="video/mp4">'+
         '</video>'
       ).show();
