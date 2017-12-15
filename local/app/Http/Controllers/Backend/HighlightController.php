@@ -96,14 +96,15 @@ class HighlightController extends Controller
 
     public function store(Request $request)
     {
-      // $clip = new Post();
-      // $clip->headline = $request->head;
-      // $clip->zone_id = $request->zone_id;
-      // $clip->des = $request->des;
-      // $clip->type = 'highlight';
-      //
-      // //clip
-      //
+      $clip = new Post();
+      $clip->headline = $request->head;
+      $clip->zone_id = $request->zone_id;
+      $clip->des = $request->des;
+      $clip->type = 'highlight';
+      $clip->path_video = $request->clip;
+
+      //clip
+
       // $video = $request->file('clip');
       //
       // $path = public_path() . '/clip';
@@ -115,8 +116,8 @@ class HighlightController extends Controller
       // $clip->path_video = $filename;
       //
       // Storage::disk('clip')->put($filename, File::get($video));
-      //
-      // // cover
+
+      // cover
       // if( $request->hasFile('cover') ){
       //   $cover = $request->file('cover');
       //
@@ -130,8 +131,8 @@ class HighlightController extends Controller
       //
       //   Storage::disk('cover')->put($filename, File::get($cover));
       // }
-      //
-      // $clip->save();
+
+      $clip->save();
 
       return $request;
 
