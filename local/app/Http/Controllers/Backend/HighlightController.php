@@ -65,7 +65,7 @@ class HighlightController extends Controller
         'js/backend/tinymce/tinymce.min.js',
         'formValidation/js/validator.js',
         'formValidation/js/framework/bootstrap.js',
-        'js/backend/clip/formscript.js'
+        'js/backend/clip/form.js'
       );
 
       return view('backend.highlight.form', [
