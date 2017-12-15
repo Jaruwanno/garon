@@ -101,21 +101,8 @@ class HighlightController extends Controller
       $clip->zone_id = $request->zone_id;
       $clip->des = $request->des;
       $clip->type = 'highlight';
-      // $clip->path_video = $request->clip;
-
-      //clip
-      // $video = $request->file('clip');
-      //
-      // $path = public_path() . '/clip';
-      //
-      // do{
-      //   $filename = uniqid('clip_').".".$video->getClientOriginalExtension();
-      // }while( file_exists($path.$filename) );
-      //
-      // $clip->path_video = $filename;
-      //
-      // Storage::disk('clip')->put($filename, File::get($video));
-
+      $clip->path_video = $request->clip;
+  
       // cover
       if( $request->hasFile('cover') ){
         $cover = $request->file('cover');
