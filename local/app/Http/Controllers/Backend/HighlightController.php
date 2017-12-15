@@ -104,7 +104,6 @@ class HighlightController extends Controller
       $clip->path_video = $request->clip;
 
       //clip
-
       // $video = $request->file('clip');
       //
       // $path = public_path() . '/clip';
@@ -118,19 +117,19 @@ class HighlightController extends Controller
       // Storage::disk('clip')->put($filename, File::get($video));
 
       // cover
-      // if( $request->hasFile('cover') ){
-      //   $cover = $request->file('cover');
-      //
-      //   $path = public_path() . '/cover';
-      //
-      //   do{
-      //     $filename = uniqid('cover_').".".$cover->getClientOriginalExtension();
-      //   }while( file_exists($path.$filename) );
-      //
-      //   $clip->path_cover = $filename;
-      //
-      //   Storage::disk('cover')->put($filename, File::get($cover));
-      // }
+      if( $request->hasFile('cover') ){
+        $cover = $request->file('cover');
+
+        $path = public_path() . '/cover';
+
+        do{
+          $filename = uniqid('cover_').".".$cover->getClientOriginalExtension();
+        }while( file_exists($path.$filename) );
+
+        $clip->path_cover = $filename;
+
+        Storage::disk('cover')->put($filename, File::get($cover));
+      }
 
       $clip->save();
 
