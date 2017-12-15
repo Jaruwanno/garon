@@ -4,7 +4,7 @@
 .cover,
 .clip{
     display: none;
-    width: 200px;
+    width: 500px;
     border: 1px solid #d5d5d5;
     margin-top: 10px;
 }
