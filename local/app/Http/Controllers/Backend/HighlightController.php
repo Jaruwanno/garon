@@ -101,7 +101,7 @@ class HighlightController extends Controller
       $clip->zone_id = $request->zone_id;
       $clip->des = $request->des;
       $clip->type = 'highlight';
-      $clip->path_video = $request->clip;
+      // $clip->path_video = $request->clip;
 
       //clip
       // $video = $request->file('clip');
