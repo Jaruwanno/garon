@@ -102,7 +102,7 @@ class HighlightController extends Controller
       $clip->des = $request->des;
       $clip->type = 'highlight';
       $clip->path_video = $request->clip;
-  
+    
       // cover
       if( $request->hasFile('cover') ){
         $cover = $request->file('cover');
