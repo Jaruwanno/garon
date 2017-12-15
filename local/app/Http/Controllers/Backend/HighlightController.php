@@ -57,7 +57,7 @@ class HighlightController extends Controller
 //
       $aStyle = array(
         'formValidation/css/formValidation.min.css',
-        'css/backend/clip/formstyle.css'
+        'css/backend/clip/form.css'
       );
 
       $aScript = array(
