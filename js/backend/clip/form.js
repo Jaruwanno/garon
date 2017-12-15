@@ -119,6 +119,7 @@ $(function(){
   });
 
   $("select[name='date']").change(function(){
+    clip.html('').hide();
     var form = $('#form').data('formValidation'),
         shipHighlight = ($(this).val() != ''),
         clip = $("select[name='clip']");
