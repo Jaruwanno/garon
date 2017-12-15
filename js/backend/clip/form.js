@@ -116,6 +116,14 @@ $(function(){
   .on('success.form.fv', function(e, data){
     e.preventDefault();
     var $form = $(e.target);
+
+    $form.ajaxSubmit({
+      url: $form.attr('action'),
+      dataType: 'json',
+      success: function(data) {
+        console.log(data);
+      }
+    });
   });
 
   var clipPreview = $('#clipPreview');
@@ -155,7 +163,6 @@ $(function(){
     }else{
       clip.attr('disabled', 'disabled');
     }
-
     // form.enableFieldValidators('clip', shipHighlight);
   });
 

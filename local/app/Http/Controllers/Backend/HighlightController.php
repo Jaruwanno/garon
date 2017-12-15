@@ -96,44 +96,44 @@ class HighlightController extends Controller
 
     public function store(Request $request)
     {
-      $clip = new Post();
-      $clip->headline = $request->head;
-      $clip->zone_id = $request->zone_id;
-      $clip->des = $request->des;
-      $clip->type = 'highlight';
+      // $clip = new Post();
+      // $clip->headline = $request->head;
+      // $clip->zone_id = $request->zone_id;
+      // $clip->des = $request->des;
+      // $clip->type = 'highlight';
+      //
+      // //clip
+      //
+      // $video = $request->file('clip');
+      //
+      // $path = public_path() . '/clip';
+      //
+      // do{
+      //   $filename = uniqid('clip_').".".$video->getClientOriginalExtension();
+      // }while( file_exists($path.$filename) );
+      //
+      // $clip->path_video = $filename;
+      //
+      // Storage::disk('clip')->put($filename, File::get($video));
+      //
+      // // cover
+      // if( $request->hasFile('cover') ){
+      //   $cover = $request->file('cover');
+      //
+      //   $path = public_path() . '/cover';
+      //
+      //   do{
+      //     $filename = uniqid('cover_').".".$cover->getClientOriginalExtension();
+      //   }while( file_exists($path.$filename) );
+      //
+      //   $clip->path_cover = $filename;
+      //
+      //   Storage::disk('cover')->put($filename, File::get($cover));
+      // }
+      //
+      // $clip->save();
 
-      //clip
-
-      $video = $request->file('clip');
-
-      $path = public_path() . '/clip';
-
-      do{
-        $filename = uniqid('clip_').".".$video->getClientOriginalExtension();
-      }while( file_exists($path.$filename) );
-
-      $clip->path_video = $filename;
-
-      Storage::disk('clip')->put($filename, File::get($video));
-
-      // cover
-      if( $request->hasFile('cover') ){
-        $cover = $request->file('cover');
-
-        $path = public_path() . '/cover';
-
-        do{
-          $filename = uniqid('cover_').".".$cover->getClientOriginalExtension();
-        }while( file_exists($path.$filename) );
-
-        $clip->path_cover = $filename;
-
-        Storage::disk('cover')->put($filename, File::get($cover));
-      }
-
-      $clip->save();
-
-      return "เรียบร้อย";
+      return $request;
 
     }
 
