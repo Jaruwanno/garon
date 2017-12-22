@@ -19,9 +19,7 @@ class HighlightController extends Controller
     function __construct()
     {
       $this->client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
-
       $this->adapter = new DropboxAdapter($this->client);
-
       $this->filesystem = new Filesystem($this->adapter);
     }
 
@@ -29,7 +27,16 @@ class HighlightController extends Controller
     {
       $clip = Post::where('type', '=', 'highlight')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(10);
+      $data = $clip;
+
+      foreach ($data as $key => $value) {
+        $link = $this->client->rpcEndpointRequest('files/get_temporary_link', [
+          'path' => $value->path_video
+        ])['link'];
+
+        $clip[$key]->link = $link;
+      }
 
       $aStyle = array(
         'lightgallery/css/lightgallery.min.css',
@@ -50,48 +57,37 @@ class HighlightController extends Controller
 
     public function form()
     {
-
-      $date = $this->client->listFolder('/');
+      $clip = [];
+      $data = $this->client->listFolder('/');
+      foreach ($data['entries'] as $key => $value) {
+        array_push($clip, $value);
+        $link = $this->adapter->getTemporaryLink($value['path_display']);
+        $clip[$key]['link'] = $link;
+      }
 
       $zones = Zone::orderBy('length')->get();
 //
       $aStyle = array(
+        'bootstrapSelect/css/bootstrap-select.min.css',
         'formValidation/css/formValidation.min.css',
         'css/backend/clip/form.css'
       );
 
       $aScript = array(
+        'bootstrapSelect/js/bootstrap-select.min.js',
         'js/jquery/jquery.form.min.js',
         'js/backend/tinymce/tinymce.min.js',
         'formValidation/js/validator.js',
         'formValidation/js/framework/bootstrap.js',
-        'js/backend/clip/form.js'
+        'js/backend/clip/formscript.js'
       );
 
       return view('backend.highlight.form', [
         'zones' => $zones,
-        'dates' => $date['entries'],
+        'clips' => $clip,
         'css' => $aStyle,
         'js' => $aScript
       ]);
-    }
-
-    public function name($name){
-      $data = [];
-      $list = $this->client->listFolder($name);
-
-      if( count($list['entries']) != 0 ){
-        foreach ($list['entries'] as $v) {
-          $link = $this->client->rpcEndpointRequest('files/get_temporary_link', ['path' => $v['path_display']]);
-          array_push($data, [
-            'name' => $v['name'],
-            'path_display' => $v['path_display'],
-            'link' => $link['link']
-          ]);
-        }
-      }
-
-      return $data;
     }
 
     public function store(Request $request)
@@ -102,12 +98,12 @@ class HighlightController extends Controller
       $clip->des = $request->des;
       $clip->type = 'highlight';
       $clip->path_video = $request->clip;
-    
+
       // cover
       if( $request->hasFile('cover') ){
         $cover = $request->file('cover');
 
-        $path = public_path() . '/cover';
+        $path = storage_path('app/public/cover');
 
         do{
           $filename = uniqid('cover_').".".$cover->getClientOriginalExtension();
@@ -117,21 +113,17 @@ class HighlightController extends Controller
 
         Storage::disk('cover')->put($filename, File::get($cover));
       }
-
       $clip->save();
-
-      return $request;
-
+      return;
     }
 
     public function destroy($id)
     {
       $clip = Post::findOrFail($id);
       Storage::disk('cover')->delete($clip->path_cover);
-      Storage::disk('clip')->delete($clip->path_video);
+      Visitor::where('id', $id)->delete();
       $clip->delete();
 
-      Visitor::where('id', '=', $id)->delete();
 
       return redirect()->route('admin.highlight.home');
     }

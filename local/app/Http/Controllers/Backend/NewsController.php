@@ -16,7 +16,9 @@ class NewsController extends Controller
 {
     public function index()
     {
-      $news = Post::where('type','=','news')->orderBy('created_at', 'desc')->get();
+      $news = Post::where('type','=','news')
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(10);
 
       return view('backend.news.home', [
         'news' => $news
@@ -85,10 +87,10 @@ class NewsController extends Controller
       if( $request->hasFile('input-file-preview') ){
         $image = $request->file('input-file-preview');
 
-        $path = public_path() . '/cover';
+        $path = storage_path('public/cover');
 
         do{
-          $filename = uniqid('img_').".".$image->getClientOriginalExtension();
+          $filename = uniqid('cover_').".".$image->getClientOriginalExtension();
         }while( file_exists($path.$filename) );
 
         $news->path_cover = $filename;
@@ -145,8 +147,7 @@ class NewsController extends Controller
       Storage::disk('cover')->delete($news->path_cover);
       $news->delete();
 
-      $visitor = Visitor::findOrFail($id);
-      $visitor->delete();
+      Visitor::destroy($id);
 
       return redirect()->route('admin.news.index');
     }

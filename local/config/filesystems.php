@@ -45,22 +45,12 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-        ],
-
-        'match' => [
-            'driver' => 'local',
-            'root' => public_path() . '/match',
-        ],
-
-        'clip' => [
-            'driver' => 'local',
-            'root' => public_path() . '/clip',
+            'root' => storage_path('app/public')
         ],
 
         'cover' => [
             'driver' => 'local',
-            'root' => public_path() . '/cover',
+            'root' => storage_path('app/public/cover')
         ],
 
         'public' => [
@@ -76,8 +66,7 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
-        ],
-
+        ]
     ],
 
 ];

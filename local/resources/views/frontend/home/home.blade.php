@@ -9,51 +9,158 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <p style="font-size:25px;margin-top:10px;">รวบรวม <span style="color:green;">ข่าวเด่น</span></p>
+      <p style="font-size:30px;margin-top:10px;">รวบรวม <span style="color:green;">ข่าวด่วน</span></p>
     </div>
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row" style="background:#800000;">
-@php
-$i = 0;
-@endphp
-@forelse ($news as $new)
-@php
-$i++;
-@endphp
-    <a href="{{ route('news.show', ['id' => $new->id]) }}">
-      <div class="col-md-3 col-xs-6 news">
-        <h3 class="col-xs-7">{{ $new->headline }}</h3>
-        <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
-@if ( Storage::disk('cover')->has($new->path_cover) )
-  <img class="img-responsive" src="{{ asset('cover/'.$new->path_cover) }}">
-@else
-  <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
-@endif
-      </div>
-    </a>
-@empty
-    <a href="#">
-      <div class="col-md-12 news">
-        <h3 class="col-xs-7">"งูใหญ่"สะดุด! "อิการ์ดี้" ซัดโทษบุกเจ๊าโบโลญญ่า 1-1 หยุดสถิติชนะรวด</h3>
-        <img src="{{ asset('pic/black.png') }}">
-        <img src="http://static.siamsport.co.th/news/2017/09/21/news201709211231947.jpg" alt="">
-      </div>
-    </a>
-@endforelse
+  <div class="row" style="
+                background:linear-gradient(
+                  rgba(0, 0, 0, 0.4),
+                  rgba(139, 0, 0, 0.6)
+                ),url('https://images.alphacoders.com/510/thumb-1920-510026.jpg');
+                background-size:cover;
+                background-position: 0 100%;
+                background-repeat: no-repeat;">
 
+    <div class="col-sm-10 col-sm-offset-1">
+@for ($i=0; $i < 6 ; $i++)
+      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}">
+        <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
+          <h3 class="col-xs-7">{{ $news[$i]->headline }}</h3>
+          <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
+@if ( Storage::disk('cover')->has($news[$i]->path_cover) )
+          <img class="img-responsive" src="{{ route('image', ['filename' => $news[$i]->path_cover]) }}">
+@else
+          <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
+@endif
+        </div>
+      </a>
+      {!! $i==2?'<div class="clearfix"></div>':'' !!}
+@endfor
+    </div><!--/.col-sm-10-->
+    <div class="clearfix"></div>
+    <br>
   </div><!-- /.row-->
+  <br>
+@for ($i=6; $i < 14; $i++)
+
+  {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
+    <div class="col-sm-3 col-xs-6">
+@if ( Storage::disk('cover')->has($news[$i]->path_cover) )
+      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}"><img class="img-responsive" src="{{ route('image', ['filename' => $news[$i]->path_cover]) }}"></a>
+@else
+      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}"><img class="img-responsive" src="{{ asset('pic/file_error.png') }}"></a>
+@endif
+      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}"><h3>{{ $news[$i]->headline }}</h3></a>
+      <span class="pull-left">{{ $news[$i]->zone->name }}</span>
+      <span class="pull-right">{{ $news[$i]->created_at->diffForHumans() }}</span>
+    </div>
+  {!! $i%4==1?'</div></div>':'' !!}
+@endfor
+<div class="col-sm-4 col-sm-offset-4">
+  <br>
+  <a href="{{ route('news') }}" type="button" class="btn btn-lg btn-default btn-block">ดูทั้งหมด</a>
+</div>
+<hr class="col-sm-10 col-sm-offset-1 hr-danger" />
 </div><!-- /.container-fluid-->
 
-<section class="clip">
+<section class="section-white">
+  <div class="container-fluid" style="background-color:#1a0000;">
+    <br>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-1">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="http://static.siamsport.co.th/news/2017/12/20/news20171220170783.jpg" alt="...">
+              <div class="play">
+                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+              </div>
+              <div class="carousel-caption">
+                <h2>ไฮไลท์ อาร์เซน่อล vs แมนยู</h2>
+              </div>
+            </div>
+            <div class="item">
+              <img src="http://static.siamsport.co.th/news/2017/12/20/news20171220170783.jpg" alt="...">
+              <div class="play">
+                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+              </div>
+              <div class="carousel-caption">
+                <h2>Heading</h2>
+              </div>
+            </div>
+            <div class="item">
+              <img src="http://static.siamsport.co.th/news/2017/12/20/news20171220170783.jpg" alt="...">
+              <div class="play">
+                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+              </div>
+              <div class="carousel-caption">
+                <h2>Heading</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="fa fa-2x fa-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="fa fa-2x fa-chevron-right"></span>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-5">
+			<ul class="media-list main-list">
+			  <li class="media">
+			    <a class="pull-left" href="#">
+			      <img class="media-object" src="http://placehold.it/150x90" alt="...">
+			    </a>
+			    <div class="media-body">
+			      <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
+			      <p class="by-author">By Jhon Doe</p>
+			    </div>
+			  </li>
+			  <li class="media">
+			    <a class="pull-left" href="#">
+			      <img class="media-object" src="http://placehold.it/150x90" alt="...">
+			    </a>
+			    <div class="media-body">
+			      <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
+			      <p class="by-author">By Jhon Doe</p>
+			    </div>
+			  </li>
+			  <li class="media">
+			    <a class="pull-left" href="#">
+			      <img class="media-object" src="http://placehold.it/150x90" alt="...">
+			    </a>
+			    <div class="media-body">
+			      <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
+			      <p class="by-author">By Jhon Doe</p>
+			    </div>
+			  </li>
+			</ul>
+		</div>
+    </div>
+    <br>
+  </div>
+</section>
+{{-- <section class="clip">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <p id="text">ไฮไลท์ฟุตบอล <span style="color:	#7FFFD4;">ยอดนิยม</span></p>
       </div>
     </div>
-  </div><!-- /.container-->
+  </div>
   <div class="container-fluid">
     <div class="row">
       <section class="regular slider">
@@ -61,7 +168,7 @@ $i++;
         @forelse ($clip as $c)
           <a href="{{ route('highlight.show', ['id' => $c->id]) }}">
             @if ( Storage::disk('cover')->has($c->path_cover) )
-              <img class="img-responsive" src="{{ asset('cover/'.$c->path_cover) }}">
+              <img class="img-responsive" src="{{ route('image', ['filename' => $c->path_cover]) }}">
             @else
               <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
             @endif
@@ -74,10 +181,10 @@ $i++;
         @endforelse
       </section>
     </div>
-  </div><!-- /.container-fluid-->
-</section>{{--  /section--}}
+  </div>
+</section> --}}
 
-<section class="board">
+{{-- <section class="board">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -92,12 +199,9 @@ $i++;
           <a href="{{ route('table') }}" type="button" class="btn btn-lg btn-default btn-block">ดูผลบอลย้อนหลัง</a>
         </div>
       </div>
-      {{-- .col --}}
     </div>
-    {{-- .row --}}
   </div>
-  {{-- .container --}}
-</section>
+</section> --}}
 
 <br><br><br><br><br><br><br><br><br>
 

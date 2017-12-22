@@ -67,12 +67,12 @@
 
         <div class="form-group{{ $errors->has('zone_id') ? ' has-error' : '' }}">
           <div class="col-md-10">
-            <select class="form-control" name="zone_id" required> 
+            <select class="form-control" name="zone_id" required>
               <option value="">เลือกโซนข่าว</option>
 
   @foreach ($zones as $zone)
               <option value="{{ $zone->id }}"{!! ( isset($news) ? ($news->zone_id == $zone->id ? 'selected' : '') : '' ) !!}>{{ $zone->name }}</option>
-  @endforeach
+  @endforeach 
 
             </select>
             @if ($errors->has('zone_id'))

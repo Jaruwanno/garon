@@ -18,10 +18,9 @@ class NewsController extends Controller
 
       $news = Post::withCount(['visit' => function($query){
         $query->where('type', '=', 'news');
-      }])
-                    ->where('type', '=', 'news')
-                    ->orderBy('created_at', 'desc')
-                    ->paginate(6);
+      }])->where('type', '=', 'news')
+         ->orderBy('created_at', 'desc')
+         ->paginate(6);
       $aCss = array(
         'css/frontend/datepicker/datepicker.css',
         'css/frontend/news/style.css'

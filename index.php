@@ -49,10 +49,6 @@ $app = require_once __DIR__.'/local/bootstrap/app.php';
 |
 */
 
-$app->bind('path.public', function() {
-    return __DIR__;
-});
-
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(

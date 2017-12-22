@@ -47,10 +47,10 @@
       <div class="clearfix"></div>
       <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
-              "poster": "{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? asset('cover/'.$highlight[0]->path_cover) : '' }}",
+              "poster": "{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}",
               "controls":true
           }'>
-        <source src="{{ asset("clip/".$highlight[0]->path_video) }}" type="video/mp4">
+        <source src="{{ $highlight[0]->link }}" type="video/mp4">
       </video>
       <br><br>
       <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div>
@@ -80,7 +80,7 @@
             <div class="row">
               <a href="{{ route('highlight.show', ['id' => $h->id]) }}">
 @if ( Storage::disk('cover')->has($h->path_cover) )
-                <img src="{{ asset( 'cover/'.$h->path_cover ) }}">
+                <img src="{{ route('image', ['filename' => $h->path_cover]) }}">
 @else
                 <img src="{{ asset( 'pic/file_error.png' ) }}">
 @endif

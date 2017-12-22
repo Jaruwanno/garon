@@ -121,8 +121,9 @@ Route::middleware('roles')->group(function () {
 
     Route::get('admin/news/create', [
       'uses' => 'Backend\NewsController@create',
-      'roles' => ['news']
-    ])->name('admin.news.create');
+      'roles' => ['news'],
+      'type' => 'news'
+    ])->middleware('checkTimePost')->name('admin.news.create');
 
     Route::post('admin/news', [
       'uses' => 'Backend\NewsController@store',
@@ -148,7 +149,6 @@ Route::middleware('roles')->group(function () {
       'uses' => 'Backend\NewsController@destroy',
       'roles' => ['news']
     ])->name('admin.news.destroy');
-
 });
 
 //highlight
@@ -161,13 +161,9 @@ Route::middleware('roles')->group(function () {
 
   Route::get('admin/highlight/form', [
     'uses' => 'Backend\HighlightController@form',
-    'roles' => ['highlight']
-  ])->name('admin.highlight.form');
-
-  Route::get('admin/highlight/form/{name}', [
-    'uses' => 'Backend\HighlightController@name',
-    'roles' => ['highlight']
-  ]);
+    'roles' => ['highlight'],
+    'type' => 'highlight'
+  ])->middleware('checkTimePost')->name('admin.highlight.form');
 
   Route::post('admin/highlight', [
     'uses' => 'Backend\HighlightController@store',
@@ -180,3 +176,9 @@ Route::middleware('roles')->group(function () {
   ])->name('admin.highlight.destroy');
 
 });
+
+
+// ----------------------------read-image-----------------------------------
+// -------------------cover----------------------
+Route::get('cover/{filename}', 'Backend\ImageReadController@cover')->name('image');
+// ------------------------------------------

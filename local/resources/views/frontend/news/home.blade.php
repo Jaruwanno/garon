@@ -67,14 +67,14 @@
 
     <div class="col-md-9">
       <div class="row">
-@forelse ($news as $n)
+@forelse ($news as $n) 
         <div class='col-md-12'>
           <div class="well well-sm">
             <div class="row">
               <div class="col-sm-4 text-center">
 @if ( Storage::disk('cover')->has($n->path_cover) )
                 <a href="{{ route('news.show', ['id'=>$n->id]) }}">
-                  <img class="img-rounded img-responsive" src="{{ asset( 'cover/' . $n->path_cover ) }}">
+                  <img class="img-rounded img-responsive" src="{{ route('image', ['filename' => $n->path_cover]) }}">
                 </a>
 @else
                 <a href="{{ route('news.show', ['id'=>$n->id]) }}">

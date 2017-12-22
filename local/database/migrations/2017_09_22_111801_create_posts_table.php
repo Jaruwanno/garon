@@ -15,11 +15,11 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
           $table->increments('id');
-          $table->integer('zone_id')->nullable();
+          $table->integer('zone_id');
           $table->string('headline');
           $table->string('path_cover')->nullable();
           $table->string('path_video')->nullable();
-          $table->text('des');
+          $table->text('des')->nullable();
           $table->enum('type', ['news', 'highlight']);
           $table->timestamps();
         });

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client;
+use Spatie\FlysystemDropbox\DropboxAdapter;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Zone;
@@ -13,6 +17,10 @@ class HighlightController extends Controller
 
   function __construct()
   {
+    $this->client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
+    $this->adapter = new DropboxAdapter($this->client);
+    $this->filesystem = new Filesystem($this->adapter);
+
     $this->active = "";
     $this->zone = Zone::orderBy('length')->get();
     $this->highlight = array();
@@ -117,6 +125,11 @@ class HighlightController extends Controller
                   ->where('type', '=', 'highlight')
                   ->where('id', '=', $id)
                   ->get();
+
+    $link = $this->client->rpcEndpointRequest('files/get_temporary_link', [
+      'path' => $this->highlight[0]->path_video
+    ])['link'];
+    $this->highlight[0]->link = $link;
 
     $hot = Post::withCount(['visit' => function($query){
                 $query->where('type', '=', 'highlight');

@@ -73,13 +73,6 @@ $(function(){
           }
         }
       },
-      date:{
-        validators: {
-          notEmpty: {
-            message: "กรุณาเลือกวันที่ไฮไลท์ด้วยนะค่ะ"
-          }
-        }
-      },
       clip: {
         validators: {
           notEmpty: {
@@ -115,64 +108,30 @@ $(function(){
   })
   .on('success.form.fv', function(e, data){
     e.preventDefault();
-    var $form = $(e.target);
+    var $form = $(e.target); 
 
     $form.ajaxSubmit({
       url: $form.attr('action'),
-      dataType: 'json',
       success: function(data) {
+        window.location.assign(home);
+      },
+      error: function(data){
         console.log(data);
       }
     });
   });
 
-  var clipPreview = $('#clipPreview');
-  $("select[name='date']").change(function(){
-    clipPreview.html('').hide();
-    var form = $('#form').data('formValidation'),
-        shipHighlight = ($(this).val() != ''),
-        clip = $("select[name='clip']");
-
-    clip.html(
-      '<option value="">เลือก</option>'
-    );
-    form.resetField(clip);
-
-    if(shipHighlight){
-
-      clip.removeAttr('disabled');
-      $.ajax({
-        'url' : 'form' + $(this).val(),
-        'type' : 'get',
-        'dataType' : 'json',
-        beforeSend : function(){
-
-        },
-        success : function(data){
-          $.each(data, function(k, v){
-            clip.append(
-              '<option value="'+v.link+'">'+v.name+'</option>'
-            );
-          });
-          console.log(data);
-        },
-        error : function(data){
-          console.log(data);
-        }
-      });
-    }else{
-      clip.attr('disabled', 'disabled');
-    }
-    // form.enableFieldValidators('clip', shipHighlight);
-  });
-
   $("select[name='clip']").change(function(){
+    var clipPreview = $('#clipPreview');
     if($(this).val() != ''){
-      clipPreview.html(
-        '<video controls>'+
-          '<source src="'+$(this).val()+'" type="video/mp4">'+
-        '</video>'
-      ).show();
+      $( "select[name='clip'] option:selected" ).each(function() {
+        // console.log($(this).attr('data-link'));
+        clipPreview.html(
+          '<video controls>'+
+            '<source src="'+$(this).attr('data-link')+'" type="video/mp4">'+
+          '</video>'
+        ).show();
+      });
     }else{
       clipPreview.html('').hide();
     }

@@ -40,7 +40,7 @@
         </div>
       </span>
 @if ( Storage::disk('cover')->has($news->path_cover) )
-      <img src="{{ asset( 'cover/'.$news->path_cover ) }}">
+      <img src="{{ route('image', ['filename' => $news->path_cover]) }}">
 @else
       <img src="{{ asset( 'pic/file_error.png' ) }}">
 @endif
@@ -75,7 +75,7 @@
             <div class="row">
               <a href="{{ route('news.show', ['id' => $h->id]) }}">
 @if ( Storage::disk('cover')->has($h->path_cover) )
-                <img src="{{ asset( 'cover/'.$h->path_cover ) }}">
+                <img src="{{ route('image', ['filename' => $h->path_cover]) }}">
 @else
                 <img src="{{ asset( 'pic/file_error.png' ) }}">
 @endif

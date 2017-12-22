@@ -80,7 +80,7 @@
       <div class="panel panel-default panelD">
         <div class="panel-image">
           <a href="{{ route('highlight.show', ['id'=>$h->id]) }}">
-            <img src="{{ Storage::disk('cover')->has($h->path_cover) ? asset( 'cover/' . $h->path_cover ) : asset( 'pic/file_error.png' ) }}" class="panel-image-preview" />
+            <img src="{{ Storage::disk('cover')->has($h->path_cover) ? route('image', ['filename' => $h->path_cover]) : asset( 'pic/file_error.png' ) }}" class="panel-image-preview" />
             <div class="play">
               <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
             </div>

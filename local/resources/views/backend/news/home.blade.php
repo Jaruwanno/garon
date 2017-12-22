@@ -17,7 +17,7 @@
         <div class="media">
           <a class="pull-left" href="#">
 @if (Storage::disk('cover')->has($new->path_cover))
-            <img width="200" src="{{ asset( 'cover/'.$new->path_cover) }}">
+            <img width="200" src="{{ route('image', ['filename' => $new->path_cover]) }}">
 @else
             <img width="200" src="{{ asset( 'pic/file_error.png' ) }}">
 @endif

@@ -9,7 +9,6 @@
       <h3 class="page-header">ไฮไลท์ทั้งหมด</h3>
     </div><!-- /.col-lg-12 -->
   </div><!-- /.row-->
-
   <div class="row">
 @forelse ($clip as $c)
     <div class="col-md-10 col-md-offset-1">
@@ -17,10 +16,10 @@
         <div class="media">
           <ul class="lightgallery pull-left">
             <li class="video" data-html="{{ '#'.$c->id }}"
-    data-poster="{{ Storage::disk('cover')->has($c->path_cover) ? asset('cover/'.$c->path_cover) : asset('pic/file_error.png') }}">
+    data-poster="{{ Storage::disk('cover')->has($c->path_cover) ? route('image', ['filename' => $c->path_cover]) : asset('pic/file_error.png') }}">
               <a href="">
               @if ( Storage::disk('cover')->has($c->path_cover) )
-                <img class="img-responsive" src="{{ asset('cover/'.$c->path_cover) }}">
+                <img class="img-responsive" src="{{ route('image', ['filename' => $c->path_cover]) }}">
               @else
                 <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
               @endif
@@ -32,7 +31,7 @@
           </ul>
           <div style="display:none;" id="{{ $c->id }}">
             <video class="lg-video-object lg-html5" controls preload="none">
-              <source src="{{ asset('clip/'.$c->path_video) }}" type="video/mp4">
+              <source src="{{ $c->link }}" type="video/mp4">
             </video>
           </div>
 

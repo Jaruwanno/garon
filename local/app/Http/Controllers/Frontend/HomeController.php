@@ -26,13 +26,17 @@ class HomeController extends Controller
       $aStyle = array(
         'slick/slick.css',
         'slick/slick-theme.css',
-        'css/frontend/home/home_style.css'
+        'css/frontend/home/home.css'
       );
 
-      $news = Post::withCount(['visit' => function($query){
-        $query->where('type', '=', 'news');
-      }])->where('type', '=', 'news')
-         ->orderBy('visit_count', 'desc')->limit(4)->get();
+      // $news = Post::withCount(['visit' => function($query){
+      //   $query->where('type', '=', 'news');
+      // }])->where('type', '=', 'news')
+      //    ->orderBy('visit_count', 'desc')->limit(6)->get();
+
+      $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
+                    ->limit(14)
+                    ->get();
 
       $clip = Post::withCount(['visit' => function($query){
         $query->where('type', 'highlight');

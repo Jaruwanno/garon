@@ -21,7 +21,7 @@ class Client
     const THUMBNAIL_SIZE_S = 'w64h64';
     const THUMBNAIL_SIZE_M = 'w128h128';
     const THUMBNAIL_SIZE_L = 'w640h480';
-    const THUMBNAIL_SIZE_XL = 'w1024h768';
+    const THUMBNAIL_SIZE_XL = 'w1024h768'; 
 
     const MAX_CHUNK_SIZE = 1024 * 1024 * 150;
 
