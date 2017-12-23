@@ -29,20 +29,26 @@ class HomeController extends Controller
         'css/frontend/home/home.css'
       );
 
-      // $news = Post::withCount(['visit' => function($query){
-      //   $query->where('type', '=', 'news');
-      // }])->where('type', '=', 'news')
-      //    ->orderBy('visit_count', 'desc')->limit(6)->get();
-
       $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
                     ->limit(14)
                     ->get();
 
-      $clip = Post::withCount(['visit' => function($query){
-        $query->where('type', 'highlight');
-      }])->where('type', 'highlight')
-         ->orderBy('visit_count', 'desc')->limit(6)->get();
+      $clip = Post::where('type', 'highlight')->orderBy('created_at', 'desc')
+                    ->limit(15)
+                    ->get();
 
+      $curl_options = array(
+      CURLOPT_URL => "http://78.46.64.77:1337/service/storage/201712/59e4fb5d1e142247148b4567/event.json",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_HEADER => false
+      );
+
+      $curl = curl_init();
+      curl_setopt_array( $curl, $curl_options );
+      $result = curl_exec( $curl );
+
+      $result = (array) json_decode($result);
+      dd($result);
       return view('frontend.home.home', [
         'news' => $news,
         'clip' => $clip,

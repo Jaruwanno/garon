@@ -69,44 +69,43 @@
   <div class="container-fluid" style="background-color:#1a0000;">
     <br>
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-1">
+      <div class="col-sm-7 col-sm-offset-1">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="http://static.siamsport.co.th/news/2017/12/20/news20171220170783.jpg" alt="...">
-              <div class="play">
-                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-              </div>
+@php
+  $i=0;
+@endphp
+@forelse ($clip as $key => $value)
+            <div class="item{{ $i==0?' active':'' }}">
+              <a href="{{ route('highlight.show', ['id' => $value->id]) }}">
+        @if ( Storage::disk('cover')->has($value->path_cover) )
+                <img class="img-responsive" src="{{ route('image', ['filename' => $value->path_cover]) }}">
+
+        @else
+                <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
+        @endif
+                <div class="play">
+                  <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                </div>
+              </a>
               <div class="carousel-caption">
-                <h2>ไฮไลท์ อาร์เซน่อล vs แมนยู</h2>
+                <h2>{{ $value->headline }}</h2>
               </div>
             </div>
-            <div class="item">
-              <img src="http://static.siamsport.co.th/news/2017/12/20/news20171220170783.jpg" alt="...">
-              <div class="play">
-                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-              </div>
-              <div class="carousel-caption">
-                <h2>Heading</h2>
-              </div>
-            </div>
-            <div class="item">
-              <img src="http://static.siamsport.co.th/news/2017/12/20/news20171220170783.jpg" alt="...">
-              <div class="play">
-                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-              </div>
-              <div class="carousel-caption">
-                <h2>Heading</h2>
-              </div>
-            </div>
+@if ($i==3) @break @endif
+@php $i++; @endphp
+@empty
+
+@endforelse
           </div>
 
           <!-- Controls -->
@@ -118,37 +117,35 @@
           </a>
         </div>
       </div>
-      <div class="col-sm-5">
-			<ul class="media-list main-list">
-			  <li class="media">
-			    <a class="pull-left" href="#">
-			      <img class="media-object" src="http://placehold.it/150x90" alt="...">
-			    </a>
-			    <div class="media-body">
-			      <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-			      <p class="by-author">By Jhon Doe</p>
-			    </div>
-			  </li>
-			  <li class="media">
-			    <a class="pull-left" href="#">
-			      <img class="media-object" src="http://placehold.it/150x90" alt="...">
-			    </a>
-			    <div class="media-body">
-			      <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-			      <p class="by-author">By Jhon Doe</p>
-			    </div>
-			  </li>
-			  <li class="media">
-			    <a class="pull-left" href="#">
-			      <img class="media-object" src="http://placehold.it/150x90" alt="...">
-			    </a>
-			    <div class="media-body">
-			      <h4 class="media-heading">Lorem ipsum dolor asit amet</h4>
-			      <p class="by-author">By Jhon Doe</p>
-			    </div>
-			  </li>
-			</ul>
-		</div>
+      <div class="col-sm-3">
+  			<ul class="media-list main-list">
+@php
+  $i=0;
+@endphp
+@forelse ($clip as $key => $value)
+@php $i++; @endphp
+@if ($i < 5) @continue @endif
+          <li class="media">
+            <a href="#">
+@if ( Storage::disk('cover')->has($value->path_cover) )
+              <img class="media-object" src="{{ route('image', ['filename' => $value->path_cover]) }}">
+
+@else
+              <img class="media-object" src="{{ asset('pic/file_error.png') }}">
+@endif
+              <div class="play">
+                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+              </div>
+            </a>
+            <div class="media-body">
+              <a href="{{ route('highlight.show', ['id' => $value->id]) }}"><h3 class="media-heading">{{ $value->headline }}</h3></a>              {{-- <p class="by-author">By Jhon Doe</p> --}}
+            </div>
+          </li>
+@empty
+@endforelse
+
+  			</ul>
+      </div>
     </div>
     <br>
   </div>
