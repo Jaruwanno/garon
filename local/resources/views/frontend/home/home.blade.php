@@ -150,55 +150,6 @@
     <br>
   </div>
 </section>
-{{-- <section class="clip">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <p id="text">ไฮไลท์ฟุตบอล <span style="color:	#7FFFD4;">ยอดนิยม</span></p>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <section class="regular slider">
-
-        @forelse ($clip as $c)
-          <a href="{{ route('highlight.show', ['id' => $c->id]) }}">
-            @if ( Storage::disk('cover')->has($c->path_cover) )
-              <img class="img-responsive" src="{{ route('image', ['filename' => $c->path_cover]) }}">
-            @else
-              <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
-            @endif
-            <div class="play">
-              <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
-            </div>
-          </a>
-        @empty
-
-        @endforelse
-      </section>
-    </div>
-  </div>
-</section> --}}
-
-{{-- <section class="board">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 style="margin-top:20px;">ตารางบอลวันนี้</h2>
-        <img style="display:block; margin:auto; width:15%;"
-        id="loader" src="{{ asset('gif/loader.gif') }}" alt="">
-        <div class="table-responsive">
-          <table id="table" class="table table-condesed" border="0"></table>
-        </div>
-        <br>
-        <div class="col-sm-6 col-sm-offset-3">
-          <a href="{{ route('table') }}" type="button" class="btn btn-lg btn-default btn-block">ดูผลบอลย้อนหลัง</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> --}}
 
 <br><br><br><br><br><br><br><br><br>
 
