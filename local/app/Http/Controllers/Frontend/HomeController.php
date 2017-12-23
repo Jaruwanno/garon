@@ -18,15 +18,12 @@ class HomeController extends Controller
     public function index()
     {
       $aScript = array(
-        'slick/slick.js',
         'js/datepicker/moment.js',
         'js/frontend/home/live.js'
       );
 
       $aStyle = array(
-        'slick/slick.css',
-        'slick/slick-theme.css',
-        'css/frontend/home/home.css'
+        'css/frontend/home/homestyle.css'
       );
 
       $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
