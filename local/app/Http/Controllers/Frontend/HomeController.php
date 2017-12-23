@@ -48,7 +48,7 @@ class HomeController extends Controller
       $result = curl_exec( $curl );
 
       $result = (array) json_decode($result);
-      dd($result);
+      // dd($result);
       return view('frontend.home.home', [
         'news' => $news,
         'clip' => $clip,
