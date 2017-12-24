@@ -60,6 +60,7 @@
       <span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
     </div>
 {!! $i%4==1?'</div></div>':'' !!}
+@php $i++ @endphp
 @endforeach
 {{-- @for ($i=6; $i < 14; $i++)
 
