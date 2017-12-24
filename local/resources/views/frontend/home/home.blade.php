@@ -24,7 +24,21 @@
                 background-repeat: no-repeat;">
 
     <div class="col-sm-10 col-sm-offset-1">
-@for ($i=0; $i < 6 ; $i++)
+@foreach ($news as $key => $value)
+      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}">
+        <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
+          <h3 class="col-xs-7">{{ $news[$i]->headline }}</h3>
+          <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
+    @if ( Storage::disk('cover')->has($news[$i]->path_cover) )
+          <img class="img-responsive" src="{{ route('image', ['filename' => $news[$i]->path_cover]) }}">
+    @else
+          <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
+    @endif
+        </div>
+      </a>
+  {!! $i==2?'<div class="clearfix"></div>':'' !!}
+@endforeach
+{{-- @for ($i=0; $i < 6 ; $i++)
       <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}">
         <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
           <h3 class="col-xs-7">{{ $news[$i]->headline }}</h3>
@@ -37,13 +51,13 @@
         </div>
       </a>
       {!! $i==2?'<div class="clearfix"></div>':'' !!}
-@endfor
+@endfor --}}
     </div><!--/.col-sm-10-->
     <div class="clearfix"></div>
     <br>
   </div><!-- /.row-->
   <br>
-@for ($i=6; $i < 14; $i++)
+{{-- @for ($i=6; $i < 14; $i++)
 
   {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
     <div class="col-sm-3 col-xs-6">
@@ -57,7 +71,7 @@
       <span class="pull-right">{{ $news[$i]->created_at->diffForHumans() }}</span>
     </div>
   {!! $i%4==1?'</div></div>':'' !!}
-@endfor
+@endfor --}}
 <div class="col-sm-4 col-sm-offset-4">
   <br>
   <a href="{{ route('news') }}" type="button" class="btn btn-lg btn-default btn-block">ดูทั้งหมด</a>
