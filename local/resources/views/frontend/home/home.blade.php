@@ -41,25 +41,26 @@
 @if($i==5) @break @endif
 @php $i++ @endphp
 @endforeach
-{{-- @for ($i=0; $i < 6 ; $i++)
-      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}">
-        <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
-          <h3 class="col-xs-7">{{ $news[$i]->headline }}</h3>
-          <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
-@if ( Storage::disk('cover')->has($news[$i]->path_cover) )
-          <img class="img-responsive" src="{{ route('image', ['filename' => $news[$i]->path_cover]) }}">
-@else
-          <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
-@endif
-        </div>
-      </a>
-      {!! $i==2?'<div class="clearfix"></div>':'' !!}
-@endfor --}}
     </div><!--/.col-sm-10-->
     <div class="clearfix"></div>
     <br>
   </div><!-- /.row-->
   <br>
+@php $i=0;@endphp
+@foreach ($news as $new)
+{!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
+    <div class="col-sm-3 col-xs-6">
+@if ( Storage::disk('cover')->has($new->path_cover) )
+      <a href="{{ route('news.show', ['id' => $new->id]) }}"><img class="img-responsive" src="{{ route('image', ['filename' => $new->path_cover]) }}"></a>
+@else
+      <a href="{{ route('news.show', ['id' => $new->id]) }}"><img class="img-responsive" src="{{ asset('pic/file_error.png') }}"></a>
+@endif
+      <a href="{{ route('news.show', ['id' => $new->id]) }}"><h3>{{ $new->headline }}</h3></a>
+      <span class="pull-left">{{ $new->zone->name }}</span>
+      <span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
+    </div>
+{!! $i%4==1?'</div></div>':'' !!}
+@endforeach
 {{-- @for ($i=6; $i < 14; $i++)
 
   {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
