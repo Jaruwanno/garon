@@ -46,10 +46,10 @@
     <br>
   </div><!-- /.row-->
   <br>
-@php $i=6 @endphp
+@php $i=0 @endphp
 @foreach ($news as $new)
 {{ $i%4 }}
-{!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
+{{-- {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
     <div class="col-sm-3 col-xs-6">
 @if ( Storage::disk('cover')->has($new->path_cover) )
       <a href="{{ route('news.show', ['id' => $new->id]) }}"><img class="img-responsive" src="{{ route('image', ['filename' => $new->path_cover]) }}"></a>
@@ -60,7 +60,7 @@
       <span class="pull-left">{{ $new->zone->name }}</span>
       <span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
     </div>
-{!! $i%4==1?'</div></div>':'' !!}
+{!! $i%4==1?'</div></div>':'' !!} --}}
 @php $i++ @endphp
 @endforeach
 {{-- @for ($i=6; $i < 14; $i++)
