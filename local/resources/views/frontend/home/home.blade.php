@@ -46,9 +46,12 @@
     <br>
   </div><!-- /.row-->
   <br>
+
 @php $i=0 @endphp
 @foreach ($news as $new)
-{{ $i%4 }}
+@if($i<5) @continue @endif
+@php $i++ @endphp
+{{ $i }}
 {{-- {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
     <div class="col-sm-3 col-xs-6">
 @if ( Storage::disk('cover')->has($new->path_cover) )
@@ -61,10 +64,8 @@
       <span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
     </div>
 {!! $i%4==1?'</div></div>':'' !!} --}}
-@php $i++ @endphp
 @endforeach
 {{-- @for ($i=6; $i < 14; $i++)
-
   {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
     <div class="col-sm-3 col-xs-6">
 @if ( Storage::disk('cover')->has($news[$i]->path_cover) )
