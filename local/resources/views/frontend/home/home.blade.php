@@ -24,19 +24,21 @@
                 background-repeat: no-repeat;">
 
     <div class="col-sm-10 col-sm-offset-1">
+@php $i=0 @endphp
 @foreach ($news as $key => $value)
-      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}">
+      <a href="{{ route('news.show', ['id' => $news->id]) }}">
         <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
-          <h3 class="col-xs-7">{{ $news[$i]->headline }}</h3>
+          <h3 class="col-xs-7">{{ $news->headline }}</h3>
           <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
-    @if ( Storage::disk('cover')->has($news[$i]->path_cover) )
-          <img class="img-responsive" src="{{ route('image', ['filename' => $news[$i]->path_cover]) }}">
+    @if ( Storage::disk('cover')->has($news->path_cover) )
+          <img class="img-responsive" src="{{ route('image', ['filename' => $news->path_cover]) }}">
     @else
           <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
     @endif
         </div>
       </a>
   {!! $i==2?'<div class="clearfix"></div>':'' !!}
+@php $i++ @endphp
 @endforeach
 {{-- @for ($i=0; $i < 6 ; $i++)
       <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}">
