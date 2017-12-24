@@ -35,7 +35,7 @@ class HomeController extends Controller
                     ->get();
 
       $curl_options = array(
-      CURLOPT_URL => "http://inplay.goalserve.com/inplay.json",
+      CURLOPT_URL => "http://78.46.64.77:1337/service/storage/201710/59e4fb5d1e142247148b4567/event.json",
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_HEADER => false
       );
