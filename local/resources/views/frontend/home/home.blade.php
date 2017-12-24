@@ -38,6 +38,7 @@
         </div>
       </a>
   {!! $i==2?'<div class="clearfix"></div>':'' !!}
+@if($i==3) @break @endif
 @php $i++ @endphp
 @endforeach
 {{-- @for ($i=0; $i < 6 ; $i++)
