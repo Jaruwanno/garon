@@ -25,13 +25,13 @@
 
     <div class="col-sm-10 col-sm-offset-1">
 @php $i=0 @endphp
-@foreach ($news as $key => $value)
-      <a href="{{ route('news.show', ['id' => $news->id]) }}">
+@foreach ($news as $new)
+      <a href="{{ route('news.show', ['id' => $new->id]) }}">
         <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
-          <h3 class="col-xs-7">{{ $news->headline }}</h3>
+          <h3 class="col-xs-7">{{ $new->headline }}</h3>
           <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
-    @if ( Storage::disk('cover')->has($news->path_cover) )
-          <img class="img-responsive" src="{{ route('image', ['filename' => $news->path_cover]) }}">
+    @if ( Storage::disk('cover')->has($new->path_cover) )
+          <img class="img-responsive" src="{{ route('image', ['filename' => $new->path_cover]) }}">
     @else
           <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
     @endif
