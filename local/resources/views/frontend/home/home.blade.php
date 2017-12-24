@@ -49,7 +49,7 @@
 
 @php $i=0 @endphp
 @foreach ($news as $new)
-@if($i<5) @continue @endif
+@if($i<3) @continue @endif
 @php $i++ @endphp
 {{ $i }}
 {{-- {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
