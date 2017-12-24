@@ -23,7 +23,7 @@ class HomeController extends Controller
       );
 
       $aStyle = array(
-        'css/frontend/home/homestyle.css'
+        'css/frontend/home/home.css'
       );
 
       $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
@@ -46,7 +46,7 @@ class HomeController extends Controller
       //
       // $result = (array) json_decode($result);
       // dd($result);
-      
+
       return view('frontend.home.home', [
         'news' => $news,
         'clip' => $clip,
