@@ -48,6 +48,7 @@
   <br>
 @php $i=6 @endphp
 @foreach ($news as $new)
+{{ $i%4 }}
 {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
     <div class="col-sm-3 col-xs-6">
 @if ( Storage::disk('cover')->has($new->path_cover) )
