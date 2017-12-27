@@ -51,9 +51,7 @@
 @foreach ($news as $new)
 @php $i++; @endphp
 @if($i<7) @continue @endif
-
-{{ $i }}
-{{-- {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
+{!! $i%4==3?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
     <div class="col-sm-3 col-xs-6">
 @if ( Storage::disk('cover')->has($new->path_cover) )
       <a href="{{ route('news.show', ['id' => $new->id]) }}"><img class="img-responsive" src="{{ route('image', ['filename' => $new->path_cover]) }}"></a>
@@ -64,22 +62,8 @@
       <span class="pull-left">{{ $new->zone->name }}</span>
       <span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
     </div>
-{!! $i%4==1?'</div></div>':'' !!} --}}
+{!! $i%4==2?'</div></div>':'' !!}
 @endforeach
-{{-- @for ($i=6; $i < 14; $i++)
-  {!! $i%4==2?'<div class="row news-second"><div class="col-sm-10 col-sm-offset-1">':'' !!}
-    <div class="col-sm-3 col-xs-6">
-@if ( Storage::disk('cover')->has($news[$i]->path_cover) )
-      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}"><img class="img-responsive" src="{{ route('image', ['filename' => $news[$i]->path_cover]) }}"></a>
-@else
-      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}"><img class="img-responsive" src="{{ asset('pic/file_error.png') }}"></a>
-@endif
-      <a href="{{ route('news.show', ['id' => $news[$i]->id]) }}"><h3>{{ $news[$i]->headline }}</h3></a>
-      <span class="pull-left">{{ $news[$i]->zone->name }}</span>
-      <span class="pull-right">{{ $news[$i]->created_at->diffForHumans() }}</span>
-    </div>
-  {!! $i%4==1?'</div></div>':'' !!}
-@endfor --}}
 <div class="col-sm-4 col-sm-offset-4">
   <br>
   <a href="{{ route('news') }}" type="button" class="btn btn-lg btn-default btn-block">ดูทั้งหมด</a>
@@ -91,7 +75,10 @@
   <div class="container-fluid" style="background-color:#1a0000;">
     <br>
     <div class="row">
-      <div class="col-sm-7 col-sm-offset-1">
+      <div class="col-sm-6 col-sm-offset-1">
+        <span class="label">ไฮไลท์มาแรง</span>
+      </div>
+      <div class="col-sm-6 col-sm-offset-1">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -139,7 +126,15 @@
           </a>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
+        {{-- <div class="row">
+          <div class="col-sm-6">
+            fe
+          </div>
+          <div class="col-sm-6">
+            fe
+          </div>
+        </div> --}}
   			<ul class="media-list main-list">
 @php
   $i=0;
@@ -160,12 +155,10 @@
               </div>
             </a>
             <div class="media-body">
-              <a href="{{ route('highlight.show', ['id' => $value->id]) }}"><h3 class="media-heading">{{ $value->headline }}</h3></a>              {{-- <p class="by-author">By Jhon Doe</p> --}}
-            </div>
+              <a href="{{ route('highlight.show', ['id' => $value->id]) }}"><h3 class="media-heading">{{ $value->headline }}</h3></a>
           </li>
 @empty
 @endforelse
-
   			</ul>
       </div>
     </div>

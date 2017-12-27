@@ -23,7 +23,7 @@ class HomeController extends Controller
       );
 
       $aStyle = array(
-        'css/frontend/home/home.css'
+        'css/frontend/home/homestyle.css'
       );
 
       $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
@@ -34,18 +34,19 @@ class HomeController extends Controller
                     ->limit(15)
                     ->get();
 
-      $curl_options = array(
-      CURLOPT_URL => "http://inplay.goalserve.com/inplay.json",
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_HEADER => false
-      );
+      // $curl_options = array(
+      // CURLOPT_URL => "http://inplay.goalserve.com/inplay.json",
+      // CURLOPT_RETURNTRANSFER => true,
+      // CURLOPT_HEADER => false
+      // );
+      //
+      // $curl = curl_init();
+      // curl_setopt_array( $curl, $curl_options );
+      // $result = curl_exec( $curl );
+      //
+      // $result = (array) json_decode($result);
+      // dd($result);
 
-      $curl = curl_init();
-      curl_setopt_array( $curl, $curl_options );
-      $result = curl_exec( $curl );
-
-      $result = (array) json_decode($result);
-      dd($result);
 
       return view('frontend.home.home', [
         'news' => $news,
