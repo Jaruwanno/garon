@@ -55,16 +55,6 @@
   border-radius: 0;
   background-color:red;
 }
-.section-white span.label:after,
-.section-white span.label:before {
-  position: absolute;
-  top: -1px;
-  width: 0;
-  height: 0;
-  content: '';
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-}
 .carousel-inner > .item > a > img{
   -webkit-transition: -webkit-transform 0.15s ease 0s;
   -moz-transition: -moz-transform 0.15s ease 0s;

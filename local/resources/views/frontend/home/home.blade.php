@@ -71,14 +71,14 @@
 <hr class="col-sm-10 col-sm-offset-1 hr-danger" />
 </div><!-- /.container-fluid-->
 
-<section class="section-white">
-  <div class="container-fluid" style="background-color:#1a0000;">
+<section class="section-white" style="background-color:#1a0000;">
+  <div class="container">
     <br>
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-1">
-        <span class="label">ไฮไลท์มาแรง</span>
+      <div class="col-sm-12">
+        <span class="label">ไฮไลท์มาใหม่</span>
       </div>
-      <div class="col-sm-6 col-sm-offset-1">
+      <div class="col-sm-8">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -127,14 +127,6 @@
         </div>
       </div>
       <div class="col-sm-4">
-        {{-- <div class="row">
-          <div class="col-sm-6">
-            fe
-          </div>
-          <div class="col-sm-6">
-            fe
-          </div>
-        </div> --}}
   			<ul class="media-list main-list">
 @php
   $i=0;
@@ -157,6 +149,7 @@
             <div class="media-body">
               <a href="{{ route('highlight.show', ['id' => $value->id]) }}"><h3 class="media-heading">{{ $value->headline }}</h3></a>
           </li>
+@if ($i==6) @break @endif
 @empty
 @endforelse
   			</ul>
@@ -165,9 +158,35 @@
     <br>
   </div>
 </section>
+<div class="container" id="highlight-second">
+  <br>
+@php $i=0 @endphp
+@foreach ($clip as $value)
+@php $i++ @endphp
+@if ($i<7) @continue @endif
+{{-- @if($i%4==3) {!! '<div class="row">' !!} @endif --}}
+{!! $i%4==3?'<div class="row">':''!!}
+  <div class="col-sm-3 col-xs-6">
+    <div class="thumbnail">
+@if ( Storage::disk('cover')->has($value->path_cover) )
+      <img class="media-object" src="{{ route('image', ['filename' => $value->path_cover]) }}">
 
+@else
+      <img class="media-object" src="{{ asset('pic/file_error.png') }}">
+@endif
+      <div class="caption">
+        <h3>{{ $value->headline }}</h3>
+        <span class="pull-left">{{ $value->zone->name }}</span>
+        <span class="pull-right">{{ $value->created_at->diffForHumans() }}</span>
+        <div class="clearfix"></div>
+        <p><a href="{{ route('highlight.show', ['id' => $value->id]) }}" class="btn btn-danger btn-block" role="button">ชมไฮไลท์</a></p>
+      </div>
+    </div>
+  </div>
+{!! $i%4==2?'</div>':'' !!}
+@endforeach
+</div>
 <br><br><br><br><br><br><br><br><br>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">

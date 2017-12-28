@@ -23,7 +23,7 @@ class HomeController extends Controller
       );
 
       $aStyle = array(
-        'css/frontend/home/homestyle.css'
+        'css/frontend/home/home_style.css'
       );
 
       $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
@@ -31,7 +31,7 @@ class HomeController extends Controller
                     ->get();
 
       $clip = Post::where('type', 'highlight')->orderBy('created_at', 'desc')
-                    ->limit(15)
+                    ->limit(10)
                     ->get();
 
       // $curl_options = array(
