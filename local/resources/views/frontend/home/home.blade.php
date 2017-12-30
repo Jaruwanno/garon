@@ -28,7 +28,8 @@
 @foreach ($news as $new)
       <a href="{{ route('news.show', ['id' => $new->id]) }}">
         <div class="{{ $i==0?'col-sm-8 col-xs-8':'col-sm-4 col-xs-4' }} news">
-          <h3 class="col-xs-7">{{ $new->headline }}</h3>
+          <h3 class="col-sm-8">{{ $new->headline }}</h3>
+          <h3 class="col-xs-9">{{ str_limit($new->headline, 25) }}</h3>
           <img src="{!! $i % 2 == 1 ? asset('pic/black.png') : asset('pic/red.png') !!}">
     @if ( Storage::disk('cover')->has($new->path_cover) )
           <img class="img-responsive" src="{{ route('image', ['filename' => $new->path_cover]) }}">
@@ -58,9 +59,12 @@
 @else
       <a href="{{ route('news.show', ['id' => $new->id]) }}"><img class="img-responsive" src="{{ asset('pic/file_error.png') }}"></a>
 @endif
-      <a href="{{ route('news.show', ['id' => $new->id]) }}"><h3>{{ $new->headline }}</h3></a>
-      <span class="pull-left">{{ $new->zone->name }}</span>
-      <span class="pull-right">{{ $new->created_at->diffForHumans() }}</span>
+      <a href="{{ route('news.show', ['id' => $new->id]) }}">
+        <h3>{{ $new->headline }}</h3>
+        <h3>{{ str_limit($new->headline, 25) }}</h3>
+      </a>
+      <span class="pull-left"><i class="fa fa-futbol-o" aria-hidden="true"></i> {{ $new->zone->name }}</span>
+      <span class="pull-right"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $new->created_at->diffForHumans() }}</span>
     </div>
 {!! $i%4==2?'</div></div>':'' !!}
 @endforeach
@@ -80,7 +84,7 @@
       </div>
       <div class="col-sm-8">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
+
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -88,7 +92,6 @@
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
           </ol>
 
-          <!-- Wrapper for slides -->
           <div class="carousel-inner">
 @php
   $i=0;
@@ -103,11 +106,11 @@
                 <img class="img-responsive" src="{{ asset('pic/file_error.png') }}">
         @endif
                 <div class="play">
-                  <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                  <i class="fa fa-3x fa-play-circle" aria-hidden="true"></i>
                 </div>
               </a>
               <div class="carousel-caption">
-                <h2>{{ $value->headline }}</h2>
+                <h1 class="carousel-caption-header">{{ $value->headline }}</h1>
               </div>
             </div>
 @if ($i==3) @break @endif
@@ -116,8 +119,6 @@
 
 @endforelse
           </div>
-
-          <!-- Controls -->
           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
             <span class="fa fa-2x fa-chevron-left"></span>
           </a>
@@ -126,33 +127,34 @@
           </a>
         </div>
       </div>
-      <div class="col-sm-4">
-  			<ul class="media-list main-list">
+      <div class="col-sm-4" id="highlight-right">
+        <div class="row">
 @php
   $i=0;
 @endphp
 @forelse ($clip as $key => $value)
 @php $i++; @endphp
 @if ($i < 5) @continue @endif
-          <li class="media">
-            <a href="#">
+          <div class="col-sm-12 col-xs-6">
+            <a class="cover" href="{{ route('highlight.show', ['id' => $value->id]) }}">
 @if ( Storage::disk('cover')->has($value->path_cover) )
-              <img class="media-object" src="{{ route('image', ['filename' => $value->path_cover]) }}">
+              <img src="{{ route('image', ['filename' => $value->path_cover]) }}">
 
 @else
-              <img class="media-object" src="{{ asset('pic/file_error.png') }}">
+              <img src="{{ asset('pic/file_error.png') }}">
 @endif
               <div class="play">
-                <img src="https://sachinchoolur.github.io/lightGallery/static/img/play-button.png">
+                <i class="fa fa-play-circle" aria-hidden="true"></i>
+              </div>
+              <div class="caption">
+                <h3>{{ $value->headline }}</h3>
               </div>
             </a>
-            <div class="media-body">
-              <a href="{{ route('highlight.show', ['id' => $value->id]) }}"><h3 class="media-heading">{{ $value->headline }}</h3></a>
-          </li>
+          </div>
 @if ($i==6) @break @endif
 @empty
 @endforelse
-  			</ul>
+        </div>
       </div>
     </div>
     <br>
@@ -164,20 +166,25 @@
 @foreach ($clip as $value)
 @php $i++ @endphp
 @if ($i<7) @continue @endif
-{{-- @if($i%4==3) {!! '<div class="row">' !!} @endif --}}
 {!! $i%4==3?'<div class="row">':''!!}
   <div class="col-sm-3 col-xs-6">
     <div class="thumbnail">
 @if ( Storage::disk('cover')->has($value->path_cover) )
-      <img class="media-object" src="{{ route('image', ['filename' => $value->path_cover]) }}">
-
+      <a href="{{ route('highlight.show', ['id' => $value->id]) }}">
+        <img class="media-object" src="{{ route('image', ['filename' => $value->path_cover]) }}">
+        <div class="play">
+          <i class="fa fa-2x fa-play-circle" aria-hidden="true"></i>
+        </div>
+      </a>
 @else
-      <img class="media-object" src="{{ asset('pic/file_error.png') }}">
+      <a href="{{ route('highlight.show', ['id' => $value->id]) }}">
+        <img class="media-object" src="{{ asset('pic/file_error.png') }}">
+      </a>
 @endif
       <div class="caption">
         <h3>{{ $value->headline }}</h3>
-        <span class="pull-left">{{ $value->zone->name }}</span>
-        <span class="pull-right">{{ $value->created_at->diffForHumans() }}</span>
+        <span class="pull-left"><i class="fa fa-futbol-o" aria-hidden="true"></i> {{ $value->zone->name }}</span>
+        <span class="pull-right"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $value->created_at->diffForHumans() }}</span>
         <div class="clearfix"></div>
         <p><a href="{{ route('highlight.show', ['id' => $value->id]) }}" class="btn btn-danger btn-block" role="button">ชมไฮไลท์</a></p>
       </div>
@@ -185,10 +192,15 @@
   </div>
 {!! $i%4==2?'</div>':'' !!}
 @endforeach
+  <div class="col-sm-6 col-sm-offset-3">
+    <a href="{{ route('highlight') }}" type="button" class="btn btn-lg btn-default btn-block">ดูทั้งหมด</a>
+  </div>
+  <div class="clearfix"></div>
+  <hr class="hr-danger" />
 </div>
 <br><br><br><br><br><br><br><br><br>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+{{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -199,10 +211,7 @@
               <!-- Tab panes -->
         <div class="tab-content"></div>
       </div>
-      {{-- .modal-body --}}
     </div>
-    {{-- .modal-content --}}
   </div>
-  {{-- .modal-dialog --}}
-</div>
+</div> --}}
 @endsection
