@@ -193,10 +193,9 @@
   </div>
 {!! $i%4==2?'</div>':'' !!}
 @endforeach
-  <div class="col-sm-6 col-sm-offset-3">
+  <div class="col-sm-6 col-sm-offset-3 clearfix">
     <a href="{{ route('highlight') }}" type="button" class="btn btn-lg btn-default btn-block">ดูทั้งหมด</a>
   </div>
-  <div class="clearfix"></div>
   <hr class="hr-danger" />
 </div>
 <br><br><br><br><br><br><br><br><br>
