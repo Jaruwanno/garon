@@ -170,7 +170,8 @@ div#highlight-right{
       text-align:center;
       @include cover_shadow;
       h3{
-        line-height: 3vmin;
+        line-height: 7vmin;
+        font-size:3vmin;
       }
     }
   }

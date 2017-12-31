@@ -267,7 +267,8 @@ div#highlight-right a.cover div.caption {
 }
 
 div#highlight-right a.cover div.caption h3 {
-  line-height: 3vmin;
+  line-height: 7vmin;
+  font-size: 3vmin;
 }
 
 div#highlight-second div.thumbnail > a {
