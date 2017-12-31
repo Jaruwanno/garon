@@ -268,6 +268,7 @@ div#highlight-right a.cover div.caption {
 
 div#highlight-right a.cover div.caption h3 {
   line-height: 7vmin;
+  display: none;
 }
 
 div#highlight-second div.thumbnail > a {
@@ -323,10 +324,6 @@ div#highlight-second div.thumbnail > a:hover > div.play {
 
 div#highlight-second div.thumbnail > a i {
   font-size: 8vmin;
-}
-
-div#highlight-second div.thumbnail div.caption h3 {
-  display: none;
 }
 
 div#highlight-second div.thumbnail div.caption span {
