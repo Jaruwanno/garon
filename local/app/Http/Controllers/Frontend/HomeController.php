@@ -23,7 +23,7 @@ class HomeController extends Controller
       );
 
       $aStyle = array(
-        'css/frontend/home/home_style.css'
+        'css/frontend/home/style.css'
       );
 
       $news = Post::where('type', 'news')->orderBy('created_at', 'desc')
