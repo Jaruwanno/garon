@@ -34,18 +34,18 @@ class HomeController extends Controller
                     ->limit(10)
                     ->get();
 
-      // $curl_options = array(
-      // CURLOPT_URL => "http://inplay.goalserve.com/inplay.json",
-      // CURLOPT_RETURNTRANSFER => true,
-      // CURLOPT_HEADER => false
-      // );
-      //
-      // $curl = curl_init();
-      // curl_setopt_array( $curl, $curl_options );
-      // $result = curl_exec( $curl );
-      //
-      // $result = (array) json_decode($result);
-      // dd($result);
+      $curl_options = array(
+      CURLOPT_URL => "http://inplay.goalserve.com/inplay.json",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_HEADER => false
+      );
+
+      $curl = curl_init();
+      curl_setopt_array( $curl, $curl_options );
+      $result = curl_exec( $curl );
+
+      $result = (array) json_decode($result);
+      dd($result);
 
 
       return view('frontend.home.home', [
