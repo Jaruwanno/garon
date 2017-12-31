@@ -188,6 +188,9 @@ div#highlight-second{
       }
     }
     div.caption{
+      h3{
+        display:none;
+      }
       span{
         font-size: 16px;
         &.pull-left{
