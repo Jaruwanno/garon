@@ -62,16 +62,8 @@ div.news-second a:first-child {
   display: inline-block;
 }
 
-@media screen and (max-width: 1000px) {
-  div.news-second a:last-of-type h3:first-child {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  div.news-second a:last-of-type h3:last-child {
-    display: none;
-  }
+div.news-second a:last-of-type h3 {
+  font-size: 22px;
 }
 
 div.news-second span:first-of-type,
@@ -175,7 +167,7 @@ section.section-white .carousel .item div.carousel-caption {
 
 section.section-white .carousel .item div.carousel-caption .carousel-caption-header {
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 8vmin;
 }
 
 section.section-white .carousel .carousel-control {
@@ -268,6 +260,7 @@ div#highlight-right a.cover div.caption {
 
 div#highlight-right a.cover div.caption h3 {
   line-height: 7vmin;
+  font-size: 4vmin;
 }
 
 div#highlight-second div.thumbnail > a {

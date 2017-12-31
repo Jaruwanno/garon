@@ -60,8 +60,8 @@
       <a href="{{ route('news.show', ['id' => $new->id]) }}"><img class="img-responsive" src="{{ asset('pic/file_error.png') }}"></a>
 @endif
       <a href="{{ route('news.show', ['id' => $new->id]) }}">
-        <h3>{{ $new->headline }}</h3>
-        <h3>{{ str_limit($new->headline, 25) }}</h3>
+        {{-- <h3>{{ $new->headline }}</h3> --}}
+        <h3>{{ str_limit($new->headline, 30) }}</h3>
       </a>
       <span class="pull-left"><i class="fa fa-futbol-o" aria-hidden="true"></i> {{ $new->zone->name }}</span>
       <span class="pull-right"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $new->created_at->diffForHumans() }}</span>
@@ -166,7 +166,7 @@
 @foreach ($clip as $value)
 @php $i++ @endphp
 @if ($i<7) @continue @endif
-{!! $i%4==3?'<div class="row">':''!!} 
+{!! $i%4==3?'<div class="row">':''!!}
   <div class="col-sm-3 col-xs-6">
     <div class="thumbnail">
 @if ( Storage::disk('cover')->has($value->path_cover) )

@@ -72,16 +72,7 @@ div.news-second{
     }
     &:last-of-type{
       h3{
-        @media screen and (max-width: 1000px) {
-          &:first-child{
-            display:none;
-          }
-        }
-        @media screen and (min-width: 1000px) {
-          &:last-child{
-            display:none;
-          }
-        }
+        font-size: 22px;
       }
     }
   }
@@ -116,7 +107,6 @@ section.section-white{
         overflow: hidden;
         position: relative;
         @include cover(35%, 45%);
-
         .play > i{
           font-size: 12vmin;
         }
@@ -134,7 +124,7 @@ section.section-white{
         @include cover_shadow;
         .carousel-caption-header{
           margin-top: 10px;
-  	      font-size: 24px;
+  	      font-size: 8vmin;
         }
       }
     }
@@ -171,6 +161,7 @@ div#highlight-right{
       @include cover_shadow;
       h3{
         line-height: 7vmin;
+        font-size: 4vmin;
       }
     }
   }
