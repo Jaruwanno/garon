@@ -325,6 +325,10 @@ div#highlight-second div.thumbnail > a i {
   font-size: 8vmin;
 }
 
+div#highlight-second div.thumbnail div.caption h3 {
+  font-size: 3vmin;
+}
+
 div#highlight-second div.thumbnail div.caption span {
   font-size: 16px;
 }
