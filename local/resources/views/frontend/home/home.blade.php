@@ -167,7 +167,7 @@
 @php $i++ @endphp
 @if ($i<7) @continue @endif
 {!! $i%4==3?'<div class="row">':''!!}
-  <div class="col-sm-3 col-xs-6">
+  <div class="col-sm-3 col-xs-6"> 
     <div class="thumbnail">
 @if ( Storage::disk('cover')->has($value->path_cover) )
       <a href="{{ route('highlight.show', ['id' => $value->id]) }}">
