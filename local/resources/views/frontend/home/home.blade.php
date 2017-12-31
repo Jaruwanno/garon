@@ -68,6 +68,7 @@
     </div>
 {!! $i%4==2?'</div></div>':'' !!}
 @endforeach
+<div class="clearfix"></div>
 <div class="col-sm-4 col-sm-offset-4">
   <br>
   <a href="{{ route('news') }}" type="button" class="btn btn-lg btn-default btn-block">ดูทั้งหมด</a>
