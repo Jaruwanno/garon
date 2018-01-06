@@ -28,7 +28,9 @@
   <!-- Scripts -->
   <script src="{{ asset( 'js/jquery/jquery.min.js' ) }}"></script>
   <script src="{{ asset( 'js/bootstrap/bootstrap.min.js' ) }}"></script>
-
+  <script>
+        var match_path = '{{ url('/local/storage/app/public/bigmatch') }}';
+  </script>
   @if ( isset( $js ) )
     @foreach ($js as $script)
       <script src="{{ asset( $script ) }}"></script>

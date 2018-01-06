@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 
 @section('header-text')
-  <p>home</p>
-  <h1>หน้าแรก</h1>
+    <p>home</p>
+    <h1>หน้าแรก</h1>
 @endsection
 
 @section('content')

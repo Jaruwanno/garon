@@ -1,6 +1,5 @@
 $(document).ready(function(){
   // alert('garon');
-
   $('.action').change(function(){
     if(this.checked){
       var d = {'active':1};
@@ -16,7 +15,6 @@ $(document).ready(function(){
       'url' : 'match/'+id,
       'data' : d,
       'type' : 'PUT',
-      // 'dataType' : 'json',
       success : function(d){
         location.reload();
       },

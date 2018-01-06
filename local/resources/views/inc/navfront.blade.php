@@ -1,5 +1,5 @@
 <header id="header">
-  {{-- <nav id="social" class="navbar navbar-default">
+  <nav id="social" class="navbar navbar-default">
     <div class="container">
       <div class="row">
         <div class="navbar-header">
@@ -7,12 +7,11 @@
           <a class="navbar-brand fa fa-google-plus fa-lg" href="#"></a>
           <a class="navbar-brand fa fa-twitter fa-lg" href="#"></a>
           <a class="navbar-brand fa fa-youtube-play fa-lg" href="#"></a>
-          <a class="navbar-brand fa fa-phone fa-lg" href="#"> xxx-xxx-xxxx</a>
-          <a class="navbar-brand fa fa-envelope-o fa-lg" href="#"> support@rakball@gamil.com</a>
+          <a class="btn btn-danger" id="login" role="button"><i class="fa fa-user-o" aria-hidden="true"></i>เข้าสู่ระบบ</a>
         </div>
       </div>
     </div>
-  </nav> --}}
+  </nav>
 
   <nav id="main-menu" class="navbar navbar-inverse" role="banner">
     <div class="container">
@@ -25,7 +24,7 @@
             <span class="icon-bar"></span>
           </button>
           <a href="{{ url('/') }}" class="navbar-brand">
-            <img src="{{ asset('pic/balllife-logo.png') }}" id="brand">
+            <img src="{{ asset('pic/balllife-logo.png') }}">
           </a>
         </div>
 
@@ -35,7 +34,6 @@
             <li class="{{ Request::is('news*') ? 'active' : '' }}"><a href="{{ route('news') }}">ข่าวสาร</a></li>
             <li class="{{ Request::is('highlight*') ? 'active' : '' }}"><a href="{{ route('highlight') }}">ไฮไลท์ฟุตบอล</a></li>
             <li class="{{ Request::is('table') ? 'active' : '' }}"><a href="{{ route('table') }}">ผลบอล</a></li>
-
           </ul>
         </div>
 
@@ -46,8 +44,10 @@
   <section class="image-header">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-xs-7 bigmatch text-center">
-          @yield('header-text')
+        <div class="col-md-4 col-xs-7 bigmatch text-center">
+          <span>
+            @yield('header-text')
+          </span>
         </div>
       </div>
     </div>

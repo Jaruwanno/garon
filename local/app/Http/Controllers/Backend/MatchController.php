@@ -19,7 +19,7 @@ class MatchController extends Controller
         'css/backend/match/home_style.css'
       );
       $aScript = array(
-        'js/backend/match/home_.js'
+        'js/backend/match/home_script.js'
       );
       return view('backend.match.home', [
         'match' => $match,
@@ -65,7 +65,7 @@ class MatchController extends Controller
       $match->away = $request->away;
       $match->active = '0';
 
-      $path = public_path() . '/match';
+      $path = storage_path('app/public/bigmatch');
 
       if( $request->hasFile('home_png') ){
         $image = $request->file('home_png');
@@ -106,6 +106,7 @@ class MatchController extends Controller
     public function delete($id)
     {
       $match = Match::find($id);
+      Storage::disk('match')->delete([$match->home_png, $match->away_png]);
       $match->delete();
     }
 }

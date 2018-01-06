@@ -1,30 +1,19 @@
-/*
-/*************************
-*******Font******
-**************************/
 @font-face {
-    font-family: 'db_helvethaica_x75_bd';
-    src: url('../../font/db_helvethaica_x_bd_v3.2-webfont.woff2') format('woff2'),
-         url('../../font/db_helvethaica_x_bd_v3.2-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'db_helvethaica_x65_med';
-    src: url('../../font/db_helvethaica_x_med_v3.2-webfont.woff2') format('woff2'),
-         url('../../font/db_helvethaica_x_med_v3.2-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'db_helvethaica_x75_bd';
+  src: url("/git/fonts/db_helvethaica_x_bd_v3.2-webfont.woff2") format("woff2"), url("/git/fonts/db_helvethaica_x_bd_v3.2-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-/*
-/*************************
-*******Typography******
-**************************/
-body{
+@font-face {
   font-family: 'db_helvethaica_x65_med';
-  font-size:24px;
+  src: url("/git/fonts/db_helvethaica_x_med_v3.2-webfont.woff2") format("woff2"), url("/git/fonts/db_helvethaica_x_med_v3.2-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'db_helvethaica_x65_med';
 }
 
 h1,
@@ -34,121 +23,148 @@ h4,
 h5,
 h6,
 p,
-ul{
-  margin:0;
-  padding:0;
-  border:0;
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-
-/*************************
-*******Header******
-**************************/
 .navbar {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
 }
-#social{
-  font-family: 'db_helvethaica_x75_bd';
-  font-size: 14px;
-}
-#main-menu{
-  font-size:20px !important;
+
+.navbar#social {
+  font-family: 'db_helvethaica_x65_med';
 }
 
-#brand{
-  width:150px;
+.navbar#social div.navbar-header {
+  width: 100%;
 }
 
+.navbar#social div.navbar-header > a:last-child {
+  margin: 10px 0 0 0;
+  border-radius: 15px;
+  padding: 0 8px 0 !important;
+  cursor: pointer;
+  float: right;
+  font-size: 22px;
+  background-color: #d80000;
+  border: 0;
+}
 
-.navbar.navbar-inverse .navbar-toggle {
-  margin:18px 0 20px 20px;
-  background:#B22222;
+.navbar#social div.navbar-header > a:last-child i {
+  font-size: 80%;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar#social div.navbar-header > a:last-child {
+    margin-right: 10px;
+  }
+}
+
+.navbar#main-menu {
+  font-size: 20px !important;
+}
+
+.navbar#main-menu div.navbar-header > button {
+  margin: 18px 0 20px 20px;
+  background: #B22222;
   border-radius: 50%;
-  width:50px;
-  height:50px;
-  padding-left:13px;
+  width: 50px;
+  height: 50px;
+  padding-left: 13px;
 }
-.navbar.navbar-inverse .navbar-brand {
+
+.navbar#main-menu div.navbar-header > .navbar-brand {
   height: auto;
   padding: 24px 10px 22px;
 }
 
+.navbar#main-menu div.navbar-header > .navbar-brand img {
+  width: 150px;
+}
 
+@media only screen and (max-width: 768px) {
+  .navbar#main-menu div.navbar-header > .navbar-brand {
+    -webkit-transform: translate(-45%);
+            transform: translate(-45%);
+    left: 50%;
+    position: absolute;
+    padding-top: 20px;
+  }
+}
 
-@media only screen and (min-width: 768px){
-  #main-menu.navbar-inverse .navbar-nav a{
+@media screen and (min-width: 768px) {
+  .navbar#main-menu div.navbar-right > ul.nav > li > a {
     padding-top: 35px;
     padding-bottom: 35px;
-
   }
-  #main-menu.navbar-inverse .navbar-nav > li.active > a,
-  #main-menu.navbar-inverse .navbar-nav > li.open > a,
-  #main-menu.navbar-inverse .navbar-nav > li.hover > a{
+
+  .navbar#main-menu div.navbar-right > ul.nav > li.active > a,
+  .navbar#main-menu div.navbar-right > ul.nav > li.open > a,
+  .navbar#main-menu div.navbar-right > ul.nav > li.hover > a {
     background: transparent;
     padding-top: 28px;
     border-top: 7px solid #B22222;
   }
-
-
-
 }
 
-.image-header{
+section.image-header {
   color: #fff;
-  min-height: 250px;
-  padding:10px 0 0 0;
-  background-image: url("../../pic/image-header.png");
+  background-image: url("/git/pic/image-header.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
-.image-header h1{
-  font-size: 50px;
+section.image-header div.bigmatch {
+  min-height: 250px;
+  line-height: 250px;
 }
 
-.image-header div.bigmatch > p{
-  margin-top:50px;
+section.image-header div.bigmatch span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
-.image-header h1.match-text{
-  font-size:35px;
-  margin:0;
+section.image-header div.bigmatch span > p {
+  font-size: 20px;
 }
 
-.image-header span > p{
-  color:#000;
+section.image-header div.bigmatch span > h1 {
+  font-size: 46px;
+}
+
+section.image-header div.bigmatch span > h1.match-text {
+  font-size: 26px;
+}
+
+section.image-header div.bigmatch span > div.logo-team > img {
+  width: 25%;
+}
+
+section.image-header div.bigmatch span > span {
+  display: inline-block;
+  width: 35px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+section.image-header div.bigmatch span > span p {
+  color: #000;
   font-size: 25px;
-  background-color:#fff;
-  border-radius:5px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
 
-.image-header span{
-  display:inline-block;
-  width:35px;
-  text-align:center;
-}
-
-.image-header span{
-  margin-right:8px;
-}
-
-@media only screen and (max-width: 768px){
-  .image-header{
-    background-position:50% 0;
-  }
-
-  .navbar-inverse .navbar-brand{
-    transform: translate(-45%);
-    left:50%;
-    position:absolute;
-    padding:0;
+@media screen and (max-width: 768px) {
+  section.image-header {
+    background-position: 50% 0;
   }
 }
-/******End Header*******/
 
-.w150{
-  width:300px;
-}

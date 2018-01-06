@@ -19,8 +19,8 @@ class HomeController extends Controller
     {
       $aScript = array(
         'js/datepicker/moment.js',
-        'js/frontend/home/live.js'
-      ); 
+        'js/frontend/home/home.js'
+      );
 
       $aStyle = array(
         'css/frontend/home/style.css'
@@ -58,8 +58,8 @@ class HomeController extends Controller
 
     public function bigmatch()
     {
-      Match::where('kick_start', '<=', NOW('Asia/Bangkok'))->delete();
-
+      $match = Match::where('kick_start', '<=', NOW('Asia/Bangkok'))->get();
+      // return $match;
       $match = Match::where('active', '=', 1)->get();
 
       return $match;
