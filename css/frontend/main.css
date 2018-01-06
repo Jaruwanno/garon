@@ -114,7 +114,7 @@ ul {
 
 section.image-header {
   color: #fff;
-  background-image: url("/git/pic/image-header.png");
+  background-image: url("/pic/image-header.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
