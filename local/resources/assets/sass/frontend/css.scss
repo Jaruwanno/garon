@@ -146,10 +146,11 @@ section.image-header{
 div#myModal{
   div.modal-content{
     background-color:#222;
+    padding: 10px;
     color:#fff;
     & > div.modal-header{
       img{
-        width: 250px;
+        width: 230px;
       }
     }
   }

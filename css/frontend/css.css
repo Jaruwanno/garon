@@ -170,10 +170,11 @@ section.image-header div.bigmatch span > span p {
 
 div#myModal div.modal-content {
   background-color: #222;
+  padding: 10px;
   color: #fff;
 }
 
 div#myModal div.modal-content > div.modal-header img {
-  width: 250px;
+  width: 230px;
 }
 
