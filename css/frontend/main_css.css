@@ -175,6 +175,7 @@ div#myModal div.modal-content {
 }
 
 div#myModal div.modal-content > div.modal-header img {
+  margin: auto;
   width: 230px;
 }
 
