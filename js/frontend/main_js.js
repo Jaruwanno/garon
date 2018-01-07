@@ -1,5 +1,5 @@
 $(function(){
   $('#login').click(function(){
-    alert('fd');
+    $('#myModal').modal('show')
   });
 });
