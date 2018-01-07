@@ -10,8 +10,6 @@ use App\Match;
 use App\Post;
 use App\LiveScore;
 
-// date_default_timezone_set('Asia/Bangkok');
-
 class HomeController extends Controller
 {
 
