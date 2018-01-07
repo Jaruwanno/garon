@@ -136,28 +136,15 @@ section.image-header{
       }
     }
   }
-    // div.bigmatch{
-    //   h1.match-text{
-    //     font-size:35px;
-    //     margin:0;
-    //   }
-    //   span{
-    //     display:inline-block;
-    //     width:35px;
-    //     text-align:center;
-    //     margin-right:8px;
-    //     p{
-    //       color:#000;
-    //       font-size: 25px;
-    //       background-color:#fff;
-    //       border-radius:5px;
-    //     }
-    //   }
-    // }
-
   @media screen and (max-width: 768px) {
     &{
       background-position:50% 0;
     }
+  }
+}
+div#myModal{
+  div.modal-content{
+    background-color:#222;
+    color:#ddd;
   }
 }
