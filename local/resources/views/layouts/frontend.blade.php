@@ -36,9 +36,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <ul class="nav nav-pills" role="tablist"></ul>
-                <!-- Tab panes -->
-          <div class="tab-content"></div>
+          <h2>เฟสบุ๊ค</h2>
         </div>
       </div>
     </div>
