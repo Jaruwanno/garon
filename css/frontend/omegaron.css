@@ -176,6 +176,7 @@ div#myModal div.modal-content {
 
 div#myModal div.modal-content > div.modal-header img {
   margin: auto;
+  display: inline-block;
   width: 230px;
 }
 
