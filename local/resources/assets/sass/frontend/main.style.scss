@@ -147,5 +147,8 @@ div#myModal{
   div.modal-content{
     background-color:#222;
     color:#fff;
+    & > div.modal-header{
+      border: 0;
+    }
   }
 }
