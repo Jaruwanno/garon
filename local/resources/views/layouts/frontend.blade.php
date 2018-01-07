@@ -45,7 +45,7 @@
   <!-- Scripts -->
   <script src="{{ asset( 'js/jquery/jquery.min.js' ) }}"></script>
   <script src="{{ asset( 'js/bootstrap/bootstrap.min.js' ) }}"></script>
-  <script src="{{ asset( 'js/frontend/main_js.js' ) }}"></script>
+  <script src="{{ asset( 'js/frontend/main_script.js' ) }}"></script>
   <script>
         var match_path = '{{ url('/local/storage/app/public/bigmatch') }}';
   </script>
