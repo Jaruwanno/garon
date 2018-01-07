@@ -25,6 +25,23 @@
   @include('inc.navfront')
 
   @yield('content')
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-pills" role="tablist"></ul>
+                <!-- Tab panes -->
+          <div class="tab-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="{{ asset( 'js/jquery/jquery.min.js' ) }}"></script>
   <script src="{{ asset( 'js/bootstrap/bootstrap.min.js' ) }}"></script>
