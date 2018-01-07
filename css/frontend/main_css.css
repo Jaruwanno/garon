@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'db_helvethaica_x75_bd';
+  src: url("/fonts/db_helvethaica_x_bd_v3.2-webfont.woff2") format("woff2"), url("/fonts/db_helvethaica_x_bd_v3.2-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'db_helvethaica_x65_med';
+  src: url("/fonts/db_helvethaica_x_med_v3.2-webfont.woff2") format("woff2"), url("/fonts/db_helvethaica_x_med_v3.2-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'db_helvethaica_x65_med';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.navbar {
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar#social {
+  font-family: 'db_helvethaica_x65_med';
+}
+
+.navbar#social div.navbar-header {
+  width: 100%;
+}
+
+.navbar#social div.navbar-header > a:last-child {
+  margin: 10px 0 0 0;
+  border-radius: 15px;
+  padding: 0 8px 0 !important;
+  cursor: pointer;
+  float: right;
+  font-size: 22px;
+  background-color: #d80000;
+  border: 0;
+}
+
+.navbar#social div.navbar-header > a:last-child i {
+  font-size: 80%;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar#social div.navbar-header > a:last-child {
+    margin-right: 10px;
+  }
+}
+
+.navbar#main-menu {
+  font-size: 20px !important;
+}
+
+.navbar#main-menu div.navbar-header > button {
+  margin: 18px 0 20px 20px;
+  background: #B22222;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-left: 13px;
+}
+
+.navbar#main-menu div.navbar-header > .navbar-brand {
+  height: auto;
+  padding: 24px 10px 22px;
+}
+
+.navbar#main-menu div.navbar-header > .navbar-brand img {
+  width: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar#main-menu div.navbar-header > .navbar-brand {
+    -webkit-transform: translate(-45%);
+            transform: translate(-45%);
+    left: 50%;
+    position: absolute;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar#main-menu div.navbar-right > ul.nav > li > a {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .navbar#main-menu div.navbar-right > ul.nav > li.active > a,
+  .navbar#main-menu div.navbar-right > ul.nav > li.open > a,
+  .navbar#main-menu div.navbar-right > ul.nav > li.hover > a {
+    background: transparent;
+    padding-top: 28px;
+    border-top: 7px solid #B22222;
+  }
+}
+
+section.image-header {
+  color: #fff;
+  background-image: url("/pic/image-header.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+section.image-header div.bigmatch {
+  min-height: 250px;
+  line-height: 250px;
+}
+
+section.image-header div.bigmatch span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+section.image-header div.bigmatch span > p {
+  font-size: 20px;
+}
+
+section.image-header div.bigmatch span > h1 {
+  font-size: 46px;
+}
+
+section.image-header div.bigmatch span > h1.match-text {
+  font-size: 26px;
+}
+
+section.image-header div.bigmatch span > div.logo-team > img {
+  width: 25%;
+}
+
+section.image-header div.bigmatch span > span {
+  display: inline-block;
+  width: 35px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+section.image-header div.bigmatch span > span p {
+  color: #000;
+  font-size: 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  section.image-header {
+    background-position: 50% 0;
+  }
+}
+
+div#myModal div.modal-content {
+  background-color: #222;
+  padding: 10px;
+  color: #fff;
+}
+
+div#myModal div.modal-content > div.modal-header img {
+  width: 230px;
+}
+
