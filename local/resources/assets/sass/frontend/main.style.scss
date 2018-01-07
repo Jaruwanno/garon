@@ -148,7 +148,9 @@ div#myModal{
     background-color:#222;
     color:#fff;
     & > div.modal-header{
-      border: 0 !important;
+      img{
+        width: 250px;
+      }
     }
   }
 }

@@ -173,7 +173,7 @@ div#myModal div.modal-content {
   color: #fff;
 }
 
-div#myModal div.modal-content > div.modal-header {
-  border: 0 !important;
+div#myModal div.modal-content > div.modal-header img {
+  width: 250px;
 }
 
