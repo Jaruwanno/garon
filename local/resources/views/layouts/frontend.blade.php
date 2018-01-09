@@ -13,7 +13,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset( 'css/bootstrap/bootstrap.min.css' ) }}">
   <link rel="stylesheet" href="{{ asset( 'css/font awesome/css/font-awesome.min.css' ) }}">
-  <link rel="stylesheet" href="{{ asset( 'css/frontend/ome.css' ) }}">
+  <link rel="stylesheet" href="{{ asset( 'css/frontend/style.css' ) }}">
 
   @if ( isset( $css ) )
     @foreach ($css as $style)
@@ -30,16 +30,17 @@
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
-
         <div class="modal-header">
-          <img src="{{ asset('pic/rakball-logo.png') }}">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+          <img src="{{ asset('pic/rakball-logo.png') }}">
         </div>
-
         <div class="modal-body">
-          <h2>เฟสบุ๊ค</h2>
+          <fieldset>
+            <legend>เข้าสู่ระบบ</legend>
+            <br><br>
+          </fieldset>
         </div>
       </div>
     </div>

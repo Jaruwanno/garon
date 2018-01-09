@@ -2,15 +2,15 @@
 @import "../_variables.scss";
 @font-face {
   font-family: 'db_helvethaica_x75_bd';
-  src: url('/fonts/db_helvethaica_x_bd_v3.2-webfont.woff2') format('woff2'),
-       url('/fonts/db_helvethaica_x_bd_v3.2-webfont.woff') format('woff');
+  src: url('/git/fonts/db_helvethaica_x_bd_v3.2-webfont.woff2') format('woff2'),
+       url('/git/fonts/db_helvethaica_x_bd_v3.2-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
     font-family: 'db_helvethaica_x65_med';
-    src: url('/fonts/db_helvethaica_x_med_v3.2-webfont.woff2') format('woff2'),
-         url('/fonts/db_helvethaica_x_med_v3.2-webfont.woff') format('woff');
+    src: url('/git/fonts/db_helvethaica_x_med_v3.2-webfont.woff2') format('woff2'),
+         url('/git/fonts/db_helvethaica_x_med_v3.2-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6, p, ul{
 }
 section.image-header{
   color: #fff;
-  background-image: url("/pic/image-header.png");
+  background-image: url("/git/pic/image-header.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -146,14 +146,46 @@ section.image-header{
 div#myModal{
   div.modal-content{
     background-color:#222;
-    padding: 20px;
-    color:#fff;
+    padding: 15px;
     & > div.modal-header{
+      border: 0;
+      & > button{
+        color:white;
+        font-size: 30px;
+      }
       img{
-        margin-left:10%;
-        background: red;
+        margin:0 auto 0;
+        display: block;
         width: 230px;
       }
+    }
+    & > div.modal-body{
+      fieldset{
+        border-style: solid none none none;
+        border-width: 1px;
+        border-color: silver;
+    		margin: 0;
+    		position: relative;
+        color:#fff;
+        legend{
+          font-size:26px;
+    			margin-bottom: 0px;
+    			width:auto;
+    			border: 0;
+          padding : 0 20px 0;
+    			margin: auto;
+          color: inherit;
+        }
+      }
+      // & > h3{
+      //   margin: 0 auto 0;
+      //   display: table;
+      //   &:before{
+      //     content: 'efewffe';
+      //     border-top : 2px solid #fff;
+      //     margin-right: 10px;
+      //   }
+      // }
     }
   }
 }
