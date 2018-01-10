@@ -18,7 +18,7 @@ class HighlightController extends Controller
 {
     function __construct()
     {
-      $this->client = new Client('8FwQP7bmfGQAAAAAAAAFfXevjDhLxWKSiLPbw9R7S7EQAGhPtbLcb4-gh_QSREs9');
+      $this->client = new Client('pg5ZKjhH9PAAAAAAAAGgTkl_FJbzndvvwR60Eou4092ppEIP5GeKHg0SlRYOyV1R');
       $this->adapter = new DropboxAdapter($this->client);
       $this->filesystem = new Filesystem($this->adapter);
     }
