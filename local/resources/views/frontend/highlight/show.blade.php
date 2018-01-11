@@ -45,19 +45,19 @@
         </span>
       </span>
       <div class="clearfix"></div>
-      {{-- <video src="{{ $highlight[0]->link }}"
+      <video src="{{ $highlight[0]->link }}https://www.dropbox.com/s/d3o2tc76g3ybwp0/%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%8B%E0%B8%B5%20vs%20%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%8B%E0%B8%99%E0%B8%AD%E0%B8%A5.mp4?raw=1"
          type='video/mp4'
          controls
          width="100%"
          poster="{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}">
-      </video> --}}
-      <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
+      </video>
+      {{-- <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
               "poster": "{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}",
               "controls":true
           }'>
         <source src="https://www.dropbox.com/s/d3o2tc76g3ybwp0/%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%8B%E0%B8%B5%20vs%20%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%8B%E0%B8%99%E0%B8%AD%E0%B8%A5.mp4?raw=1" type="video/mp4">
-      </video>
+      </video> --}}
       <br><br>
       {{-- <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div> --}}
     </div>
