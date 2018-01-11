@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'db_helvethaica_x75_bd';
-  src: url("/git/fonts/db_helvethaica_x_bd_v3.2-webfont.woff2") format("woff2"), url("/git/fonts/db_helvethaica_x_bd_v3.2-webfont.woff") format("woff");
+  src: url("/fonts/db_helvethaica_x_bd_v3.2-webfont.woff2") format("woff2"), url("/fonts/db_helvethaica_x_bd_v3.2-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'db_helvethaica_x65_med';
-  src: url("/git/fonts/db_helvethaica_x_med_v3.2-webfont.woff2") format("woff2"), url("/git/fonts/db_helvethaica_x_med_v3.2-webfont.woff") format("woff");
+  src: url("/fonts/db_helvethaica_x_med_v3.2-webfont.woff2") format("woff2"), url("/fonts/db_helvethaica_x_med_v3.2-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -115,7 +115,7 @@ ul {
 
 section.image-header {
   color: #fff;
-  background-image: url("/git/pic/image-header.png");
+  background-image: url("/pic/image-header.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0;
