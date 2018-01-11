@@ -59,7 +59,7 @@
         <source src="{{ $highlight[0]->link }}" type="video/mp4">
       </video> --}}
       <br><br>
-      <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div>
+      {{-- <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div> --}}
     </div>
     {{--  /col-md-8--}}
     <div class="col-md-4">
