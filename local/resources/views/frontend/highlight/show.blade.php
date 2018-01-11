@@ -46,9 +46,10 @@
       </span>
       <div class="clearfix"></div>
       <video src="{{ $highlight[0]->link }}"
-             controls
-             width="100%"
-             poster="{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}">
+         type='video/mp4'
+         controls
+         width="100%"
+         poster="{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}">
       </video>
       {{-- <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
