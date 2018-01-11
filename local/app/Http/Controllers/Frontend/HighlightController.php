@@ -131,6 +131,7 @@ class HighlightController extends Controller
     ])['link'];
     $this->highlight[0]->link = $link;
 
+    dd($this->highlight);
 
     $hot = Post::withCount(['visit' => function($query){
                 $query->where('type', '=', 'highlight');

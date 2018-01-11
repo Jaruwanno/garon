@@ -33,7 +33,7 @@
             data-show-faces="false"
             data-share="false">
           </div>
-        </span>
+        </span> 
         <span>
           <div class="fb-share-button"
             data-href="http://localhost/project/public/news/{{$highlight[0]->id}}"
