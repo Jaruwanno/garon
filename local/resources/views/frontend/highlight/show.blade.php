@@ -53,7 +53,7 @@
       </video> --}}
       <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
-              "poster": "https://www.dropbox.com/s/9ne9qe26317zqco/b-135.jpg",
+              "poster": "https://www.dropbox.com/s/9ne9qe26317zqco/b-135.jpg?dl=0",
               "controls":true
           }'>
         <source src="{{ $highlight[0]->link }}" type="video/mp4">
