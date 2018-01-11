@@ -45,19 +45,19 @@
         </span>
       </span>
       <div class="clearfix"></div>
-      <video src="{{ $highlight[0]->link }}"
+      {{-- <video src="{{ $highlight[0]->link }}"
          type='video/mp4'
          controls
          width="100%"
          poster="{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}">
-      </video>
-      {{-- <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
+      </video> --}}
+      <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
               "poster": "{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}",
               "controls":true
           }'>
-        <source src="{{ $highlight[0]->link }}" type="video/mp4">
-      </video> --}}
+        <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+      </video>
       <br><br>
       {{-- <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div> --}}
     </div>
