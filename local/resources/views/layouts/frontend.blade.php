@@ -34,7 +34,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <img src="{{ asset('pic/rakball-logo.png') }}">
+          <img src="{{ asset('pic/balllife-logo.png') }}">
         </div>
         <div class="modal-body">
           <fieldset>
