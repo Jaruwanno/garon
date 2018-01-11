@@ -53,7 +53,7 @@
       </video> --}}
       <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
-              "poster": "{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}",
+              "poster": "https://www.dropbox.com/s/9ne9qe26317zqco/b-135.jpg",
               "controls":true
           }'>
         <source src="{{ $highlight[0]->link }}" type="video/mp4">
