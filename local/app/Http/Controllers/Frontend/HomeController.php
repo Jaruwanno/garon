@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
       $aScript = array(
         'js/datepicker/moment.js',
-        'js/frontend/home/home.js'
+        'js/frontend/home/home_script.js'
       );
 
       $aStyle = array(
