@@ -1,5 +1,5 @@
 $(function(){
-  alert('fd');
+  // alert('fd');
   // var league_id;
   // var match_id;
   $.ajax({
