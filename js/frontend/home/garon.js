@@ -19,13 +19,13 @@ $(function(){
             ' vs '+
             '<img src="'+match_path+'/'+d[0].away_png+'">'+
           '</div>'+
-          '<span><p id="day"></p>วัน</span>'+
+          '<span><p id="days"></p>วัน</span>'+
           '<span><p id="hours"></p>ชั่วโมง</span>'+
           '<span><p id="minutes"></p>นาที</span>'+
           '<span><p id="seconds"></p>วินาที</span>'+
         '</span>'
       );
-      countDown( d[0].kick_start );
+      countDown(d[0].kick_start);
     },
     error : function(d){
       console.log(d);
@@ -398,14 +398,15 @@ $(function(){
 // }
 
 function countDown(time){
-  var kick = time;
-  var countDownDate = new Date(kick).getTime();
 
+  var kick = time;
+
+  var countDownDate = moment(kick);
+  console.log(countDownDate.valueOf(), moment().valueOf());
   // Update the count down every 1 second
   var x = setInterval(function() {
-
     // Get todays date and time
-    var now = new Date().getTime();
+    var now = moment().valueOf();
 
     // Find the distance between now an the count down date
     var distance = countDownDate - now;
@@ -427,11 +428,12 @@ function countDown(time){
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    $("#day").text('30');
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
-
+    $("#days").text(days);
+    $("#hours").text(hours);
+    $("#minutes").text(minutes);
+    $("#seconds").text(seconds);
+    // document.getElementById("minutes").innerHTML = minutes;
+    // document.getElementById("seconds").innerHTML = seconds;
 
     // If the count down is finished, write some text
 
