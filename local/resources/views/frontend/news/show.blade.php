@@ -2,7 +2,9 @@
 
 @section('header-text')
   <p>news</p>
-  <h1>ข่าวเด่น</h1>
+  {{-- <h1>ข่าวเด่น</h1> --}}
+  <h1>{{ Request::is('news/*') }}</h1>
+
 @endsection
 
 @section('content')
