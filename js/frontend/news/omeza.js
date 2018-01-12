@@ -10,7 +10,7 @@ $(function(){
   $("meta[property='og:description']").attr('content', des);
   $("meta[property='og:image']").attr('content', image);
 
-  alert($("meta[property='og:title']").attr('content');
+  alert($("meta[property='og:title']").attr('content'));
 
   var id = $('.head-news-show').attr('data-id');
   var ip = $('.head-news-show').attr('data-ip');
