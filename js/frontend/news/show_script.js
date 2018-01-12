@@ -6,6 +6,7 @@ $(function(){
 
   $("meta[property='og:url']").attr('content', url);
   $("meta[property='og:title']").attr('content', title);
+  $("meta[property='og:description']").attr('content', des);
 
   var id = $('.head-news-show').attr('data-id');
   var ip = $('.head-news-show').attr('data-ip');
