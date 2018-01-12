@@ -9,7 +9,7 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 head-news-show" data-id="{{ $news->id }}" data-ip="{{ User::fake_ip() }}">
+    <div class="col-md-8 head-news-show" data-id="{{ $news->id }}" data-ip="{{ User::user_ip() }}">
       <h1>{{ $news->headline }}</h1>
       <span><i class="fa fa-soccer-ball-o"></i> {{ $news->zone->name }}</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <span><i class="fa fa-clock-o fa-lg"></i> {{ $news->created_at->diffForHumans() }}</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
