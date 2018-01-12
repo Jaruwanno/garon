@@ -3,6 +3,10 @@ $(function(){
       title = $("div.head-news-show > h1").text(),
       des = $("div#descriptions").text();
   console.log(url, title, des);
+
+  $("meta[property='og:url']").attr('content', url);
+  $("meta[property='og:title']").attr('content', title);
+
   var id = $('.head-news-show').attr('data-id');
   var ip = $('.head-news-show').attr('data-ip');
 
