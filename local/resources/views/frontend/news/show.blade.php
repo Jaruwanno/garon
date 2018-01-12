@@ -31,13 +31,6 @@
              data-show-faces="true"
              data-share="true">
         </div>
-        {{-- <div class="fb-share-button"
-            data-href="http://localhost/project/public/news/{{$news->id}}"
-            data-layout="button_count"
-            data-size="small"
-            data-mobile-iframe="true">
-          <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fproject%2Fpublic%2Fnews%2F15&amp;src=sdkpreparse">แชร์</a>
-        </div> --}}
       </span>
 @if ( Storage::disk('cover')->has($news->path_cover) )
       <img src="{{ route('image', ['filename' => $news->path_cover]) }}">
