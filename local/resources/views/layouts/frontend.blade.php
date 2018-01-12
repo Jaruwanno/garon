@@ -46,6 +46,7 @@
           <fieldset>
             <legend>เข้าสู่ระบบ</legend>
             <br><br>
+            {{ Request::is('news/*')?"garon":"" }}
           </fieldset>
         </div>
       </div>

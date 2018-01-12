@@ -3,7 +3,6 @@
 @section('header-text')
   <p>news</p>
   <h1>ข่าวเด่น</h1>
-  
 @endsection
 
 @section('content')
