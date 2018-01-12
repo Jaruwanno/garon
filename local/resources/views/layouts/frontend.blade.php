@@ -10,7 +10,7 @@
 
   <meta property="og:url"         content="" />
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="" />
+  <meta property="og:title"       content="gvkw';t" />
   <meta property="og:description" content="" />
   <meta property="og:image"       content="{{ asset('pic/file_error.png') }}" />
 
