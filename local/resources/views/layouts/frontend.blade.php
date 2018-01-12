@@ -7,12 +7,20 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  @if (Request::is('news/*'))
+    <meta property="og:url"         content="http://www.balllife24.com/news/{{$news->id}}" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="{{ $news->headline }}" />
+    <meta property="og:description" content="{{ $news->des }} "/>
+    <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($news->path_cover)?storage_path('app/public/cover/{{$news->path_cover}}'):asset( 'pic/file_error.png'  ) }}" />
+  @else
+    <meta property="og:url"         content="http://www.balllife24.com" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="เอาใจคนรักบอล" />
+    <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
+    <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
+  @endif
 
-  <meta property="og:url"         content="http://www.balllife24.com" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="เอาใจคนรักบอล" />
-  <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
-  <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
 
   {{-- <title>เอาใจคนรักบอล</title> --}}
 
@@ -46,7 +54,6 @@
           <fieldset>
             <legend>เข้าสู่ระบบ</legend>
             <br><br>
-            {{ Request::is('news/*')?"garon":"" }}
           </fieldset>
         </div>
       </div>
