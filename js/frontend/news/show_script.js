@@ -2,7 +2,7 @@ $(function(){
   var url = $(".fb-like").attr('data-href'),
       title = $("div.head-news-show > h1").text(),
       des = $("div#descriptions").text();
-  console.log(url, title, des);
+  // console.log(url, title, des);
 
   $("meta[property='og:url']").attr('content', url);
   $("meta[property='og:title']").attr('content', title);
