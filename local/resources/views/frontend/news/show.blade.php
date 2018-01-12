@@ -41,7 +41,7 @@
       <div id="descriptions">
         @php echo $news->des; @endphp
       </div>
-      <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$news->id}}" data-width="100%" data-numposts="5"></div>
+      <div class="fb-comments" data-href="http://www.balllife24.com/news/{{$news->id}}" data-width="100%" data-numposts="5"></div>
     </div>
 
     <div class="col-md-4">
