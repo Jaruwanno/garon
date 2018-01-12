@@ -1,6 +1,7 @@
 $(function(){
-  var url = $(".fb-like").attr('data-href');
-  alert(url);
+  var url = $(".fb-like").attr('data-href'),
+      title = $("div.head-news-show > h1").text();
+  console.log(url, title);
   var id = $('.head-news-show').attr('data-id');
   var ip = $('.head-news-show').attr('data-ip');
 
