@@ -10,10 +10,10 @@
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-md-8" id="main" data-id="{{ $highlight[0]->id }}" data-ip="{{ User::user_ip() }}">
-      <p>{{ $highlight[0]->headline }}</p>
-      <span><i class="fa fa-soccer-ball-o"></i> {{$highlight[0]->zone->name}}</span>
-      <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $highlight[0]->created_at->diffForHumans() }}</span>
+    <div class="col-md-8" id="main" data-id="{{ $highlight->id }}" data-ip="{{ User::user_ip() }}">
+      <p>{{ $highlight->headline }}</p>
+      <span><i class="fa fa-soccer-ball-o"></i> {{$highlight->zone->name}}</span>
+      <span><i class="fa fa-clock-o" aria-hidden="true"></i> {{ $highlight->created_at->diffForHumans() }}</span>
       <span><i class="fa fa-eye"></i> <span id="count"></span></span>
       <span class="facebook-button">
         {{-- <div id="fb-root"></div> --}}
@@ -36,7 +36,7 @@
         </span>
         <span>
           <div class="fb-share-button"
-            data-href="http://localhost/project/public/news/{{$highlight[0]->id}}"
+            data-href="http://localhost/project/public/news/{{$highlight->id}}"
             data-layout="button"
             data-size="small"
             data-mobile-iframe="true">
@@ -53,12 +53,12 @@
       </video> --}}
       <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
-              "poster": "{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}",
+              "poster": "{{ Storage::disk('cover')->has($highlight->path_cover) ? route('image', ['filename' => $highlight->path_cover]) : '' }}",
               "controls":true
           }'>
         {{-- <source src="{{ $highlight[0]->link }}" type="video/mp4"> --}}
         {{-- <source src="https://www.dropbox.com/s/zejmttrki2e4jd5/_E0_B9_80_E0_B8_8A_E0_B8_A5_E0_B8_8B_E0_B8_B5_vs_E.mov?raw=1" type="video/quicktime"> --}}
-        <source src="https://dl.dropboxusercontent.com/s/d3o2tc76g3ybwp0/%E0%B9%80%E0%B8%8A%E0%B8%A5%E0%B8%8B%E0%B8%B5%20vs%20%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%8B%E0%B8%99%E0%B8%AD%E0%B8%A5.mp4" type="video/mp4">
+        <source src="{{ $highlight->shared_links }}" type="video/mp4">
       </video>
       <br><br>
       {{-- <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div> --}}

@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Visitor;
 use App\Zone;
+use User;
 
 class HighlightController extends Controller
 {
@@ -25,19 +26,21 @@ class HighlightController extends Controller
 
     public function index()
     {
-      $clip = Post::where('type', '=', 'highlight')
+      $data = Post::where('type', '=', 'highlight')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-      $data = $clip;
+      $clip = $data;
+      $link = $this->client->listSharedLinks();
 
-      foreach ($data as $key => $value) {
-        $link = $this->client->rpcEndpointRequest('files/get_temporary_link', [
-          'path' => $value->path_video
-        ])['link'];
-
-        $clip[$key]->link = $link;
+      foreach ($link as $key => $value) {
+        foreach($data as $k => $v){
+          if(array_search($v->path_video, $value) == "id"){
+            $shared_links = User::shared_links($value['url']);
+            $clip[$k]->shared_links = $shared_links;
+          }
+        }
+        // $clip[$key]->link = $link;
       }
-
       $aStyle = array(
         'lightgallery/css/lightgallery.min.css',
         'css/backend/clip/style_home.css'
@@ -58,13 +61,13 @@ class HighlightController extends Controller
     public function form()
     {
       $clip = [];
-      $data = $this->client->listFolder('/');
-      foreach ($data['entries'] as $key => $value) {
-        array_push($clip, $value);
-        $link = $this->adapter->getTemporaryLink($value['path_display']);
-        $clip[$key]['link'] = $link;
+      $data = $this->client->listSharedLinks();
+      $clip = $data;
+      foreach ($data as $key => $value) {
+        $url = User::shared_links($value['url']);
+        $clip[$key]['shared_links'] = $url;
       }
-
+      // dd($clip);
       $zones = Zone::orderBy('length')->get();
 //
       $aStyle = array(

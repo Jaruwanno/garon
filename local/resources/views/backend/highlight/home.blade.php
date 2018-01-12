@@ -31,7 +31,7 @@
           </ul>
           <div style="display:none;" id="{{ $c->id }}">
             <video class="lg-video-object lg-html5" controls preload="none">
-              <source src="{{ $c->link }}" type="video/mp4">
+              <source src="{{ $c->shared_links }}" type="video/mp4">
             </video>
           </div>
 

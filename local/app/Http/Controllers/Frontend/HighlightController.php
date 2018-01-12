@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Zone;
 use App\Post;
 use App\Visitor;
+use User;
 
 class HighlightController extends Controller
 {
@@ -120,16 +121,17 @@ class HighlightController extends Controller
     $this->assetShow();
 
     $this->highlight = Post::withCount(['visit' => function($query){
-                    $query->where('type', '=', 'highlight');
-                  }])
-                  ->where('type', '=', 'highlight')
-                  ->where('id', '=', $id)
-                  ->get();
-
-    $link = $this->client->rpcEndpointRequest('files/get_temporary_link', [
-      'path' => $this->highlight[0]->path_video
-    ])['link'];
-    $this->highlight[0]->link = $link;
+      $query->where('type', '=', 'highlight');
+    }])
+    ->where('type', '=', 'highlight')
+    ->where('id', '=', $id)
+    ->first();
+    $link = $this->client->listSharedLinks();
+    foreach($link as $k => $v){
+      if( array_search( $this->highlight->path_video, $v ) == "id" ){
+        $this->highlight->shared_links = User::shared_links($v['url']);
+      }
+    }
 
     $hot = Post::withCount(['visit' => function($query){
                 $query->where('type', '=', 'highlight');

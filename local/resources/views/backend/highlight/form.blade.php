@@ -42,7 +42,7 @@
             <select class="form-control selectpicker" name="clip" data-live-search="true">
               <option value="">เลือก</option>
 @foreach ($clips as $clip)
-              <option data-link="{{ $clip['link'] }}" value="{{ $clip['id'] }}">{{ $clip['name'] }}</option>
+              <option data-link="{{ $clip['shared_links'] }}" value="{{ $clip['id'] }}">{{ $clip['name'] }}</option>
 @endforeach
             </select>
             <div id="clipPreview" class="clip"></div>

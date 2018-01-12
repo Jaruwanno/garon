@@ -132,4 +132,17 @@ class User
   	return min( $bytes, PHP_INT_MAX );
 
   }
+
+  public function shared_links($url){
+    // ตัด www.dropbox.com ทิ้งออกไป
+    $find_pattern = "/www.dropbox/i";
+    $replace_pattern = "dl.dropboxusercontent";
+    $link = preg_replace($find_pattern, $replace_pattern, $url);
+
+    // ตัด dl? ออกไป
+    $find_pattern = "/\?dl=.*/i";
+    $replace_pattern = "";
+    $links = preg_replace($find_pattern, $replace_pattern, $link);
+    return $links;
+  }
 }
