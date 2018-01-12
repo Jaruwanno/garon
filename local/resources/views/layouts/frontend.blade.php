@@ -8,6 +8,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+  <meta property="og:url"         content="http://www.balllife24.com/news/47" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="เห้ยไอสัส" />
+  <meta property="og:description" content="Your description" />
+  <meta property="og:image"       content="{{ asset('pic/vegus24hr.jpg') }}" />
+
   <title>เอาใจคนรักบอล</title>
 
   <!-- Styles -->
