@@ -12,7 +12,7 @@
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="{{ $news->headline }}" />
     <meta property="og:description" content="{{ $news->des }} "/>
-    <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($news->path_cover) ? asset('local/storage/app/public/cover'.$news->path_cover):asset('pic/file_error.png')  ) }}" />
+    <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($news->path_cover) ? asset('local/storage/app/public/cover/'.$news->path_cover):asset('pic/file_error.png')  ) }}" />
   @else
     <meta property="og:url"         content="http://www.balllife24.com" />
     <meta property="og:type"        content="website" />
