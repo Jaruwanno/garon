@@ -11,10 +11,10 @@
   <meta property="og:url"         content="" />
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="" />
-  <meta property="og:description" content="Your description" />
+  <meta property="og:description" content="" />
   <meta property="og:image"       content="{{ asset('pic/file_error.png') }}" />
 
-  <title>เอาใจคนรักบอล</title>
+  {{-- <title>เอาใจคนรักบอล</title> --}}
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset( 'css/bootstrap/bootstrap.min.css' ) }}">
