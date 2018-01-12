@@ -1,5 +1,5 @@
 $(function(){
-
+  alert();
   var id = $('.head-news-show').attr('data-id');
   var ip = $('.head-news-show').attr('data-ip');
 
