@@ -1,15 +1,15 @@
 $(function(){
-  var url = $(".fb-like").attr('data-href'),
-      title = $("div.head-news-show > h1").text(),
-      des = $("div#descriptions").text(),
-      image = $("div.head-news-show > img").attr('src');
-  console.log(image);
-
-  $("meta[property='og:url']").attr('content', url);
-  $("meta[property='og:title']").attr('content', title);
-  $("meta[property='og:description']").attr('content', des);
-  $("meta[property='og:image']").attr('content', image);
-
+  // var url = $(".fb-like").attr('data-href'),
+  //     title = $("div.head-news-show > h1").text(),
+  //     des = $("div#descriptions").text(),
+  //     image = $("div.head-news-show > img").attr('src');
+  // console.log(image);
+  //
+  // $("meta[property='og:url']").attr('content', url);
+  // $("meta[property='og:title']").attr('content', title);
+  // $("meta[property='og:description']").attr('content', des);
+  // $("meta[property='og:image']").attr('content', image);
+  //
   alert($("meta[property='og:title']").attr('content'));
 
   var id = $('.head-news-show').attr('data-id');

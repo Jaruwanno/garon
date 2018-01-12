@@ -8,11 +8,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <meta property="og:url"         content="" />
+  <meta property="og:url"         content="http://www.balllife24.com" />
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image"       content="" />
+  <meta property="og:title"       content="เอาใจคนรักบอล" />
+  <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
+  <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
 
   {{-- <title>เอาใจคนรักบอล</title> --}}
 
