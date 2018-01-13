@@ -46,9 +46,9 @@ div.news div.panel-default div.panel-footer{
   font-size:16px;
 }
 
-.rating-desc .fb-like{
+/*.rating-desc .fb-like{
   margin-top:5px;
-}
+}*/
 
 .section-box hr {
   margin-top: 0;
@@ -72,10 +72,10 @@ div.news div.panel-default div.panel-footer{
 
 }
 
-.leagues-list img.leagues-icon{
+/*.leagues-list img.leagues-icon{
   width: 25px;
   margin-right: 5%;
-}
+}*/
 
 .leagues-list a > i{
   margin-right: 5%;

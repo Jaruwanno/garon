@@ -14,4 +14,9 @@ let mix = require('laravel-mix');
 // mix.js('resources/assets/js/app.js', 'public/js')
 //    .sass('resources/assets/sass/app.scss', 'public/css');
 
-mix.sass('resources/assets/sass/frontend/main.scss', '../../css/frontend');
+// MAIN STYLE
+mix.sass('resources/assets/sass/frontend/main_style.scss', '../../css/frontend');
+
+
+// NEWS STYLE
+// mix.sass('resources/assets/sass/frontend/news/news_style.scss', '../../css/frontend/news');

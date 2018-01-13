@@ -17,7 +17,7 @@
         <span class="icon-bar"></span>
         <h3>เมนู</h3>
       </button>
-      <div class="sidebar-collapse" style="padding:0;">
+      <div class="sidebar-collapse">
         <h1>รายชื่อลีก</h1>
         <div class="leagues-list">
           <ul class="nav">
@@ -91,12 +91,8 @@
                   {{ User::short_text($n->des, 160) }}<a href="{{ route('news.show', ['id'=>$n->id]) }}"> &nbspอ่านเพิ่มเติม...</a>
                 </p>
                 <hr />
-                <div id="fb-root"></div>
                 <div class="row rating-desc">
                   <div class="col-md-12">
-                    <span><i class="fa fa-soccer-ball-o" aria-hidden="true"></i>&nbsp&nbsp{{ $n->zone->name }}</span>&nbsp&nbsp|
-                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp&nbsp{{ $n->created_at->diffForHumans() }}</span>&nbsp&nbsp|
-                    <span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp&nbsp{{ $n->visit_count }}</span>
                     <div id="fb-root"></div>
                     <script>
                       (function(d, s, id) {
@@ -107,6 +103,10 @@
                         fjs.parentNode.insertBefore(js, fjs);
                       }(document, 'script', 'facebook-jssdk'));
                     </script>
+                    <span><i class="fa fa-soccer-ball-o" aria-hidden="true"></i>&nbsp&nbsp{{ $n->zone->name }}</span>&nbsp&nbsp|
+                    <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp&nbsp{{ $n->created_at->diffForHumans() }}</span>&nbsp&nbsp|
+                    <span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp&nbsp{{ $n->visit_count }}</span>
+
                     <span>
                       <div class="fb-like"
                            data-href="http://www.balllife24.com/news/{{$n->id}}"
@@ -129,51 +129,6 @@
 @empty
 
 @endforelse
-{{-- @forelse ($news as $n)
-
-        <div class="col-md-6 news">
-          <div class="panel panel-default">
-            <div class="panel-image">
-              <a href="{{ route('news.show', ['id' => $n->id]) }}">
-@if ( Storage::disk('cover')->has($n->path_cover) )
-                <img src="{{ asset( 'cover/' . $n->path_cover ) }}">
-@else
-                <img src="{{ asset( 'pic/file_error.png' ) }}">
-@endif
-              </a>
-            </div>
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.10&appId=1758381751148365";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-            <div class="panel-footer">
-              <h3 class="news-head">{{ $n->headline }}</h3>
-              <div class="footer">
-                <span class="news-time">
-                  {{ $n->created_at->diffForHumans() }}
-                </span>
-                <span class="fb-like pull-right"
-                  data-href="https://developers.facebook.com/docs/plugins/"
-                  data-layout="button_count"
-                  data-action="like"
-                  data-size="small"
-                  data-show-faces="false"
-                  data-share="false">
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-@empty
-        <div class="alert alert-info"><h1 class="text-center">ไม่พบข้อมูล</h1></div>
-@endforelse --}}
       </div>
       {{-- .row --}}
       <div class="text-center">
