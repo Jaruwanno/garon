@@ -67,7 +67,7 @@
 
     <div class="col-md-9">
       <div class="row">
-@forelse ($news as $n) 
+@forelse ($news as $n)
         <div class='col-md-12'>
           <div class="well well-sm">
             <div class="row">
@@ -97,14 +97,24 @@
                     <span><i class="fa fa-soccer-ball-o" aria-hidden="true"></i>&nbsp&nbsp{{ $n->zone->name }}</span>&nbsp&nbsp|
                     <span><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp&nbsp{{ $n->created_at->diffForHumans() }}</span>&nbsp&nbsp|
                     <span><i class="fa fa-eye" aria-hidden="true"></i>&nbsp&nbsp{{ $n->visit_count }}</span>
-                    <span class="fb-like pull-right"
-                      data-href="https://developers.facebook.com/docs/plugins/"
-                      data-layout="button_count"
-                      data-action="like"
-                      data-size="small"
-                      data-show-faces="false"
-                      data-share="false">
-                    </span>
+                    <div id="fb-root"></div>
+                    <script>
+                      (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.11&appId=1853870104914494';
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));
+                    </script>
+                    <div class="fb-like"
+                         data-href="http://www.balllife24.com/news/{{$n->id}}" 
+                         data-layout="button_count"
+                         data-action="like"
+                         data-size="small"
+                         data-show-faces="true"
+                         data-share="false">
+                    </div>
                   </div>
                 </div>
               </div>

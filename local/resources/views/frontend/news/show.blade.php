@@ -27,7 +27,7 @@
              data-href="http://www.balllife24.com/news/{{$news->id}}"
              data-layout="button_count"
              data-action="like"
-             data-size="small"
+             data-size="small" 
              data-show-faces="true"
              data-share="true">
         </div>
