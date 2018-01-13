@@ -109,9 +109,9 @@
                   <i class="fa fa-3x fa-play-circle" aria-hidden="true"></i>
                 </div>
               </a>
-              <div class="carousel-caption">
+              {{-- <div class="carousel-caption">
                 <h1 class="carousel-caption-header">{{ $value->headline }}</h1>
-              </div>
+              </div> --}}
             </div>
 @if ($i==3) @break @endif
 @php $i++; @endphp
@@ -146,9 +146,9 @@
               <div class="play">
                 <i class="fa fa-play-circle" aria-hidden="true"></i>
               </div>
-              <div class="caption">
+              {{-- <div class="caption">
                 <h3>{{ $value->headline }}</h3>
-              </div>
+              </div> --}}
             </a>
           </div>
 @if ($i==6) @break @endif
