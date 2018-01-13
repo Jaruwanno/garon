@@ -19,4 +19,4 @@ let mix = require('laravel-mix');
 
 
 // NEWS STYLE
-mix.sass('resources/assets/sass/frontend/news/news_style.scss', '../../css/frontend/news');
+mix.sass('resources/assets/sass/frontend/news/news.scss', '../../css/frontend/news');

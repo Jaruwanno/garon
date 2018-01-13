@@ -1,0 +1,100 @@
+div.section-box {
+  padding-top: 10px;
+}
+
+div.section-box > h3 > a {
+  color: #000;
+}
+
+div.section-box > h3 > a:hover {
+  color: #8B0000;
+  text-decoration: none;
+}
+
+div.section-box > p {
+  font-size: 20px;
+}
+
+div.section-box > p > a {
+  font-size: 16px;
+}
+
+div.section-box hr {
+  margin-top: 0;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #c7c7c7;
+}
+
+div.section-box div.rating-desc > div span {
+  font-size: 16px;
+}
+
+div.section-box div.rating-desc > div span:last-of-type {
+  float: right;
+  margin-top: 4px;
+}
+
+div.sidebar-collapse {
+  padding: 0;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li {
+  margin-bottom: 3px;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li.active a {
+  background: url("/pic/active.png") no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li:not(:last-child) {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li > a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #F5F5F5;
+  border-left: 5px solid #8B0000;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li > a:hover {
+  background-color: #fff;
+  color: #5b9bd1;
+}
+
+div.sidebar-collapse div.search-leagues {
+  background: red;
+}
+
+button.detail {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  button.detail {
+    display: none;
+  }
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #000;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  color: #000 !important;
+}
+
+.pagination > li.active span,
+.pagination > li.active span:hover {
+  background-color: #B22222 !important;
+  border-color: #B22222 !important;
+}
+
