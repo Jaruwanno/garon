@@ -107,14 +107,16 @@
                         fjs.parentNode.insertBefore(js, fjs);
                       }(document, 'script', 'facebook-jssdk'));
                     </script>
-                    <div class="fb-like"
-                         data-href="http://www.balllife24.com/news/{{$n->id}}" 
-                         data-layout="button_count"
-                         data-action="like"
-                         data-size="small"
-                         data-show-faces="true"
-                         data-share="false">
-                    </div>
+                    <span>
+                      <div class="fb-like"
+                           data-href="http://www.balllife24.com/news/{{$n->id}}"
+                           data-layout="button_count"
+                           data-action="like"
+                           data-size="small"
+                           data-show-faces="true"
+                           data-share="false">
+                      </div>
+                    </span>
                   </div>
                 </div>
               </div>
