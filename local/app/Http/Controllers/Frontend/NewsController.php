@@ -93,7 +93,7 @@ class NewsController extends Controller
         'css/frontend/news/style.css'
       );
       $aJs = array(
-        'js/frontend/news/omeza.js'
+        'js/frontend/news/show_js.js'
       );
 
       return view('frontend.news.show',[
