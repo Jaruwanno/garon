@@ -23,7 +23,7 @@ class NewsController extends Controller
          ->paginate(6);
       $aCss = array(
         'css/frontend/datepicker/datepicker.css',
-        'css/frontend/news/style.css'
+        'css/frontend/news/news_show.css'
       );
       $aJs = array(
         'js/frontend/datepicker/moment.js',
@@ -64,7 +64,7 @@ class NewsController extends Controller
 
       $aCss = array(
         'css/frontend/datepicker/datepicker.css',
-        'css/frontend/news/style.css'
+        'css/frontend/news/news_show.css'
       );
       $aJs = array(
         'js/frontend/datepicker/moment.js',
@@ -90,7 +90,7 @@ class NewsController extends Controller
       }])->orderBy('visit_count', 'desc')->limit(4)->get();
 
       $aCss = array(
-        'css/frontend/news/style.css'
+        'css/frontend/news/news_show.css'
       );
       $aJs = array(
         'js/frontend/news/show_js.js'

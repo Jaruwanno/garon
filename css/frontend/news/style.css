@@ -174,7 +174,7 @@ ul.other li:not(:last-child){
 .hot-news .panel-body{
   border-radius: 0;
   border:none;
- box-shadow: none;
+  box-shadow: none;
 }
 .hot-news > .panel-heading{
   background:#B22222;

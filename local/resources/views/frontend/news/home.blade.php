@@ -45,7 +45,7 @@
           </ul>
         </div><!-- /.leagues-list-->
         <br>
-        <div class="search-leages">
+        <div class="search-leagues">
           <div class="form-group">
             <label for="news-text"><h1>ค้นหาข่าว</h1></label>
             <form action="{{ route('news.find') }}" method="POST">

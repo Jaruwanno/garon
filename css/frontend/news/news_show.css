@@ -1,0 +1,202 @@
+div.section-box {
+  padding-top: 10px;
+}
+
+div.section-box > h3 > a {
+  color: #000;
+}
+
+div.section-box > h3 > a:hover {
+  color: #8B0000;
+  text-decoration: none;
+}
+
+div.section-box > p {
+  font-size: 20px;
+}
+
+div.section-box > p > a {
+  font-size: 16px;
+}
+
+div.section-box hr {
+  margin-top: 0;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #c7c7c7;
+}
+
+div.section-box div.rating-desc > div span {
+  font-size: 16px;
+}
+
+div.section-box div.rating-desc > div span:last-of-type {
+  float: right;
+  margin-top: 4px;
+}
+
+div.sidebar-collapse {
+  padding: 0;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li {
+  margin-bottom: 3px;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li.active a {
+  background: url("/pic/active.png") no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li:not(:last-child) {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li > a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 400;
+  background-color: #F5F5F5;
+  border-left: 5px solid #8B0000;
+  margin-left: -5px;
+  cursor: pointer;
+}
+
+div.sidebar-collapse div.leagues-list > ul.nav > li > a:hover {
+  background-color: #fff;
+  color: #5b9bd1;
+}
+
+div.sidebar-collapse div.search-leagues input {
+  font-size: 20px;
+  border-radius: 0;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border: 0;
+}
+
+div.sidebar-collapse div.search-leagues form {
+  position: relative;
+}
+
+div.sidebar-collapse div.search-leagues form > button {
+  position: absolute;
+  right: 3%;
+  bottom: 7%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+  background-color: inherit;
+  outline: none;
+  border: none;
+}
+
+div.sidebar-collapse #datetimepicker1 {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+button.detail {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  button.detail {
+    display: none;
+  }
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #000;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  color: #000 !important;
+}
+
+.pagination > li.active span,
+.pagination > li.active span:hover {
+  background-color: #B22222 !important;
+  border-color: #B22222 !important;
+}
+
+div.head-news-show > span {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+div.head-news-show > span > i {
+  font-size: 20px;
+}
+
+div.head-news-show > span.facebook-button div.fb-like > span {
+  vertical-align: middle !important;
+}
+
+@media screen and (min-width: 768px) {
+  div.head-news-show > span.facebook-button {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.head-news-show > span.facebook-button {
+    display: block;
+  }
+}
+
+ul.other {
+  list-style: none;
+}
+
+ul.other li > img {
+  width: 15px;
+}
+
+ul.other li > a {
+  color: #000;
+}
+
+ul.other li > a:hover,
+ul.other li > a:active {
+  text-decoration: none;
+  color: red;
+}
+
+ul.other li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+div.hot-news {
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+div.hot-news div.panel-heading {
+  background: #B22222;
+  color: #fff;
+}
+
+div.hot-news div.panel-body img {
+  width: 100%;
+}
+
+div.hot-news div.panel-body > div > div h1 {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+div.hot-news div.panel-body > div > div p,
+div.hot-news div.panel-body > div > div a {
+  font-size: 16px;
+}
+
