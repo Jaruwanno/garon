@@ -78,12 +78,14 @@ button.detail {
   }
 }
 
-.pagination > li > a {
+.pagination > li > a,
+.pagination > li > span {
   margin: 0 5px;
   color: #000;
 }
 
-.pagination > li > a:hover {
+.pagination > li > a:hover,
+.pagination > li > span:hover {
   color: #000 !important;
 }
 

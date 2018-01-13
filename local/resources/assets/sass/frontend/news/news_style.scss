@@ -77,7 +77,8 @@ button.detail{
 }
 
 .pagination > li{
-  & > a{
+  & > a,
+  & > span{
     margin: 0 5px;
     color:#000;
     &:hover{
