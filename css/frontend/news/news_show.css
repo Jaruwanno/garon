@@ -152,6 +152,10 @@ div.head-news-show > span.facebook-button div.fb-like > span {
   }
 }
 
+div.head-news-show > img {
+  width: 100%;
+}
+
 ul.other {
   list-style: none;
 }
