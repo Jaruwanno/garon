@@ -53,7 +53,7 @@
         <div class="modal-body">
           <fieldset>
             <legend>เข้าสู่ระบบ</legend>
-            <button type="button" class="btn btn-primary btn-lg btn-block">
+            <button type="button" class="btn btn-primary btn-block">
               <i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp&nbsp
               Facebook
             </button>
