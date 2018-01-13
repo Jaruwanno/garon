@@ -68,3 +68,13 @@ div.sidebar-collapse div.leagues-list > ul.nav > li > a:hover {
   color: #5b9bd1;
 }
 
+button.detail {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  button.detail {
+    display: none;
+  }
+}
+
