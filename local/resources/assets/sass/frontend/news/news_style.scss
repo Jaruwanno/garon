@@ -77,9 +77,11 @@ button.detail{
 }
 
 .pagination > li{
-  &.active > span,
-  &.active > span:hover{
-    background-color: #B22222 !important;
-    border-color:#B22222 !important;
+  &.active{
+    span,
+    span:hover{
+      background-color: #B22222 !important;
+      border-color:#B22222 !important;
+    }
   }
 }

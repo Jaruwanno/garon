@@ -78,8 +78,8 @@ button.detail {
   }
 }
 
-.pagination > li.active > span,
-.pagination > li.active > span:hover {
+.pagination > li.active span,
+.pagination > li.active span:hover {
   background-color: #B22222 !important;
   border-color: #B22222 !important;
 }
