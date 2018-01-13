@@ -23,7 +23,7 @@ class NewsController extends Controller
          ->paginate(6);
       $aCss = array(
         'css/frontend/datepicker/datepicker.css',
-        'css/frontend/news/style.css'
+        'css/frontend/news/news.css'
       );
       $aJs = array(
         'js/frontend/datepicker/moment.js',
