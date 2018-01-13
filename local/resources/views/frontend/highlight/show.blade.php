@@ -61,6 +61,9 @@
         <source src="{{ $highlight->shared_links }}" type="video/mp4">
       </video>
       <br><br>
+      <div id="descriptions">
+        @php echo $highlight->des; @endphp
+      </div>
       {{-- <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div> --}}
     </div>
     {{--  /col-md-8--}}
