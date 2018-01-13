@@ -42,7 +42,7 @@
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-md" role="document">
+    <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -53,6 +53,7 @@
         <div class="modal-body">
           <fieldset>
             <legend>เข้าสู่ระบบ</legend>
+            <br>
             <button type="button" class="btn btn-primary btn-lg btn-block">
               <i class="fa fa-facebook-official" aria-hidden="true"></i>
               เข้าสู่ระบบ
