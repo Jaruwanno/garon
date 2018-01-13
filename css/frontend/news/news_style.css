@@ -68,6 +68,10 @@ div.sidebar-collapse div.leagues-list > ul.nav > li > a:hover {
   color: #5b9bd1;
 }
 
+div.sidebar-collapse div.search-leagues {
+  display: none;
+}
+
 button.detail {
   margin-bottom: 30px;
 }
