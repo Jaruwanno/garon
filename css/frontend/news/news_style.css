@@ -69,7 +69,7 @@ div.sidebar-collapse div.leagues-list > ul.nav > li > a:hover {
 }
 
 div.sidebar-collapse div.search-leagues {
-  display: none;
+  background: red;
 }
 
 button.detail {
