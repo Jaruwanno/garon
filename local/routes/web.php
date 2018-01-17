@@ -11,8 +11,8 @@
 |
 */
 //frontend
-Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 //home
 Route::get('/', 'Frontend\HomeController@index')->name('home');
