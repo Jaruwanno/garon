@@ -30,17 +30,11 @@
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.11&appId=1758381751148365';
+          js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.11&appId=2052941631609007';
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
       </span>
       <div class="clearfix"></div>
-      {{-- <video src="{{ $highlight[0]->link }}"
-         type='video/mp4'
-         controls
-         width="100%"
-         poster="{{ Storage::disk('cover')->has($highlight[0]->path_cover) ? route('image', ['filename' => $highlight[0]->path_cover]) : '' }}">
-      </video> --}}
       <video class="video-js vjs-16-9 vjs-big-play-centered" preload="auto"
           data-setup='{
               "poster": "{{ Storage::disk('cover')->has($highlight->path_cover) ? route('image', ['filename' => $highlight->path_cover]) : '' }}",
