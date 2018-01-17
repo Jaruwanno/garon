@@ -15,14 +15,6 @@
       <span><i class="fa fa-clock-o fa-lg"></i> {{ $news->created_at->diffForHumans() }}</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       <span><i class="fa fa-eye fa-lg"></i> <span id="count"></span></span>
       <span class="facebook-button">
-        <div class="fb-like"
-             data-href="https://www.balllife24.com/news/{{$news->id}}"
-             data-layout="button_count"
-             data-action="like"
-             data-size="small"
-             data-show-faces="true"
-             data-share="true">
-        </div>
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
@@ -31,6 +23,14 @@
           js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.11&appId=2052941631609007';
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="fb-like"
+             data-href="https://www.balllife24.com/news/{{$news->id}}"
+             data-layout="button_count"
+             data-action="like"
+             data-size="small"
+             data-show-faces="true"
+             data-share="true">
+        </div>
       </span>
 @if ( Storage::disk('cover')->has($news->path_cover) )
       <img src="{{ route('image', ['filename' => $news->path_cover]) }}">
