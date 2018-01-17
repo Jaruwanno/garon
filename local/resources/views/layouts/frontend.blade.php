@@ -14,7 +14,7 @@
     <meta property="og:description" content="{{ $news->des }} "/>
     <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($news->path_cover) ? asset('local/storage/app/public/cover/'.$news->path_cover):asset('pic/file_error.png')  ) }}" />
   @elseif ( Request::is('highlight/*') )
-    <meta property="og:url"         content="http://www.balllife24.com/highlight/{{$news->id}}" />
+    <meta property="og:url"         content="http://www.balllife24.com/highlight/{{$highlight->id}}" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="{{ $highlight->headline }}" />
     <meta property="og:description" content="{{ $highlight->des }} "/>
