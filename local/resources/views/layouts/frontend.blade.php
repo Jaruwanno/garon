@@ -16,7 +16,7 @@
   @else
     <meta property="og:url"         content="http://www.balllife24.com" />
     <meta property="og:type"        content="website" />
-    <meta property="og:title"       content="เอาใจคนรักบอล" />
+    <meta property="og:title"       content="balllife24" />
     <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
     <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
   @endif
