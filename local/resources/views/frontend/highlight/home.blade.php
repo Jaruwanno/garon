@@ -19,7 +19,7 @@
       </button>
 
       <div class="sidebar-collapse">
-        <h1>ไฮไลท์ลีก</h1>
+        <h1>ไฮไลท์ลีก</h1> 
         <div class="leagues-list">
           <ul class="nav">
             <li class="
