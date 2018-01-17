@@ -69,15 +69,6 @@
         <div class="panel-body">
           <div class="row">
 @foreach ($hot as $h)
-    @php
-    $pat = "/(<.*?>)|(&.*?;)/";
-    $replace = "";
-    $str = preg_replace($pat, $replace, $h->des);
-
-    // $des = mb_substr($str, 0, 80, 'utf-8');
-    $des = str_replace_array($pat, 'garon', $h->des);
-
-    @endphp
           <div class="col-sm-5">
             <div class="row">
               <a href="{{ route('highlight.show', ['id' => $h->id]) }}">

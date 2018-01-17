@@ -146,5 +146,11 @@ class User
     return $links;
   }
 
-  
+  public function del_tag_html($string){
+    $pat = "/(<.*?>)|(&.*?;)/";
+    $replace = "";
+    $str = preg_replace($pat, $replace, $string);
+    $des = mb_substr($str, 0, 80, 'utf-8');
+    return $des;
+  }
 }
