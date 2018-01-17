@@ -145,4 +145,6 @@ class User
     $links = preg_replace($find_pattern, $replace_pattern, $link);
     return $links;
   }
+
+  public function
 }

@@ -8,6 +8,7 @@
 @section('content')
 
 <br>
+
 <div class="container">
   <div class="row">
     <div class="col-md-8" id="main" data-id="{{ $highlight->id }}" data-ip="{{ User::user_ip() }}">
@@ -73,7 +74,8 @@
     $replace = "";
     $str = preg_replace($pat, $replace, $h->des);
 
-    $des = mb_substr($str, 0, 80, 'utf-8');
+    // $des = mb_substr($str, 0, 80, 'utf-8');
+    $des = str_replace_array($pat, 'garon', $h->des);
 
     @endphp
           <div class="col-sm-5">
