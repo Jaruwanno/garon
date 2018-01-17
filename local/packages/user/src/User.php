@@ -146,5 +146,5 @@ class User
     return $links;
   }
 
-  public function
+  
 }
