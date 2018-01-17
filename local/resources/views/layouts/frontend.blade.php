@@ -7,7 +7,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  {{-- @if (Request::is('news/*'))
+  @if (Request::is('news/*'))
     <meta property="og:url"         content="http://www.balllife24.com/news/{{$news->id}}" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="{{ $news->headline }}" />
@@ -25,13 +25,7 @@
     <meta property="og:title"       content="Balllife24" />
     <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
     <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
-  @endif --}}
-
-  <meta property="og:url"         content="http://www.balllife24.com" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Balllife24" />
-  <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
-  <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
+  @endif
 
   <link rel="icon" href="{{ asset('pic/b_icon.png') }}">
   <!-- Styles -->
