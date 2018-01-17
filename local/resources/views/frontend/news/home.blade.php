@@ -99,7 +99,7 @@
                         var js, fjs = d.getElementsByTagName(s)[0];
                         if (d.getElementById(id)) return;
                         js = d.createElement(s); js.id = id;
-                        js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.11&appId=1853870104914494';
+                        js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.11&appId=2052941631609007';
                         fjs.parentNode.insertBefore(js, fjs);
                       }(document, 'script', 'facebook-jssdk'));
                     </script>
@@ -109,7 +109,7 @@
 
                     <span>
                       <div class="fb-like"
-                           data-href="http://www.balllife24.com/news/{{$n->id}}"
+                           data-href="https://www.balllife24.com/news/{{$n->id}}"
                            data-layout="button_count"
                            data-action="like"
                            data-size="small"
