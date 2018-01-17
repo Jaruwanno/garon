@@ -22,7 +22,7 @@
              data-layout="button_count"
              data-action="like"
              data-size="small"
-             data-show-faces="true"
+             data-show-faces="false"
              data-share="true">
         </div>
         <div id="fb-root"></div>
@@ -46,7 +46,7 @@
       <div id="descriptions">
         @php echo $highlight->des; @endphp
       </div>
-      {{-- <div class="fb-comments" data-href="http://www.rakball24.com/news/{{$highlight[0]->id}}" data-width="100%" data-numposts="5"></div> --}}
+      <div class="fb-comments" data-href="https://www.balllife24.com/highlight/{{$highlight->id}}" data-width="100%" data-numposts="5"></div>
     </div>
     {{--  /col-md-8--}}
     <div class="col-md-4">
