@@ -21,9 +21,7 @@
     <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
   @endif
 
-
-  {{-- <title>เอาใจคนรักบอล</title> --}}
-
+  <link rel="icon" href="{{ asset('pic/b_icon.png') }}">
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset( 'css/bootstrap/bootstrap.min.css' ) }}">
   <link rel="stylesheet" href="{{ asset( 'css/font awesome/css/font-awesome.min.css' ) }}">
