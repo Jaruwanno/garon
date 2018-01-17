@@ -14,9 +14,9 @@
     <meta property="og:description" content="{{ $news->des }} "/>
     <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($news->path_cover) ? asset('local/storage/app/public/cover/'.$news->path_cover):asset('pic/file_error.png')  ) }}" />
   @else
-    <meta property="og:url"         content="http://www.balllife24.com" />
+    <meta property="og:url"         content="Balllife24" />
     <meta property="og:type"        content="website" />
-    <meta property="og:title"       content="balllife24" />
+    <meta property="og:title"       content="Balllife24" />
     <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
     <meta property="og:image"       content="{{ asset('pic/cover-balllife24.png') }}" />
   @endif
