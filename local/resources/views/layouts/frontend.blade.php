@@ -7,6 +7,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta property="fb:app_id" content="2052941631609007" />
   @if (Request::is('news/*'))
     <meta property="og:url"         content="https://www.balllife24.com/news/{{$news->id}}" />
     <meta property="og:type"        content="website" />

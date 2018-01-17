@@ -16,7 +16,7 @@
       <span><i class="fa fa-eye fa-lg"></i> <span id="count"></span></span>
       <span class="facebook-button">
         <div id="fb-root"></div>
-        <script>(function(d, s, id) {
+        <script>(function(d, s, id) { 
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
