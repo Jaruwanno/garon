@@ -40,8 +40,6 @@
               "poster": "{{ Storage::disk('cover')->has($highlight->path_cover) ? route('image', ['filename' => $highlight->path_cover]) : '' }}",
               "controls":true
           }'>
-        {{-- <source src="{{ $highlight[0]->link }}" type="video/mp4"> --}}
-        {{-- <source src="https://www.dropbox.com/s/zejmttrki2e4jd5/_E0_B9_80_E0_B8_8A_E0_B8_A5_E0_B8_8B_E0_B8_B5_vs_E.mov?raw=1" type="video/quicktime"> --}}
         <source src="{{ $highlight->shared_links }}" type="video/mp4">
       </video>
       <br><br>
