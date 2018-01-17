@@ -16,7 +16,7 @@
       <span><i class="fa fa-eye fa-lg"></i> <span id="count"></span></span>
       <span class="facebook-button">
         <div class="fb-like"
-             data-href="http://www.balllife24.com/news/{{$news->id}}"
+             data-href="https://www.balllife24.com/news/{{$news->id}}"
              data-layout="button_count"
              data-action="like"
              data-size="small"

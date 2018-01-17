@@ -8,19 +8,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   @if (Request::is('news/*'))
-    <meta property="og:url"         content="http://www.balllife24.com/news/{{$news->id}}" />
+    <meta property="og:url"         content="https://www.balllife24.com/news/{{$news->id}}" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="{{ $news->headline }}" />
     <meta property="og:description" content="{{ User::del_tag_html($news->des) }} "/>
     <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($news->path_cover) ? asset('local/storage/app/public/cover/'.$news->path_cover):asset('pic/file_error.png')  ) }}" />
   @elseif ( Request::is('highlight/*') )
-    <meta property="og:url"         content="http://www.balllife24.com/highlight/{{$highlight->id}}" />
+    <meta property="og:url"         content="https://www.balllife24.com/highlight/{{$highlight->id}}" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="{{ $highlight->headline }}" />
     <meta property="og:description" content="{{ User::del_tag_html($highlight->des) }} "/>
     <meta property="og:image"       content="{{ ( Storage::disk('cover')->has($highlight->path_cover) ? asset('local/storage/app/public/cover/'.$highlight->path_cover):asset('pic/file_error.png')  ) }}" />
   @else
-    <meta property="og:url"         content="http://www.balllife24.com" />
+    <meta property="og:url"         content="https://www.balllife24.com" />
     <meta property="og:type"        content="website" />
     <meta property="og:title"       content="Balllife24" />
     <meta property="og:description" content="เชิญร่วมสนุกกันได้ที่ balllife24 กันนะครับ" />
