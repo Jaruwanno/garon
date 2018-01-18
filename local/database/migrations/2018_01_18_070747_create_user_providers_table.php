@@ -15,6 +15,9 @@ class CreateUserProvidersTable extends Migration
     {
         Schema::create('user_providers', function (Blueprint $table) {
             $table->increments('id');
+            $table->foreign('user_id')unsigned()->references('id')->on('users');
+            $table->string('avatar_url');
+            $table->string('provider');
             $table->timestamps();
         });
     }
