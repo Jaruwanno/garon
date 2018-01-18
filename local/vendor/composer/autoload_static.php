@@ -403,6 +403,7 @@ class ComposerStaticInit307965aacb810b2ed3a0bc8d9948a263
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\UamRole' => __DIR__ . '/../..' . '/app/UamRole.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\UserProviders' => __DIR__ . '/../..' . '/app/UserProviders.php',
         'App\\Visitor' => __DIR__ . '/../..' . '/app/Visitor.php',
         'App\\Zone' => __DIR__ . '/../..' . '/app/Zone.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',

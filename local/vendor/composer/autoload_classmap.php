@@ -43,6 +43,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\UamRole' => $baseDir . '/app/UamRole.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\UserProviders' => $baseDir . '/app/UserProviders.php',
     'App\\Visitor' => $baseDir . '/app/Visitor.php',
     'App\\Zone' => $baseDir . '/app/Zone.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
