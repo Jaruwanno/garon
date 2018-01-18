@@ -31,10 +31,10 @@ class User extends Authenticatable
 
     public function hasRole($role)
     {
-        if( $this->roles()->where( 'access_name', $role )->first() ){
-          return true;
-        }
-        return false;
+      if( $this->roles()->where( 'access_name', $role )->first() ){
+        return true;
+      }
+      return false;
     }
 
 
