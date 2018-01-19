@@ -60,7 +60,7 @@ class LoginController extends Controller
         }
         $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
                                       ->first();
-        dd($userProviders);
+        dd($socialProviders);
 
         if(!$userProviders){
           // $user = User::firstOrCreate(
