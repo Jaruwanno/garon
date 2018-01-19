@@ -50,8 +50,11 @@ class LoginController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
+        try{
+          $user = Socialite::driver('facebook')->user();
+        }catch(\Exception $e){
+          return redirect('/');
+        }
         dd($user);
-        // $user->token;
     }
 }
