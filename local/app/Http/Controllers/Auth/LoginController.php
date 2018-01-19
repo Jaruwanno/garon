@@ -62,11 +62,11 @@ class LoginController extends Controller
                                       ->first();
 
         if(!$userProviders){
-          $user = User::create(
-            ['name' => $socialProviders->getName()],
-            ['email' => $socialProviders->getEmail()],
-            ['password' => bcrypt('123456')]
-          );
+          $user = new User;
+          $user->name = $socialProviders->getName();
+          $user->email = $socialProviders->getEmail();
+          $user->password = bcrypt('abc456');
+          $user->save();
         }
 
         auth()->login($user);
