@@ -60,12 +60,16 @@ class LoginController extends Controller
         }
         $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
                                       ->first();
-        dd($socialProviders);
 
         if(!$userProviders){
-          // $user = User::firstOrCreate(
-          //   ['name' => ]
-          // );
+          $user = User::firstOrCreate(
+            ['name' => $socialProviders->getName()],
+            ['email' => $socialProviders->getEmail()],
+            ['password' => encrypt(123456)]
+          );
         }
+
+        auth()->login($user);
+        return redirect('/');
     }
 }
