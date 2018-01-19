@@ -62,7 +62,7 @@ class LoginController extends Controller
                                       ->first();
 
         if(!$userProviders){
-          $user = User::firstOrCreate(
+          $user = User::create(
             ['name' => $socialProviders->getName()],
             ['email' => $socialProviders->getEmail()],
             ['password' => bcrypt('123456')]
