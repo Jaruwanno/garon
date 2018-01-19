@@ -16,9 +16,7 @@ class CreateUamRolesTable extends Migration
         Schema::create('uam_roles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('role_name', 20);
             $table->string('access_name', 100);
-
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

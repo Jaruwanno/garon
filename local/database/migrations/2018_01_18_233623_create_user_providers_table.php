@@ -20,7 +20,6 @@ class CreateUserProvidersTable extends Migration
           $table->string('provider_id');
           $table->string('provider');
           $table->timestamps();
-
           $table->foreign('user_id')->references('id')->on('users');
         });
     }
