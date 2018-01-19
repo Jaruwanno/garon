@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use App\UserProviders;
+use App\User;
 
 
 class LoginController extends Controller
@@ -60,7 +61,7 @@ class LoginController extends Controller
         $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
                                               ->first();
         if(!$userProviders){
-          $user = App\User::all();
+          $user = User::all();
         }
 
         dd($user);
