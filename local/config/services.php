@@ -36,8 +36,8 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '2052941631609007',
-        'client_secret' => '1b6c997cfbe4900efbd9856afee1d0c1',
+        'client_id' => '521472684875857',
+        'client_secret' => '04372b75ae343a18206ca661240e68cb',
         'redirect' => 'https://www.balllife24.com/login/facebook/callback',
     ],
 
