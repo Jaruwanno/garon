@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => '521472684875857',
         'client_secret' => '04372b75ae343a18206ca661240e68cb',
-        'redirect' => 'https://www.balllife24.com/login/facebook/callback',
+        'redirect' => 'https://www.rakball24.com/login/facebook/callback',
     ],
 
 ];
