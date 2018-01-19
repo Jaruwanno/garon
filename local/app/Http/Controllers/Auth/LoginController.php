@@ -56,7 +56,7 @@ class LoginController extends Controller
         }catch(\Exception $e){
           return redirect('/');
         }
-        $userPorviders = UserProviders::where('provider_id', $user->getId())
+        $userProviders = UserProviders::where('provider_id', $user->getId())
                                               ->first();
 
         dd($userProviders);
