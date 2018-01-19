@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use App\UserProviders;
 
+
 class LoginController extends Controller
 {
     /*
@@ -52,13 +53,16 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         try{
-          $user = Socialite::driver('facebook')->user();
+          $socialProviders = Socialite::driver('facebook')->user();
         }catch(\Exception $e){
           return redirect('/');
         }
-        $userProviders = UserProviders::where('provider_id', $user->getId())
+        $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
                                               ->first();
+        if(!$userProviders){
+          $user = App/User::all();
+        }
 
-        dd($userProviders);
+        dd($user);
     }
 }
