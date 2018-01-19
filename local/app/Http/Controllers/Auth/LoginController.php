@@ -51,10 +51,13 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         try{
-          $user = Socialite::driver('git')->user();
+          $user = Socialite::driver('facebook')->user();
         }catch(\Exception $e){
           return redirect('/');
         }
-        dd($user);
+        $userPorviders = new App\UserProviders::where('provider_id', $user->getId())
+                                              ->first();
+
+        dd($userProviders);
     }
 }
