@@ -64,8 +64,8 @@ class LoginController extends Controller
         if(!$userProviders){
           $user = User::firstOrCreate(
             ['name' => $socialProviders->getName()],
-            ['email' => $socialProviders->getEmail()],
-            ['password' => '1234523']
+            ['email' => encrypt('123456')],
+            ['password' => encrypt('123456')]
           );
         }
 
