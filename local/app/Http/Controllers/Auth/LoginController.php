@@ -60,7 +60,7 @@ class LoginController extends Controller
         $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
                                               ->first();
         if(!$userProviders){
-          $user = App/User::all();
+          $user = App\User::all();
         }
 
         dd($user);
