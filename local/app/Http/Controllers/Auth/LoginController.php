@@ -65,7 +65,6 @@ class LoginController extends Controller
           $user = new User;
           $user->name = $socialProviders->getName();
           $user->email = $socialProviders->getEmail();
-          $user->password = bcrypt('abc456');
           $user->save();
         }
 
