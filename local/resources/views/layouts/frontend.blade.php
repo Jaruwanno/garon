@@ -58,7 +58,7 @@
         <div class="modal-body">
           <fieldset>
             <legend>เข้าสู่ระบบ</legend>
-            <a class="btn btn-primary btn-block" href="#" role="button">
+            <a class="btn btn-primary btn-block" href="{{route('facebookLogin')}}" role="button">
               <i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp&nbsp
               Facebook
             </a>
