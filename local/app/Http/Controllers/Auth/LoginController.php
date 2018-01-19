@@ -59,11 +59,13 @@ class LoginController extends Controller
           return redirect('/');
         }
         $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
-                                              ->first();
-        if(!$userProviders){
-          $user = User::all();
-        }
+                                      ->first();
+        dd($userProviders);
 
-        dd($user);
+        if(!$userProviders){
+          // $user = User::firstOrCreate(
+          //   ['name' => ]
+          // );
+        }
     }
 }
