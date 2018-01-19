@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
+use App\UserProviders;
 
 class LoginController extends Controller
 {
@@ -55,7 +56,7 @@ class LoginController extends Controller
         }catch(\Exception $e){
           return redirect('/');
         }
-        $userPorviders = new App\UserProviders::where('provider_id', $user->getId())
+        $userPorviders = UserProviders::where('provider_id', $user->getId())
                                               ->first();
 
         dd($userProviders);
