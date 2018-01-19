@@ -12,7 +12,7 @@ class UamRole extends Model
     }
 
 
-    protected $fillable = [
+    protected $fillable = [ 
       'user_id', 'role_name', 'access_name'
     ];
 

@@ -9,10 +9,10 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/
 //frontend
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('facebookLogin');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback')->name('facebookCallback');
 
 //home
 Route::get('/', 'Frontend\HomeController@index')->name('home');
