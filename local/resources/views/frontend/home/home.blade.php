@@ -3,6 +3,7 @@
 @section('header-text')
     <p>home</p>
     <h1>หน้าแรก</h1>
+    <h1>{{ dd(Auth::user()) }}</h1>
 @endsection
 
 @section('content')
