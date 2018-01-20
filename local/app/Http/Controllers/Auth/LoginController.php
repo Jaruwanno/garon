@@ -61,7 +61,7 @@ class LoginController extends Controller
         $user->avatar_url = $fbProviders->getAvatar();
         $user->type = 'user';
         $user->save();
-        auth()->login($user);
+        // auth()->login($user);
         return redirect('/');
     }
 }
