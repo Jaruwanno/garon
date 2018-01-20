@@ -5,10 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
-use App\SocialProviders;
-use App\SocialUsers;
+use App\User;
 
- 
+
 class LoginController extends Controller
 {
     /*
@@ -54,22 +53,24 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         try{
-          $socialProviders = Socialite::driver('facebook')->user();
+          $fbProviders = Socialite::driver('facebook')->user();
         }catch(\Exception $e){
           return redirect('/');
         }
-        $socialUser = SocialUsers::where('provider_id', $socialProviders->getId())
-                                      ->first();
 
-        if(!$socialUser){
-          $user = new SocialUsers;
-          $user->name = $socialProviders->getName();
-          $user->email = $socialProviders->getEmail();
-          // $user->password = ;
-          $user->save();
-        }
+        dd($fbProviders);
+        // $socialUser = SocialUsers::where('provider_id', $socialProviders->getId())
+        //                               ->first();
 
-        auth()->login($user);
-        return redirect('/');
+        // if(!$socialUser){
+        //   $user = new SocialUsers;
+        //   $user->name = $socialProviders->getName();
+        //   $user->email = $socialProviders->getEmail();
+        //   // $user->password = ;
+        //   $user->save();
+        // }
+        //
+        // auth()->login($user);
+        // return redirect('/');
     }
 }
