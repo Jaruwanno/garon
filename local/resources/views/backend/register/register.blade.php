@@ -68,7 +68,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('role_name') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('role_name') ? ' has-error' : '' }}">
                             <label for="role_name" class="col-md-4 control-label">ประเภทผู้ใช้</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="role_name" reqired>
@@ -81,7 +81,7 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

@@ -16,7 +16,6 @@ class UserTableSeeder extends Seeder
         $user->name = 'โอม';
         $user->email = 'jaruwanno1991@gmail.com';
         $user->password = bcrypt('abc456');
-        $user->role_name = 'admin';
         $user->created_at = '2017-09-02';
         $user->updated_at = '2017-09-02';
         $user->save();

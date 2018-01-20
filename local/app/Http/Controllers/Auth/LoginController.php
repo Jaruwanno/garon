@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
-use App\UserProviders;
-use App\User;
+use App\SocialProviders;
+use App\SocialUsers;
 
-
+ 
 class LoginController extends Controller
 {
     /*
@@ -58,14 +58,14 @@ class LoginController extends Controller
         }catch(\Exception $e){
           return redirect('/');
         }
-        $userProviders = UserProviders::where('provider_id', $socialProviders->getId())
+        $socialUser = SocialUsers::where('provider_id', $socialProviders->getId())
                                       ->first();
 
-        if(!$userProviders){
-          $user = new User;
+        if(!$socialUser){
+          $user = new SocialUsers;
           $user->name = $socialProviders->getName();
           $user->email = $socialProviders->getEmail();
-          $user->password = NULL;
+          // $user->password = ;
           $user->save();
         }
 

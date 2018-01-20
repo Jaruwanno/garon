@@ -15,7 +15,6 @@ class RoleTableSeeder extends Seeder
       $role = new UamRole();
       $role->id = 1;
       $role->user_id = 1;
-      $role->role_name = 'admin';
       $role->access_name = 'users';
       $role->save();
     }

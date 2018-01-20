@@ -94,49 +94,42 @@ class RegisterController extends Controller
 
       if( $request['role_user'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'users'
         ]);
       }
 
       if( $request['role_match'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'match'
         ]);
       }
 
       if( $request['role_table'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'table'
         ]);
       }
 
       if( $request['role_category'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'category'
         ]);
       }
 
       if( $request['role_news'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'news'
         ]);
       }
 
       if( $request['role_highlight'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'highlight'
         ]);
       }
 
       if( $request['role_webboard'] ){
         $insertRole = $user->roles()->create([
-            'role_name' => 'admin',
             'access_name' => 'webboard'
         ]);
       }

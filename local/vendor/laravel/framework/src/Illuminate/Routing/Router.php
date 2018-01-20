@@ -1118,7 +1118,7 @@ class Router implements RegistrarContract, BindingRegistrar
      * @return void
      */
     public function auth()
-    {
+    { 
         // Authentication Routes...
         $this->get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
         $this->post('admin/login', 'Auth\LoginController@login');

@@ -40,7 +40,7 @@
                           </label>
                         </li>
 
-                        <li> 
+                        <li>
                           <label class="checkbox-inline">
                             <input type="checkbox" name="role_match" class="roles"
                             {{ $user->hasRole('match') ? "checked" : "" }}> บิ๊กแมทข์
@@ -85,8 +85,8 @@
                     </form>
                   </td>
                   <td class="text-center">
-                    <button class="btn btn-default btn-sm edit" value="{{ $user->id }}" data-toggle="modal" data-target="#myModal">แก้ไข</button>
-                    <button class="btn btn-danger btn-sm del" value="{{ $user->id }}">ลบ</button>
+                    <button class="btn btn-default btn-sm edit" disabled value="{{ $user->id }}" data-toggle="modal" data-target="#myModal">แก้ไข</button>
+                    <button class="btn btn-danger btn-sm del" disabled value="{{ $user->id }}">ลบ</button>
                   </td>
                 </tr>
 @empty
