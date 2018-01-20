@@ -14,12 +14,9 @@ class CreateUamRolesTable extends Migration
     public function up()
     {
         Schema::create('uam_roles', function (Blueprint $table) {
-            $table->string('email');
-            $table->string('provider');
+            $table->integer('user_id')->unsigned();
             $table->string('access_name');
-
-            $table->foreign(['email', 'provider'])->references(['email', 'provider'])->on('users');
-            $table->primary(['email', 'provider']);
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
