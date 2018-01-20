@@ -47,7 +47,7 @@ class LoginController extends Controller
         try{
           $fbProviders = Socialite::driver('facebook')->user();
         }catch(\Exception $e){
-          return redirect('/'); 
+          return redirect('/');
         }
         // dd($fbProviders->getAvatar());
         // $socialUser = SocialUsers::where('provider_id', $socialProviders->getId())
@@ -61,7 +61,7 @@ class LoginController extends Controller
         $user->avatar_url = $fbProviders->getAvatar();
         $user->type = 'user';
         $user->save();
-        // auth()->login($user);
+        auth()->login($user);
         return redirect('/');
     }
 }
