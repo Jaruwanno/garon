@@ -49,7 +49,7 @@ class LoginController extends Controller
         }catch(\Exception $e){
           return redirect('/');
         }
-        dd($fbProviders->getAvatar());
+        // dd($fbProviders->getAvatar());
         // $socialUser = SocialUsers::where('provider_id', $socialProviders->getId())
         //                               ->first();
         $user = new User;
@@ -59,7 +59,7 @@ class LoginController extends Controller
         $user->provider_id = $fbProviders->getId();
         $user->provider = 'facebook';
         $user->avatar_url = $fbProviders->getAvatar();
-        // $user->password = ;
+        $user->type = 'user';
         $user->save();
         // auth()->login($user);
         return redirect('/');
