@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notifiable; 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -17,7 +17,7 @@ class User extends Authenticatable
         'name', 'email', 'password', 'provider_id', 'provider',
         'avatar_url', 'type'
     ];
- 
+
     /**
      * The attributes that should be hidden for arrays.
      *
